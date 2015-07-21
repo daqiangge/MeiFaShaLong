@@ -1,19 +1,19 @@
 //
-//  ____Tests.m
-//  菜单测试Tests
+//  _____Tests.m
+//  菜单测试二Tests
 //
-//  Created by admin on 15/7/20.
+//  Created by admin on 15/7/21.
 //  Copyright (c) 2015年 dieshang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface ____Tests : XCTestCase
+@interface _____Tests : XCTestCase
 
 @end
 
-@implementation ____Tests
+@implementation _____Tests
 
 - (void)setUp {
     [super setUp];
