@@ -10,4 +10,7 @@
 
 @interface LQHomeRollingScrollView : UIScrollView
 
++ (instancetype)homeRollingScrollView;
+- (void)addImageView;
+
 @end

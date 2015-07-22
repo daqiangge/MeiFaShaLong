@@ -10,6 +10,6 @@
 
 @interface LQHomeModularView : UIView
 
-+ (instancetype)modularViewWithFrame:(CGRect)frame;
++ (instancetype)homeModularView;
 
 @end
