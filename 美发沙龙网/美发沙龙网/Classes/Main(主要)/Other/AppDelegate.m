@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "LQTabBarController.h"
+#import "LQLeftMeunVC.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +22,15 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    LQLeftMeunVC *leftMeunVC = [[LQLeftMeunVC alloc] init];
+    LQTabBarController *tabBarController = [[LQTabBarController alloc] init];
+    MFSideMenuContainerViewController *mfSideMenu = [MFSideMenuContainerViewController
+                                                     containerWithCenterViewController:tabBarController
+                                                     leftMenuViewController:leftMeunVC
+                                                     rightMenuViewController:nil];
+    
+    self.window.rootViewController = mfSideMenu;
     
     [self.window makeKeyAndVisible];
     
