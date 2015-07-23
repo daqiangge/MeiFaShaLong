@@ -13,16 +13,24 @@
 #import "LQPersonalCenterVC.h"
 #import "LQNavigationController.h"
 
-@interface LQTabBarController ()
+@interface LQTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
 @implementation LQTabBarController
 
+
+- (MFSideMenuContainerViewController *)menuContainerViewController
+{
+    return (MFSideMenuContainerViewController *)self.parentViewController;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.delegate = self;
     
     LQHomeVC *homeVC = [[LQHomeVC alloc] init];
     [self addChildVC:homeVC
@@ -51,6 +59,7 @@
       navgationTitle:@"中国美发沙龙网"
            imageName:@"tabbar_profile"
    selectedImageName:@"tabbar_profile_selected"];
+    
 }
 
 /**
@@ -64,18 +73,25 @@
  */
 - (void)addChildVC:(UIViewController *)childVC tabBarTitle:(NSString *)tabBarTitle navgationTitle:(NSString *)navgationTitle imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
-    childVC.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255. green:arc4random()%255/255. blue:arc4random()%255/255. alpha:1];
-    childVC.tabBarItem.title = tabBarTitle;
+    LQNavigationController *childNav = [[LQNavigationController alloc] initWithRootViewController:childVC];
+    childNav.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255. green:arc4random()%255/255. blue:arc4random()%255/255. alpha:1];
+    childNav.tabBarItem.title = tabBarTitle;
     childVC.navigationItem.title = navgationTitle;
-    childVC.tabBarItem.image = [UIImage imageNamed:imageName];
+    childNav.tabBarItem.image = [UIImage imageNamed:imageName];
     
     //住tabbar对图片在进行渲染
     UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
     selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    childVC.tabBarItem.selectedImage = selectedImage;
+    childNav.tabBarItem.selectedImage = selectedImage;
     
-    LQNavigationController *childNav = [[LQNavigationController alloc] initWithRootViewController:childVC];
     [self addChildViewController:childNav];
+}
+
+#pragma mark - UITabBarControllerDelegaet
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    //设置菜单栏的状态为不可打开
+    self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
 }
 
 @end

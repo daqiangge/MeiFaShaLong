@@ -8,7 +8,6 @@
 #import "MFAppDelegate.h"
 #import "DemoViewController.h"
 #import "SideMenuViewController.h"
-#import "MFSideMenuContainerViewController.h"
 
 @implementation MFAppDelegate
 
@@ -27,11 +26,11 @@
     
     SideMenuViewController *leftMenuViewController = [[SideMenuViewController alloc] init];
     SideMenuViewController *rightMenuViewController = [[SideMenuViewController alloc] init];
-    MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+    _container = [MFSideMenuContainerViewController
                                                     containerWithCenterViewController:[self navigationController]
                                                     leftMenuViewController:leftMenuViewController
                                                     rightMenuViewController:rightMenuViewController];
-    self.window.rootViewController = container;
+    self.window.rootViewController = _container;
     [self.window makeKeyAndVisible];
     
     return YES;

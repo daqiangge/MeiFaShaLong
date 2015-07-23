@@ -7,6 +7,7 @@
 
 #import "DemoViewController.h"
 #import "MFSideMenuContainerViewController.h"
+#import "MFAppDelegate.h"
 
 @implementation DemoViewController
 
@@ -20,6 +21,10 @@
     if(!self.title) self.title = @"Demo!";
     
     [self setupMenuBarButtonItems];
+    
+    
+    NSLog(@"%@",self.navigationController);
+    
 }
 
 - (MFSideMenuContainerViewController *)menuContainerViewController {
@@ -38,6 +43,8 @@
     } else {
         self.navigationItem.leftBarButtonItem = [self leftMenuBarButtonItem];
     }
+    
+    
 }
 
 - (UIBarButtonItem *)leftMenuBarButtonItem {

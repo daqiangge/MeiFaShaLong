@@ -13,28 +13,33 @@
 
 @implementation LQHomeModularView
 
-+ (instancetype)homeModularView
++ (instancetype)homeModularViewWithFrame:(CGRect)frame
 {
-    return [[self alloc] init];
+    return [[self alloc] initWithFrame:frame];
 }
 
-- (instancetype)init
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    if (self = [super init])
+    if (self = [super initWithFrame:frame])
     {
-        UIButton *oneBtn = [[UIButton alloc] init];
-        oneBtn.backgroundColor = [UIColor redColor];
-        [self addSubview:oneBtn];
-        
-        [oneBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left).with.offset(10);
-            make.top.equalTo(self.mas_top).with.offset(10);
-            make.width.equalTo(@30);
-            make.height.equalTo(@30);
-        }];
+        [self doLoading];
     }
     
     return self;
+}
+
+- (void)doLoading
+{
+    UIButton *oneBtn = [[UIButton alloc] init];
+    oneBtn.backgroundColor = [UIColor redColor];
+    [self addSubview:oneBtn];
+    
+    [oneBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.mas_left).with.offset(10);
+        make.top.equalTo(self.mas_top).with.offset(10);
+        make.width.equalTo(@30);
+        make.height.equalTo(@30);
+    }];
 }
 
 @end

@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class LQHomeRollingScrollView;
+
+@protocol LQHomeRollingScrollViewDelegate <NSObject>
+
+- (void)homeRollingScrollViewDidUpdatePageControl:(LQHomeRollingScrollView *)scrollView currentPage:(NSInteger)currentPage;
+
+@end
+
+
 @interface LQHomeRollingScrollView : UIScrollView
 
-+ (instancetype)homeRollingScrollView;
-- (void)addImageView;
+@property (nonatomic, weak) id<LQHomeRollingScrollViewDelegate> homeRollingScrollViewDelegate;
+
++ (instancetype)homeRollingScrollViewWithFrame:(CGRect)frame;
 
 @end

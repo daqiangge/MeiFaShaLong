@@ -23,6 +23,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     LQLeftMeunVC *leftMeunVC = [[LQLeftMeunVC alloc] init];
     LQTabBarController *tabBarController = [[LQTabBarController alloc] init];
     MFSideMenuContainerViewController *mfSideMenu = [MFSideMenuContainerViewController

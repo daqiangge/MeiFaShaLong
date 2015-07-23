@@ -15,7 +15,7 @@
 
     #import "UIView+Extension.h"
     #import "UIImageView+WebCache.h"
-
+    #import "UIBarButtonItem+LQExtension.h"
 /**
  *  屏幕宽
  */
@@ -34,5 +34,8 @@
 #else
 #define LQLog(...) {}
 #endif
+
+
+#define TextFont_Normal ([UIFont systemFontOfSize:14])
 
 #endif

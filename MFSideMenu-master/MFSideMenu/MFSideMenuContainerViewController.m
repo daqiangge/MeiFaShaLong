@@ -89,6 +89,7 @@ typedef enum {
     self.menuAnimationDefaultDuration = 0.2f;
     self.menuAnimationMaxDuration = 0.4f;
     self.panMode = MFSideMenuPanModeDefault;
+    self.lockUpMeun = NO;
 }
 
 - (void)setupMenuContainerView {
@@ -511,6 +512,11 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 // this method handles any pan event
 // and sets the navigation controller's frame as needed
 - (void) handlePan:(UIPanGestureRecognizer *)recognizer {
+    
+    if (self.lockUpMeun) {
+        return;
+    }
+    
     UIView *view = [self.centerViewController view];
     
 	if(recognizer.state == UIGestureRecognizerStateBegan) {

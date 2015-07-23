@@ -515,6 +515,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 // this method handles any pan event
 // and sets the navigation controller's frame as needed
 - (void) handlePan:(UIPanGestureRecognizer *)recognizer {
+    
     UIView *view = [self.centerViewController view];
     
 	if(recognizer.state == UIGestureRecognizerStateBegan) {

@@ -6,8 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MFSideMenuContainerViewController.h"
 
 @interface MFAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (nonatomic, strong) MFSideMenuContainerViewController *container;
 
 @property (strong, nonatomic) UIWindow *window;
 
