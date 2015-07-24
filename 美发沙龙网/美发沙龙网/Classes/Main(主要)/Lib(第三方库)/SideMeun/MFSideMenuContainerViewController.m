@@ -80,7 +80,7 @@ typedef enum {
     
     self.menuContainerView = [[UIView alloc] init];
     self.menuState = MFSideMenuStateClosed;
-    self.menuWidth = [UIScreen mainScreen].bounds.size.width/4*3;
+    self.menuWidth = [UIScreen mainScreen].bounds.size.width/5*4 ;
     self.shadowRadius = 10.0f;
     self.shadowOpacity = 0.75f;
     self.shadowColor = [UIColor blackColor];
