@@ -16,6 +16,8 @@
     #import "UIView+Extension.h"
     #import "UIImageView+WebCache.h"
     #import "UIBarButtonItem+LQExtension.h"
+    #import "UIButton+LQExtension.h"
+
 /**
  *  屏幕宽
  */
@@ -35,7 +37,21 @@
 #define LQLog(...) {}
 #endif
 
+#define TextFont_14 ([UIFont systemFontOfSize:14])
+#define TextFont_15 ([UIFont systemFontOfSize:15])
+#define TextFont_16 ([UIFont systemFontOfSize:16])
+#define TextFont_17 ([UIFont systemFontOfSize:17])
+#define TextFont_18 ([UIFont systemFontOfSize:18])
+#define TextFont_19 ([UIFont systemFontOfSize:19])
+#define TextFont_20 ([UIFont systemFontOfSize:20])
 
-#define TextFont_Normal ([UIFont systemFontOfSize:14])
+//画边框---倒圆角
+#define Layer_CornerRadius 2
+
+//画边框---边框线的颜色
+#define Layer_BorderColor ([UIColor grayColor].CGColor)
+
+//画边框---边框线的宽度
+#define Layer_BorderWidth 0.5
 
 #endif

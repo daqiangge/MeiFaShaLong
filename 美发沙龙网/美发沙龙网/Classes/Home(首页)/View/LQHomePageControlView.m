@@ -28,14 +28,14 @@
 - (void)doLoading
 {
     UIView *backgroundView = [[UIView alloc] init];
-    backgroundView.frame = CGRectMake(0, 0, self.width, self.height);
+    backgroundView.frame   = CGRectMake(0, 0, self.width, self.height);
     backgroundView.backgroundColor = [UIColor blackColor];
     backgroundView.alpha = 0.5;
     [self addSubview:backgroundView];
     
-    UILabel *titleLable = [[UILabel alloc] init];
+    UILabel *titleLable  = [[UILabel alloc] init];
     titleLable.textColor = [UIColor whiteColor];
-    titleLable.font = TextFont_Normal;
+    titleLable.font = TextFont_14;
     [self addSubview:titleLable];
     self.titleLable = titleLable;
     

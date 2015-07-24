@@ -10,8 +10,9 @@
 #import "LQHomeModularView.h"
 #import "LQHomeRollingScrollView.h"
 #import "LQHomePageControlView.h"
+#import "LQInformationVC.h"
 
-@interface LQHomeVC ()<LQHomeRollingScrollViewDelegate>
+@interface LQHomeVC ()<LQHomeRollingScrollViewDelegate,LQHomeModularViewDelegate>
 
 @property (weak, nonatomic) LQHomeRollingScrollView *homeRollingScrollView;
 @property (weak, nonatomic) LQHomeModularView *homeModularView;
@@ -52,7 +53,8 @@
         CGRect frame = CGRectMake(x, y, width, height);
         
         LQHomeModularView *homeModularView = [LQHomeModularView homeModularViewWithFrame:frame];
-        homeModularView.backgroundColor = [UIColor yellowColor];
+        homeModularView.backgroundColor = [UIColor whiteColor];
+        homeModularView.homeModularViewDelegate = self;
         [self.view addSubview:homeModularView];
         _homeModularView = homeModularView;
     }
@@ -70,7 +72,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"menu-icon" selectedImageName:@"menu-icon" target:self action:@selector(refresh)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"menu-icon" selectedImageName:@"menu-icon" target:self action:@selector(openMeun)];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" selectedImageName:@"navigationbar_pop_highlighted" target:self action:@selector(refresh)];
     
     [self doLoading];
@@ -96,6 +98,7 @@
 - (void)doLoading
 {
     self.homeRollingScrollView.hidden = NO;
+    self.homeModularView.hidden = NO;
     
     //加载pageControlView
     CGFloat homePageControlViewW = CGRectGetWidth(self.homeRollingScrollView.frame);
@@ -111,9 +114,14 @@
     self.homePageControlView = homePageControlView;
 }
 
+- (void)openMeun
+{
+    LQLog(@"打开菜单");
+}
+
 - (void)refresh
 {
-    LQLog(@"刷新。。。。");
+
 }
 
 #pragma mark - LQHomeRollingScrollViewDelegate
@@ -121,6 +129,13 @@
 {
     self.homePageControlView.pageControl.currentPage = currentPage;
     self.homePageControlView.titleLable.text = @"史上最全打蜡配方，高端学习教程";
+}
+
+#pragma mark - LQHomeModularViewDelegate
+- (void)homeModularViewDidClickBtnWithView:(LQHomeModularView *)view btn:(UIButton *)btn
+{
+    LQInformationVC *informationVC = [[LQInformationVC alloc] init];
+    [self.navigationController pushViewController:informationVC animated:YES];
 }
 
 @end

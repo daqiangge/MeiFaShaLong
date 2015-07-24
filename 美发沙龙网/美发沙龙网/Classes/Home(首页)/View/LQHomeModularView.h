@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class LQHomeModularView;
+
+@protocol LQHomeModularViewDelegate <NSObject>
+
+- (void)homeModularViewDidClickBtnWithView:(LQHomeModularView *)view btn:(UIButton *)btn;
+
+@end
+
+
 @interface LQHomeModularView : UIView
+
+@property (nonatomic, weak) id<LQHomeModularViewDelegate> homeModularViewDelegate;
 
 + (instancetype)homeModularViewWithFrame:(CGRect)frame;
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */; };
+		84AA3D271B61E474003A5E73 /* UIButton+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */; };
 		84CEF0711B5E36F00017D798 /* LQLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF05E1B5E36F00017D798 /* LQLoginVC.m */; };
 		84CEF0721B5E36F00017D798 /* LQLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CEF05F1B5E36F00017D798 /* LQLoginVC.xib */; };
 		84CEF0731B5E36F00017D798 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0671B5E36F00017D798 /* AppDelegate.m */; };
@@ -74,6 +75,8 @@
 /* Begin PBXFileReference section */
 		8417A77C1B607CD700B80F54 /* LQHomePageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomePageControlView.h; sourceTree = "<group>"; };
 		8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomePageControlView.m; sourceTree = "<group>"; };
+		84AA3D251B61E474003A5E73 /* UIButton+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LQExtension.h"; sourceTree = "<group>"; };
+		84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LQExtension.m"; sourceTree = "<group>"; };
 		84CEF05D1B5E36F00017D798 /* LQLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQLoginVC.h; sourceTree = "<group>"; };
 		84CEF05E1B5E36F00017D798 /* LQLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQLoginVC.m; sourceTree = "<group>"; };
 		84CEF05F1B5E36F00017D798 /* LQLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQLoginVC.xib; sourceTree = "<group>"; };
@@ -624,6 +627,8 @@
 				D546A41A1B5FCECC0003A581 /* UIView+Extension.m */,
 				84EEB5FF1B60BC78008E7731 /* UIBarButtonItem+LQExtension.h */,
 				84EEB6001B60BC78008E7731 /* UIBarButtonItem+LQExtension.m */,
+				84AA3D251B61E474003A5E73 /* UIButton+LQExtension.h */,
+				84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -773,6 +778,7 @@
 				8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */,
 				84DF631F1B5F873C00B3BF63 /* MASViewConstraint.m in Sources */,
 				D546A3E11B5FBEB40003A581 /* LQHomeModularView.m in Sources */,
+				84AA3D271B61E474003A5E73 /* UIButton+LQExtension.m in Sources */,
 				84CEF08E1B5E39BC0017D798 /* LQHomeVC.m in Sources */,
 				84F3CA8C1B5F3F4E00DD44A9 /* LQInformationVC.m in Sources */,
 				84DF631D1B5F873C00B3BF63 /* MASLayoutConstraint.m in Sources */,

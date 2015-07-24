@@ -30,6 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.tabBar.barTintColor = [UIColor blackColor];
+    self.tabBar.tintColor = [UIColor whiteColor];
     self.delegate = self;
     
     LQHomeVC *homeVC = [[LQHomeVC alloc] init];
