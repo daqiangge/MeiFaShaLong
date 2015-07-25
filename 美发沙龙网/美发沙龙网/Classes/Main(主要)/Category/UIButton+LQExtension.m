@@ -22,13 +22,13 @@
     CGPoint endImageViewCenter  = CGPointMake(buttonBoundsCenter.x, CGRectGetMidY(self.imageView.bounds));
     
     // 找出titleLabel最终的center
-//    CGPoint endTitleLabelCenter = CGPointMake(buttonBoundsCenter.x, CGRectGetHeight(self.bounds)-CGRectGetMaxY(self.titleLabel.bounds));
+    CGPoint endTitleLabelCenter = CGPointMake(buttonBoundsCenter.x, CGRectGetHeight(self.bounds)-CGRectGetMaxY(self.titleLabel.bounds));
     
     // 取得imageView最初的center
     CGPoint startImageViewCenter  = self.imageView.center;
     
     // 取得titleLabel最初的center
-//    CGPoint startTitleLabelCenter = self.titleLabel.center;
+    CGPoint startTitleLabelCenter = self.titleLabel.center;
     
     // 设置imageEdgeInsets
     CGFloat imageEdgeInsetsTop    = - CGRectGetHeight(self.titleLabel.bounds) * 0.5;
@@ -40,10 +40,11 @@
     
     // 设置titleEdgeInsets
     CGFloat titleEdgeInsetsTop    = CGRectGetHeight(self.imageView.bounds) * 0.5 + space * 0.5;
-    CGFloat titleEdgeInsetsLeft   = - (startImageViewCenter.x + CGRectGetMidX(self.imageView.bounds));
-    CGFloat titleEdgeInsetsBottom = - titleEdgeInsetsTop;
-    CGFloat titleEdgeInsetsRight  = 0;
-//    self.titleLabel.backgroundColor = [UIColor redColor];
+//    CGFloat titleEdgeInsetsLeft   = - (startImageViewCenter.x + CGRectGetMidY(self.imageView.bounds));
+    CGFloat titleEdgeInsetsLeft    = endTitleLabelCenter.x - startTitleLabelCenter.x;
+    CGFloat titleEdgeInsetsBottom = -titleEdgeInsetsTop;
+    CGFloat titleEdgeInsetsRight  = -titleEdgeInsetsLeft;
+    
     self.titleEdgeInsets = UIEdgeInsetsMake(titleEdgeInsetsTop, titleEdgeInsetsLeft, titleEdgeInsetsBottom, titleEdgeInsetsRight);
 }
 

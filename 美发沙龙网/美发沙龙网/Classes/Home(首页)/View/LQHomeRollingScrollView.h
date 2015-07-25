@@ -12,7 +12,9 @@
 
 @protocol LQHomeRollingScrollViewDelegate <NSObject>
 
+@optional
 - (void)homeRollingScrollViewDidUpdatePageControl:(LQHomeRollingScrollView *)scrollView currentPage:(NSInteger)currentPage;
+- (void)homeRollingScrollViewDidClickImageView:(LQHomeRollingScrollView *)scrollView;
 
 @end
 

@@ -24,4 +24,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbar_background_transparent"] forBarMetrics:UIBarMetricsCompact];
+    
+    //设置导航栏的title为白色
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor]}];
+    
+    [super pushViewController:viewController animated:animated];
+}
+
 @end

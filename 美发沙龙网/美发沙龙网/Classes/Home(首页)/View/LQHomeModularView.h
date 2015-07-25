@@ -12,6 +12,7 @@
 
 @protocol LQHomeModularViewDelegate <NSObject>
 
+@optional
 - (void)homeModularViewDidClickBtnWithView:(LQHomeModularView *)view btn:(UIButton *)btn;
 
 @end

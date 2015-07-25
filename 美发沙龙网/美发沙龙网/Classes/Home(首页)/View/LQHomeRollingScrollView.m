@@ -59,9 +59,16 @@
     }
 }
 
+/**
+ *  点击了图片
+ */
 - (void)clickImageView:(UIButton *)btn
 {
     LQLog(@"123");
+    
+    if ([self.homeRollingScrollViewDelegate respondsToSelector:@selector(homeRollingScrollViewDidClickImageView:)]) {
+        [self.homeRollingScrollViewDelegate homeRollingScrollViewDidClickImageView:self];
+    }
 }
 
 #pragma mark - UIScrollViewDelegate

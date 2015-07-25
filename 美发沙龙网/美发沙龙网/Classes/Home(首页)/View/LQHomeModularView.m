@@ -30,6 +30,9 @@
 
 - (void)doLoading
 {
+    
+    NSArray *titles = @[@"美业资讯",@"美发视频",@"",@"",@"发现图片",@"免费视频",@"美发商城",@"美发人社区",@"美发技术",@"每日正能量",@"发廊经营",@"求职招聘"];
+    
     for (int i = 0; i < 12; i++)
     {
         if (i == 2 || i == 3)
@@ -47,10 +50,10 @@
         CGFloat y = space + (minBtnHeight +space)*row;
         
         UIButton *btn = [[UIButton alloc] init];
+        [btn setTitle:titles[i] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
-        [btn setTitle:@"美业资讯" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        btn.titleLabel.font    = TextFont_14;
+        btn.titleLabel.font    = TextFont_13;
         btn.layer.borderColor  = Layer_BorderColor;
         btn.layer.borderWidth  = Layer_BorderWidth;
         btn.layer.cornerRadius = Layer_CornerRadius;
@@ -61,16 +64,19 @@
         {
             case 0:
                 btn.frame = CGRectMake(x,y, minBtnWidth, minBtnHeight*2+space);
-                btn.titleLabel.font = TextFont_17;
+                btn.titleLabel.font = TextFont_16;
                 [btn setBackgroundImageAndTitlePositionRelationWithUpDownSpace:10.0];
                 break;
             case 1:
                 btn.frame = CGRectMake(x,y, minBtnWidth*2+space, minBtnHeight);
-                btn.titleLabel.font = TextFont_17;
+                btn.titleLabel.font = TextFont_16;
                 [btn setBackgroundImageAndTitlePositionRelationWithLeftRightSpace:10.0];
                 break;
                 
             default:
+                if (IPhone4_4s) {
+                    [btn setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
+                }
                 btn.frame = CGRectMake(x,y, minBtnWidth, minBtnHeight);
                 [btn setBackgroundImageAndTitlePositionRelationWithUpDownSpace:5.0];
                 break;

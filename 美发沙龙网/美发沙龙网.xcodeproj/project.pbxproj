@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */; };
+		849709991B632FD400C497B6 /* NSString+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709981B632FD400C497B6 /* NSString+LQExtension.m */; };
+		849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A11B63719500C497B6 /* UIImage+LQExtension.m */; };
+		849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A41B63816C00C497B6 /* LQHomeRollingView.m */; };
+		849709A81B6389CD00C497B6 /* LQInformationBtnGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */; };
 		84AA3D271B61E474003A5E73 /* UIButton+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */; };
 		84CEF0711B5E36F00017D798 /* LQLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF05E1B5E36F00017D798 /* LQLoginVC.m */; };
 		84CEF0721B5E36F00017D798 /* LQLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CEF05F1B5E36F00017D798 /* LQLoginVC.xib */; };
@@ -40,7 +44,6 @@
 		84F3CA851B5F36CE00DD44A9 /* LQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CA841B5F36CE00DD44A9 /* LQTabBarController.m */; };
 		84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CA871B5F3F2E00DD44A9 /* LQBaseViewController.m */; };
 		84F3CA8C1B5F3F4E00DD44A9 /* LQInformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CA8A1B5F3F4E00DD44A9 /* LQInformationVC.m */; };
-		84F3CA8D1B5F3F4E00DD44A9 /* LQInformationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F3CA8B1B5F3F4E00DD44A9 /* LQInformationVC.xib */; };
 		D546A3DE1B5FBE8E0003A581 /* LQHomeRollingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A3DD1B5FBE8D0003A581 /* LQHomeRollingScrollView.m */; };
 		D546A3E11B5FBEB40003A581 /* LQHomeModularView.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */; };
 		D546A4081B5FC9C30003A581 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A3E81B5FC9C30003A581 /* MKAnnotationView+WebCache.m */; };
@@ -75,6 +78,14 @@
 /* Begin PBXFileReference section */
 		8417A77C1B607CD700B80F54 /* LQHomePageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomePageControlView.h; sourceTree = "<group>"; };
 		8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomePageControlView.m; sourceTree = "<group>"; };
+		849709971B632FD400C497B6 /* NSString+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LQExtension.h"; sourceTree = "<group>"; };
+		849709981B632FD400C497B6 /* NSString+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LQExtension.m"; sourceTree = "<group>"; };
+		849709A01B63719500C497B6 /* UIImage+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LQExtension.h"; sourceTree = "<group>"; };
+		849709A11B63719500C497B6 /* UIImage+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LQExtension.m"; sourceTree = "<group>"; };
+		849709A31B63816C00C497B6 /* LQHomeRollingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomeRollingView.h; sourceTree = "<group>"; };
+		849709A41B63816C00C497B6 /* LQHomeRollingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomeRollingView.m; sourceTree = "<group>"; };
+		849709A61B6389CD00C497B6 /* LQInformationBtnGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQInformationBtnGroupView.h; sourceTree = "<group>"; };
+		849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQInformationBtnGroupView.m; sourceTree = "<group>"; };
 		84AA3D251B61E474003A5E73 /* UIButton+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LQExtension.h"; sourceTree = "<group>"; };
 		84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LQExtension.m"; sourceTree = "<group>"; };
 		84CEF05D1B5E36F00017D798 /* LQLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQLoginVC.h; sourceTree = "<group>"; };
@@ -140,7 +151,6 @@
 		84F3CA871B5F3F2E00DD44A9 /* LQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQBaseViewController.m; sourceTree = "<group>"; };
 		84F3CA891B5F3F4E00DD44A9 /* LQInformationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQInformationVC.h; sourceTree = "<group>"; };
 		84F3CA8A1B5F3F4E00DD44A9 /* LQInformationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQInformationVC.m; sourceTree = "<group>"; };
-		84F3CA8B1B5F3F4E00DD44A9 /* LQInformationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQInformationVC.xib; sourceTree = "<group>"; };
 		D546A3DC1B5FBE8D0003A581 /* LQHomeRollingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomeRollingScrollView.h; sourceTree = "<group>"; };
 		D546A3DD1B5FBE8D0003A581 /* LQHomeRollingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomeRollingScrollView.m; sourceTree = "<group>"; };
 		D546A3DF1B5FBEB40003A581 /* LQHomeModularView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomeModularView.h; sourceTree = "<group>"; };
@@ -361,7 +371,6 @@
 				84CEF08C1B5E39BC0017D798 /* LQHomeVC.m */,
 				84F3CA891B5F3F4E00DD44A9 /* LQInformationVC.h */,
 				84F3CA8A1B5F3F4E00DD44A9 /* LQInformationVC.m */,
-				84F3CA8B1B5F3F4E00DD44A9 /* LQInformationVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -576,6 +585,10 @@
 				D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */,
 				8417A77C1B607CD700B80F54 /* LQHomePageControlView.h */,
 				8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */,
+				849709A31B63816C00C497B6 /* LQHomeRollingView.h */,
+				849709A41B63816C00C497B6 /* LQHomeRollingView.m */,
+				849709A61B6389CD00C497B6 /* LQInformationBtnGroupView.h */,
+				849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -629,6 +642,10 @@
 				84EEB6001B60BC78008E7731 /* UIBarButtonItem+LQExtension.m */,
 				84AA3D251B61E474003A5E73 /* UIButton+LQExtension.h */,
 				84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */,
+				849709971B632FD400C497B6 /* NSString+LQExtension.h */,
+				849709981B632FD400C497B6 /* NSString+LQExtension.m */,
+				849709A01B63719500C497B6 /* UIImage+LQExtension.h */,
+				849709A11B63719500C497B6 /* UIImage+LQExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -714,7 +731,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F3CA8D1B5F3F4E00DD44A9 /* LQInformationVC.xib in Resources */,
 				84F3CA811B5F287100DD44A9 /* LQPersonalCenterVC.xib in Resources */,
 				84F3CA7C1B5F284E00DD44A9 /* LQCommunityVC.xib in Resources */,
 				84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */,
@@ -743,11 +759,13 @@
 				D546A4101B5FC9C30003A581 /* SDWebImagePrefetcher.m in Sources */,
 				84DF631B1B5F873C00B3BF63 /* MASConstraint.m in Sources */,
 				D546A40A1B5FC9C30003A581 /* SDImageCache.m in Sources */,
+				849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */,
 				D546A40F1B5FC9C30003A581 /* SDWebImageManager.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
 				84EEB6011B60BC78008E7731 /* UIBarButtonItem+LQExtension.m in Sources */,
 				84EFEA6A1B5CC6670049D6FA /* _____.xcdatamodeld in Sources */,
 				84E2DBBF1B5F6A730068423C /* LQNavigationController.m in Sources */,
+				849709991B632FD400C497B6 /* NSString+LQExtension.m in Sources */,
 				D546A4171B5FC9C30003A581 /* UIView+WebCacheOperation.m in Sources */,
 				84CEF0711B5E36F00017D798 /* LQLoginVC.m in Sources */,
 				D546A40B1B5FC9C30003A581 /* SDWebImageCompat.m in Sources */,
@@ -765,6 +783,7 @@
 				84CEF0831B5E38FA0017D798 /* LQLeftMeunVC.m in Sources */,
 				D546A41B1B5FCECC0003A581 /* UIView+Extension.m in Sources */,
 				D546A4131B5FC9C30003A581 /* UIImage+MultiFormat.m in Sources */,
+				849709A81B6389CD00C497B6 /* LQInformationBtnGroupView.m in Sources */,
 				84F3CA851B5F36CE00DD44A9 /* LQTabBarController.m in Sources */,
 				D546A4081B5FC9C30003A581 /* MKAnnotationView+WebCache.m in Sources */,
 				D546A4091B5FC9C30003A581 /* NSData+ImageContentType.m in Sources */,
@@ -774,6 +793,7 @@
 				84DF63201B5F873C00B3BF63 /* NSArray+MASAdditions.m in Sources */,
 				D546A4121B5FC9C30003A581 /* UIImage+GIF.m in Sources */,
 				D546A40D1B5FC9C30003A581 /* SDWebImageDownloader.m in Sources */,
+				849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */,
 				84CEF07F1B5E38A80017D798 /* MFSideMenuContainerViewController.m in Sources */,
 				8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */,
 				84DF631F1B5F873C00B3BF63 /* MASViewConstraint.m in Sources */,

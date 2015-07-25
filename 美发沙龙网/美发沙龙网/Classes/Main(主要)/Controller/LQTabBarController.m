@@ -76,7 +76,6 @@
 - (void)addChildVC:(UIViewController *)childVC tabBarTitle:(NSString *)tabBarTitle navgationTitle:(NSString *)navgationTitle imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
     LQNavigationController *childNav = [[LQNavigationController alloc] initWithRootViewController:childVC];
-    childNav.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255. green:arc4random()%255/255. blue:arc4random()%255/255. alpha:1];
     childNav.tabBarItem.title = tabBarTitle;
     childVC.navigationItem.title = navgationTitle;
     childNav.tabBarItem.image = [UIImage imageNamed:imageName];

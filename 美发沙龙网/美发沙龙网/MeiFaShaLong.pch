@@ -17,6 +17,8 @@
     #import "UIImageView+WebCache.h"
     #import "UIBarButtonItem+LQExtension.h"
     #import "UIButton+LQExtension.h"
+    #import "NSString+LQExtension.h"
+    #import "UIImage+LQExtension.h"
 
 /**
  *  屏幕宽
@@ -37,13 +39,20 @@
 #define LQLog(...) {}
 #endif
 
-#define TextFont_14 ([UIFont systemFontOfSize:14])
-#define TextFont_15 ([UIFont systemFontOfSize:15])
-#define TextFont_16 ([UIFont systemFontOfSize:16])
-#define TextFont_17 ([UIFont systemFontOfSize:17])
-#define TextFont_18 ([UIFont systemFontOfSize:18])
-#define TextFont_19 ([UIFont systemFontOfSize:19])
-#define TextFont_20 ([UIFont systemFontOfSize:20])
+#define IPhone4_4s  (LQScreen_Height == 480?YES:NO)
+
+
+
+
+#define TextFont_12 ([UIFont systemFontOfSize:(LQScreen_Height==480?10:(LQScreen_Height==568?10:(LQScreen_Height==667?12:(LQScreen_Height==736?13:14))))])
+#define TextFont_13 ([UIFont systemFontOfSize:(LQScreen_Height==480?11:(LQScreen_Height==568?11:(LQScreen_Height==667?13:(LQScreen_Height==736?14:15))))])
+#define TextFont_14 ([UIFont systemFontOfSize:(LQScreen_Height==480?12:(LQScreen_Height==568?12:(LQScreen_Height==667?14:(LQScreen_Height==736?15:16))))])
+#define TextFont_15 ([UIFont systemFontOfSize:(LQScreen_Height==480?13:(LQScreen_Height==568?13:(LQScreen_Height==667?15:(LQScreen_Height==736?16:17))))])
+#define TextFont_16 ([UIFont systemFontOfSize:(LQScreen_Height==480?14:(LQScreen_Height==568?14:(LQScreen_Height==667?16:(LQScreen_Height==736?17:18))))])
+#define TextFont_17 ([UIFont systemFontOfSize:(LQScreen_Height==480?15:(LQScreen_Height==568?15:(LQScreen_Height==667?17:(LQScreen_Height==736?18:19))))])
+#define TextFont_18 ([UIFont systemFontOfSize:(LQScreen_Height==480?16:(LQScreen_Height==568?16:(LQScreen_Height==667?18:(LQScreen_Height==736?19:20))))])
+#define TextFont_19 ([UIFont systemFontOfSize:(LQScreen_Height==480?17:(LQScreen_Height==568?17:(LQScreen_Height==667?19:(LQScreen_Height==736?20:21))))])
+#define TextFont_20 ([UIFont systemFontOfSize:(LQScreen_Height==480?18:(LQScreen_Height==568?18:(LQScreen_Height==667?20:(LQScreen_Height==736?21:22))))])
 
 //画边框---倒圆角
 #define Layer_CornerRadius 2

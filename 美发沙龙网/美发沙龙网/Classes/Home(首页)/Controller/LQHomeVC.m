@@ -8,38 +8,37 @@
 
 #import "LQHomeVC.h"
 #import "LQHomeModularView.h"
-#import "LQHomeRollingScrollView.h"
 #import "LQHomePageControlView.h"
 #import "LQInformationVC.h"
+#import "LQHomeRollingView.h"
 
-@interface LQHomeVC ()<LQHomeRollingScrollViewDelegate,LQHomeModularViewDelegate>
+@interface LQHomeVC ()<LQHomeModularViewDelegate>
 
-@property (weak, nonatomic) LQHomeRollingScrollView *homeRollingScrollView;
 @property (weak, nonatomic) LQHomeModularView *homeModularView;
 @property (nonatomic, weak) LQHomePageControlView *homePageControlView;
+@property (nonatomic, weak) LQHomeRollingView *homeRollingView;
 
 @end
 
 @implementation LQHomeVC
 
-- (LQHomeRollingScrollView *)homeRollingScrollView
+- (LQHomeRollingView *)homeRollingView
 {
-    if (_homeRollingScrollView == nil)
+    if (_homeRollingView == nil)
     {
-        CGFloat x = 0.0;
-        CGFloat y = 64.0;
+        CGFloat x = 0;
+        CGFloat y = 64;
         CGFloat width = LQScreen_Width;
-        CGFloat height = 150.0;
+        CGFloat height = (130 * LQScreen_Width)/320;
         CGRect frame = CGRectMake(x, y, width, height);
         
-        LQHomeRollingScrollView *homeRollingScrollView = [LQHomeRollingScrollView homeRollingScrollViewWithFrame:frame];
-        homeRollingScrollView.homeRollingScrollViewDelegate = self;
-        homeRollingScrollView.backgroundColor = [UIColor blueColor];
-        [self.view addSubview:homeRollingScrollView];
-        _homeRollingScrollView = homeRollingScrollView;
+        LQHomeRollingView *homeRollingView = [LQHomeRollingView homeRollingViewWithFrame:frame];
+        [self.view addSubview:homeRollingView];
+        _homeRollingView = homeRollingView;
+        
     }
     
-    return _homeRollingScrollView;
+    return _homeRollingView;
 }
 
 - (LQHomeModularView *)homeModularView
@@ -47,7 +46,7 @@
     if (_homeModularView == nil)
     {
         CGFloat x = 0.0;
-        CGFloat y = CGRectGetMaxY(self.homeRollingScrollView.frame);
+        CGFloat y = CGRectGetMaxY(self.homeRollingView.frame);
         CGFloat width = LQScreen_Width;
         CGFloat height = LQScreen_Height - y - 49;
         CGRect frame = CGRectMake(x, y, width, height);
@@ -72,6 +71,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.view.backgroundColor = [UIColor blackColor];
+    
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"menu-icon" selectedImageName:@"menu-icon" target:self action:@selector(openMeun)];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" selectedImageName:@"navigationbar_pop_highlighted" target:self action:@selector(refresh)];
     
@@ -81,10 +82,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    //设置导航栏的title为白色
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor]}];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -97,21 +94,9 @@
 
 - (void)doLoading
 {
-    self.homeRollingScrollView.hidden = NO;
+    self.homeRollingView.hidden = NO;
     self.homeModularView.hidden = NO;
     
-    //加载pageControlView
-    CGFloat homePageControlViewW = CGRectGetWidth(self.homeRollingScrollView.frame);
-    CGFloat homePageControlViewH = 30;
-    CGFloat homePageControlViewX = 0;
-    CGFloat homePageControlViewY = CGRectGetMaxY(self.homeRollingScrollView.frame) - homePageControlViewH;
-    CGRect homePageControlViewF = CGRectMake(homePageControlViewX, homePageControlViewY, homePageControlViewW, homePageControlViewH);
-    
-    LQHomePageControlView *homePageControlView = [LQHomePageControlView homePageControlViewWithFrame:homePageControlViewF];
-    homePageControlView.titleLable.text = @"史上最全打蜡配方，高端学习教程";
-    homePageControlView.pageControl.currentPage = 0;
-    [self.view addSubview:homePageControlView];
-    self.homePageControlView = homePageControlView;
 }
 
 - (void)openMeun
@@ -121,20 +106,14 @@
 
 - (void)refresh
 {
-
-}
-
-#pragma mark - LQHomeRollingScrollViewDelegate
-- (void)homeRollingScrollViewDidUpdatePageControl:(LQHomeRollingScrollView *)scrollView currentPage:(NSInteger)currentPage
-{
-    self.homePageControlView.pageControl.currentPage = currentPage;
-    self.homePageControlView.titleLable.text = @"史上最全打蜡配方，高端学习教程";
+    
 }
 
 #pragma mark - LQHomeModularViewDelegate
 - (void)homeModularViewDidClickBtnWithView:(LQHomeModularView *)view btn:(UIButton *)btn
 {
     LQInformationVC *informationVC = [[LQInformationVC alloc] init];
+    informationVC.title = btn.titleLabel.text;
     [self.navigationController pushViewController:informationVC animated:YES];
 }
 
