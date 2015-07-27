@@ -8,16 +8,20 @@
 
 #import "LQInformationVC.h"
 #import "LQHomeRollingView.h"
+#import "LQInformationBtnGroupView.h"
+#import "LQInformationTableViewCell.h"
 
 #define SearchBar_SeachTextField_BackgroundColor ([UIColor colorWithRed:59/255. green:59/255. blue:59/255. alpha:1])
 
-@interface LQInformationVC ()
+@interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 @property (weak, nonatomic) IBOutlet UIPageControl *abx;
 @property (nonatomic, weak) LQHomeRollingView *homeRollingView;
 @property (nonatomic, weak) UIView *searchBarBsckgroundView;
 @property (nonatomic, weak) UISearchBar *searchBar;
+@property (nonatomic, weak) LQInformationBtnGroupView *btnGroupView;
+@property (nonatomic, weak) UITableView *informationTableView;
 
 @end
 
@@ -60,7 +64,7 @@
         CGFloat x = 0;
         CGFloat y = CGRectGetMaxY(self.searchBarBsckgroundView.frame);
         CGFloat width = LQScreen_Width;
-        CGFloat height = (130 * LQScreen_Width)/320;
+        CGFloat height = (145 * LQScreen_Width)/320;
         CGRect frame = CGRectMake(x, y, width, height);
         
         LQHomeRollingView *homeRollingView = [LQHomeRollingView homeRollingViewWithFrame:frame];
@@ -70,6 +74,45 @@
     }
     
     return _homeRollingView;
+}
+
+- (LQInformationBtnGroupView *)btnGroupView
+{
+    if (_btnGroupView == nil)
+    {
+        CGFloat x = 0;
+        CGFloat y = CGRectGetMaxY(self.homeRollingView.frame);
+        CGFloat width = LQScreen_Width;
+        CGFloat height = 45;
+        CGRect frame = CGRectMake(x, y, width, height);
+        
+        LQInformationBtnGroupView *btnGroupView = [LQInformationBtnGroupView informationBtnGroupViewWithFrame:frame];
+        [self.view addSubview:btnGroupView];
+        _btnGroupView = btnGroupView;
+    }
+    
+    return _btnGroupView;
+}
+
+- (UITableView *)informationTableView
+{
+    if (_informationTableView == nil)
+    {
+        CGFloat x = 0;
+        CGFloat y = CGRectGetMaxY(self.btnGroupView.frame);
+        CGFloat width = CGRectGetWidth(self.btnGroupView.frame);
+        CGFloat height = LQScreen_Height - y - 44;
+        CGRect frame = CGRectMake(x, y, width, height);
+        
+        UITableView *tableView = [[UITableView alloc] init];
+        tableView.frame = frame;
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        [self.view addSubview:tableView];
+        _informationTableView = tableView;
+    }
+    
+    return _informationTableView;
 }
 
 - (void)viewDidLoad
@@ -90,18 +133,51 @@
 {
     self.searchBar.hidden = NO;
     self.homeRollingView.hidden = NO;
+    self.btnGroupView.hidden = NO;
     
+    //给tableview注册一个cell模板
+    NSString *identifer=@"LQInformationTableViewCell";
+    UINib *nib=[UINib nibWithNibName:@"LQInformationTableViewCell" bundle:nil];
+    [self.informationTableView registerNib:nib forCellReuseIdentifier:identifer];
     
+    //设置tableview的分割线
+    if([self.informationTableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        
+        [self.informationTableView setSeparatorInset:UIEdgeInsetsMake(0,15,0,15)];
+        
+//        [self.informationTableView setSeparatorColor:[UIColor redColor]];
+        
+    }
+
 }
 
 - (void)openMeun
 {
     LQLog(@"打开菜单");
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)refresh
 {
     LQLog(@"刷新。。。");
+}
+
+#pragma mark - TableViewDelegate&DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LQInformationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LQInformationTableViewCell"];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
 }
 
 @end

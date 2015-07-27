@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 美发沙龙网. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LQBaseViewController.h"
 
-@interface LQLeftMeunVC : UIViewController
+@interface LQLeftMeunVC : LQBaseViewController
 
 @end

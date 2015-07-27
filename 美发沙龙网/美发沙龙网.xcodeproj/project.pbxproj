@@ -31,6 +31,11 @@
 		84DF63211B5F873C00B3BF63 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF63161B5F873C00B3BF63 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		84DF63221B5F873C00B3BF63 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF63181B5F873C00B3BF63 /* View+MASAdditions.m */; };
 		84E2DBBF1B5F6A730068423C /* LQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E2DBBE1B5F6A730068423C /* LQNavigationController.m */; };
+		84E81EF51B65DD890089A0A7 /* LQInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E81EF31B65DD890089A0A7 /* LQInformationTableViewCell.m */; };
+		84E81EF61B65DD890089A0A7 /* LQInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E81EF41B65DD890089A0A7 /* LQInformationTableViewCell.xib */; };
+		84E81EF91B66218F0089A0A7 /* LQTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E81EF81B66218F0089A0A7 /* LQTableViewController.m */; };
+		84E81EFD1B66278D0089A0A7 /* LQMeunTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E81EFB1B66278D0089A0A7 /* LQMeunTableViewCell.m */; };
+		84E81EFE1B66278D0089A0A7 /* LQMeunTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E81EFC1B66278D0089A0A7 /* LQMeunTableViewCell.xib */; };
 		84EEB6011B60BC78008E7731 /* UIBarButtonItem+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EEB6001B60BC78008E7731 /* UIBarButtonItem+LQExtension.m */; };
 		84EFEA6A1B5CC6670049D6FA /* _____.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EFEA681B5CC6670049D6FA /* _____.xcdatamodeld */; };
 		84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EFEA711B5CC6670049D6FA /* Images.xcassets */; };
@@ -126,6 +131,14 @@
 		84DF63191B5F873C00B3BF63 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		84E2DBBD1B5F6A730068423C /* LQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNavigationController.h; sourceTree = "<group>"; };
 		84E2DBBE1B5F6A730068423C /* LQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNavigationController.m; sourceTree = "<group>"; };
+		84E81EF21B65DD890089A0A7 /* LQInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQInformationTableViewCell.h; sourceTree = "<group>"; };
+		84E81EF31B65DD890089A0A7 /* LQInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQInformationTableViewCell.m; sourceTree = "<group>"; };
+		84E81EF41B65DD890089A0A7 /* LQInformationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQInformationTableViewCell.xib; sourceTree = "<group>"; };
+		84E81EF71B66218F0089A0A7 /* LQTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQTableViewController.h; sourceTree = "<group>"; };
+		84E81EF81B66218F0089A0A7 /* LQTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQTableViewController.m; sourceTree = "<group>"; };
+		84E81EFA1B66278D0089A0A7 /* LQMeunTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQMeunTableViewCell.h; sourceTree = "<group>"; };
+		84E81EFB1B66278D0089A0A7 /* LQMeunTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQMeunTableViewCell.m; sourceTree = "<group>"; };
+		84E81EFC1B66278D0089A0A7 /* LQMeunTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQMeunTableViewCell.xib; sourceTree = "<group>"; };
 		84EEB5FF1B60BC78008E7731 /* UIBarButtonItem+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LQExtension.h"; sourceTree = "<group>"; };
 		84EEB6001B60BC78008E7731 /* UIBarButtonItem+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LQExtension.m"; sourceTree = "<group>"; };
 		84EFEA5E1B5CC6670049D6FA /* 美发沙龙网.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美发沙龙网.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,6 +296,8 @@
 				84F3CA871B5F3F2E00DD44A9 /* LQBaseViewController.m */,
 				84E2DBBD1B5F6A730068423C /* LQNavigationController.h */,
 				84E2DBBE1B5F6A730068423C /* LQNavigationController.m */,
+				84E81EF71B66218F0089A0A7 /* LQTableViewController.h */,
+				84E81EF81B66218F0089A0A7 /* LQTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,9 +339,9 @@
 		84CEF06A1B5E36F00017D798 /* Meun(菜单) */ = {
 			isa = PBXGroup;
 			children = (
-				84CEF06B1B5E36F00017D798 /* Controller */,
 				84CEF06F1B5E36F00017D798 /* Model */,
 				84CEF0701B5E36F00017D798 /* View */,
+				84CEF06B1B5E36F00017D798 /* Controller */,
 			);
 			path = "Meun(菜单)";
 			sourceTree = "<group>";
@@ -351,6 +366,9 @@
 		84CEF0701B5E36F00017D798 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84E81EFA1B66278D0089A0A7 /* LQMeunTableViewCell.h */,
+				84E81EFB1B66278D0089A0A7 /* LQMeunTableViewCell.m */,
+				84E81EFC1B66278D0089A0A7 /* LQMeunTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -589,6 +607,9 @@
 				849709A41B63816C00C497B6 /* LQHomeRollingView.m */,
 				849709A61B6389CD00C497B6 /* LQInformationBtnGroupView.h */,
 				849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */,
+				84E81EF21B65DD890089A0A7 /* LQInformationTableViewCell.h */,
+				84E81EF31B65DD890089A0A7 /* LQInformationTableViewCell.m */,
+				84E81EF41B65DD890089A0A7 /* LQInformationTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -734,7 +755,9 @@
 				84F3CA811B5F287100DD44A9 /* LQPersonalCenterVC.xib in Resources */,
 				84F3CA7C1B5F284E00DD44A9 /* LQCommunityVC.xib in Resources */,
 				84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */,
+				84E81EF61B65DD890089A0A7 /* LQInformationTableViewCell.xib in Resources */,
 				84CEF0721B5E36F00017D798 /* LQLoginVC.xib in Resources */,
+				84E81EFE1B66278D0089A0A7 /* LQMeunTableViewCell.xib in Resources */,
 				84F3CA771B5F283400DD44A9 /* LQNewRecommendVC.xib in Resources */,
 				84CEF0841B5E38FA0017D798 /* LQLeftMeunVC.xib in Resources */,
 			);
@@ -758,10 +781,12 @@
 				D546A4141B5FC9C30003A581 /* UIImage+WebP.m in Sources */,
 				D546A4101B5FC9C30003A581 /* SDWebImagePrefetcher.m in Sources */,
 				84DF631B1B5F873C00B3BF63 /* MASConstraint.m in Sources */,
+				84E81EF91B66218F0089A0A7 /* LQTableViewController.m in Sources */,
 				D546A40A1B5FC9C30003A581 /* SDImageCache.m in Sources */,
 				849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */,
 				D546A40F1B5FC9C30003A581 /* SDWebImageManager.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
+				84E81EFD1B66278D0089A0A7 /* LQMeunTableViewCell.m in Sources */,
 				84EEB6011B60BC78008E7731 /* UIBarButtonItem+LQExtension.m in Sources */,
 				84EFEA6A1B5CC6670049D6FA /* _____.xcdatamodeld in Sources */,
 				84E2DBBF1B5F6A730068423C /* LQNavigationController.m in Sources */,
@@ -777,6 +802,7 @@
 				84CEF0731B5E36F00017D798 /* AppDelegate.m in Sources */,
 				D546A4151B5FC9C30003A581 /* UIImageView+HighlightedWebCache.m in Sources */,
 				D546A3DE1B5FBE8E0003A581 /* LQHomeRollingScrollView.m in Sources */,
+				84E81EF51B65DD890089A0A7 /* LQInformationTableViewCell.m in Sources */,
 				84DF631E1B5F873C00B3BF63 /* MASViewAttribute.m in Sources */,
 				84F3CA7B1B5F284E00DD44A9 /* LQCommunityVC.m in Sources */,
 				84DF63211B5F873C00B3BF63 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
