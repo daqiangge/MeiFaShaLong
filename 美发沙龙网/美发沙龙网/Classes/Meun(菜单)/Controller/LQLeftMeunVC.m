@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *nameBackgroundView;
 @property (nonatomic, weak) UITableView *meunTableView;
+@property (nonatomic, strong) NSIndexPath *oldIndexPath;
 
 @end
 
@@ -47,7 +48,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor colorWithRed:26/255. green:26/255. blue:26/255. alpha:1];
     
     [self doLoading];
     
@@ -75,10 +76,26 @@
 {
     LQMeunTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LQMeunTableViewCell"];
     
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meunTableview_background"]];
+    
     NSArray *meunTitleArray = MeunTitleArray;
     cell.titleLable.text = meunTitleArray[indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.oldIndexPath != nil)
+    {
+        LQMeunTableViewCell *oldcell = (LQMeunTableViewCell *)[tableView cellForRowAtIndexPath:self.oldIndexPath];
+        oldcell.titleLable.textColor = [UIColor whiteColor];
+    }
+    
+    LQMeunTableViewCell *Newcell = (LQMeunTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    Newcell.titleLable.textColor = [UIColor blackColor];
+    self.oldIndexPath = indexPath;
+    
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section

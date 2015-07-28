@@ -10,7 +10,8 @@
 
 @implementation LQMeunTableViewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     // Initialization code
 }
 
