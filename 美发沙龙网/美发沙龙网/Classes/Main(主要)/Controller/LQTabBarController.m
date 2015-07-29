@@ -31,8 +31,8 @@
     // Do any additional setup after loading the view.
     
     self.tabBar.barTintColor = [UIColor blackColor];
-    self.tabBar.tintColor = [UIColor whiteColor];
-    self.delegate = self;
+    self.tabBar.tintColor    = [UIColor orangeColor];
+    self.delegate            = self;
     
     LQHomeVC *homeVC = [[LQHomeVC alloc] init];
     [self addChildVC:homeVC
@@ -76,13 +76,14 @@
 - (void)addChildVC:(UIViewController *)childVC tabBarTitle:(NSString *)tabBarTitle navgationTitle:(NSString *)navgationTitle imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
     LQNavigationController *childNav = [[LQNavigationController alloc] initWithRootViewController:childVC];
-    childNav.tabBarItem.title = tabBarTitle;
-    childVC.navigationItem.title = navgationTitle;
-    childNav.tabBarItem.image = [UIImage imageNamed:imageName];
+    childNav.tabBarItem.title        = tabBarTitle;
+    childVC.navigationItem.title     = navgationTitle;
+    childNav.tabBarItem.image        = [UIImage imageNamed:imageName];
+    childNav.tabBarItem.badgeValue = @"10";
     
     //住tabbar对图片在进行渲染
     UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
-    selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    selectedImage          = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childNav.tabBarItem.selectedImage = selectedImage;
     
     [self addChildViewController:childNav];

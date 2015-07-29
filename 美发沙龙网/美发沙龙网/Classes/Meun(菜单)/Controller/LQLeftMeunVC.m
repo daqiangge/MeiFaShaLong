@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *nameBackgroundView;
 @property (nonatomic, weak) UITableView *meunTableView;
-@property (nonatomic, strong) NSIndexPath *oldIndexPath;
 
 @end
 
@@ -51,7 +50,6 @@
     self.view.backgroundColor = [UIColor colorWithRed:26/255. green:26/255. blue:26/255. alpha:1];
     
     [self doLoading];
-    
 }
 
 - (void)doLoading
@@ -86,16 +84,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.oldIndexPath != nil)
-    {
-        LQMeunTableViewCell *oldcell = (LQMeunTableViewCell *)[tableView cellForRowAtIndexPath:self.oldIndexPath];
-        oldcell.titleLable.textColor = [UIColor whiteColor];
-    }
-    
-    LQMeunTableViewCell *Newcell = (LQMeunTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    Newcell.titleLable.textColor = [UIColor blackColor];
-    self.oldIndexPath = indexPath;
-    
+    [self setCellTitleLableTextColor:tableView indexPath:indexPath textColor:[UIColor blackColor]];
+}
+
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self setCellTitleLableTextColor:tableView indexPath:indexPath textColor:[UIColor blackColor]];
+}
+
+- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self setCellTitleLableTextColor:tableView indexPath:indexPath textColor:[UIColor whiteColor]];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self setCellTitleLableTextColor:tableView indexPath:indexPath textColor:[UIColor whiteColor]];
+}
+
+- (void)setCellTitleLableTextColor:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath textColor:(UIColor *)color
+{
+    LQMeunTableViewCell *cell = (LQMeunTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.titleLable.textColor = color;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -107,7 +117,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 37;
+    return (37 * LQScreen_Width)/320;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
