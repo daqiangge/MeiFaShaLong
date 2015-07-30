@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */; };
+		845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */; };
+		845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */; };
 		849709991B632FD400C497B6 /* NSString+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709981B632FD400C497B6 /* NSString+LQExtension.m */; };
 		849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A11B63719500C497B6 /* UIImage+LQExtension.m */; };
 		849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A41B63816C00C497B6 /* LQHomeRollingView.m */; };
@@ -83,6 +85,9 @@
 /* Begin PBXFileReference section */
 		8417A77C1B607CD700B80F54 /* LQHomePageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomePageControlView.h; sourceTree = "<group>"; };
 		8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomePageControlView.m; sourceTree = "<group>"; };
+		8452437D1B69CBC2006E8E26 /* LQNewFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewFeatureVC.h; sourceTree = "<group>"; };
+		8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewFeatureVC.m; sourceTree = "<group>"; };
+		8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQNewFeatureVC.xib; sourceTree = "<group>"; };
 		849709971B632FD400C497B6 /* NSString+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LQExtension.h"; sourceTree = "<group>"; };
 		849709981B632FD400C497B6 /* NSString+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LQExtension.m"; sourceTree = "<group>"; };
 		849709A01B63719500C497B6 /* UIImage+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LQExtension.h"; sourceTree = "<group>"; };
@@ -223,10 +228,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8452437B1B69CB8D006E8E26 /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				8452437C1B69CB8D006E8E26 /* Controller */,
+			);
+			path = "NewFeature(新特性)";
+			sourceTree = "<group>";
+		};
+		8452437C1B69CB8D006E8E26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8452437D1B69CBC2006E8E26 /* LQNewFeatureVC.h */,
+				8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */,
+				8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		84CEF0561B5E36F00017D798 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				84CEF0601B5E36F00017D798 /* Main(主要) */,
+				8452437B1B69CB8D006E8E26 /* NewFeature(新特性) */,
 				84CEF05B1B5E36F00017D798 /* Login(登录) */,
 				84CEF06A1B5E36F00017D798 /* Meun(菜单) */,
 				84CEF0571B5E36F00017D798 /* Home(首页) */,
@@ -758,6 +782,7 @@
 				84E81EF61B65DD890089A0A7 /* LQInformationTableViewCell.xib in Resources */,
 				84CEF0721B5E36F00017D798 /* LQLoginVC.xib in Resources */,
 				84E81EFE1B66278D0089A0A7 /* LQMeunTableViewCell.xib in Resources */,
+				845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */,
 				84F3CA771B5F283400DD44A9 /* LQNewRecommendVC.xib in Resources */,
 				84CEF0841B5E38FA0017D798 /* LQLeftMeunVC.xib in Resources */,
 			);
@@ -785,6 +810,7 @@
 				D546A40A1B5FC9C30003A581 /* SDImageCache.m in Sources */,
 				849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */,
 				D546A40F1B5FC9C30003A581 /* SDWebImageManager.m in Sources */,
+				845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
 				84E81EFD1B66278D0089A0A7 /* LQMeunTableViewCell.m in Sources */,
 				84EEB6011B60BC78008E7731 /* UIBarButtonItem+LQExtension.m in Sources */,
