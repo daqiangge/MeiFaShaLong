@@ -15,8 +15,6 @@
 
 @interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
-@property (weak, nonatomic) IBOutlet UIPageControl *abx;
 @property (nonatomic, weak) LQHomeRollingView *homeRollingView;
 @property (nonatomic, weak) UIView *searchBarBsckgroundView;
 @property (nonatomic, weak) UISearchBar *searchBar;
@@ -146,7 +144,6 @@
         [self.informationTableView setSeparatorInset:UIEdgeInsetsMake(0,15,0,15)];
         
 //        [self.informationTableView setSeparatorColor:[UIColor redColor]];
-        
     }
 
 }
