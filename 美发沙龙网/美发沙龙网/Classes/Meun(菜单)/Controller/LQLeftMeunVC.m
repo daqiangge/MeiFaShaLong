@@ -50,13 +50,14 @@
     self.view.backgroundColor = [UIColor colorWithRed:26/255. green:26/255. blue:26/255. alpha:1];
     
     [self doLoading];
+    
 }
 
 - (void)doLoading
 {
-    NSString *identifier = @"LQMeunTableViewCell";
-    UINib *nib = [UINib nibWithNibName:@"LQMeunTableViewCell" bundle:nil];
-    [self.meunTableView registerNib:nib forCellReuseIdentifier:identifier];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.meunTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    [self setCellTitleLableTextColor:self.meunTableView indexPath:indexPath textColor:[UIColor blackColor]];
 }
 
 #pragma mark - TableViewDelegate&DataSource
@@ -72,7 +73,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LQMeunTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LQMeunTableViewCell"];
+    LQMeunTableViewCell *cell = [[LQMeunTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meunTableview_background"]];
     

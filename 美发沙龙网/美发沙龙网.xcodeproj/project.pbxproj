@@ -10,6 +10,7 @@
 		8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */; };
 		845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */; };
 		845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */; };
+		847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C0C9C1B6B66DD00340448 /* UIColor+LQExtension.m */; };
 		849709991B632FD400C497B6 /* NSString+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709981B632FD400C497B6 /* NSString+LQExtension.m */; };
 		849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A11B63719500C497B6 /* UIImage+LQExtension.m */; };
 		849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A41B63816C00C497B6 /* LQHomeRollingView.m */; };
@@ -37,7 +38,6 @@
 		84E81EF61B65DD890089A0A7 /* LQInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E81EF41B65DD890089A0A7 /* LQInformationTableViewCell.xib */; };
 		84E81EF91B66218F0089A0A7 /* LQTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E81EF81B66218F0089A0A7 /* LQTableViewController.m */; };
 		84E81EFD1B66278D0089A0A7 /* LQMeunTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E81EFB1B66278D0089A0A7 /* LQMeunTableViewCell.m */; };
-		84E81EFE1B66278D0089A0A7 /* LQMeunTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E81EFC1B66278D0089A0A7 /* LQMeunTableViewCell.xib */; };
 		84EEB6011B60BC78008E7731 /* UIBarButtonItem+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EEB6001B60BC78008E7731 /* UIBarButtonItem+LQExtension.m */; };
 		84EFEA6A1B5CC6670049D6FA /* _____.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EFEA681B5CC6670049D6FA /* _____.xcdatamodeld */; };
 		84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EFEA711B5CC6670049D6FA /* Images.xcassets */; };
@@ -88,6 +88,8 @@
 		8452437D1B69CBC2006E8E26 /* LQNewFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewFeatureVC.h; sourceTree = "<group>"; };
 		8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewFeatureVC.m; sourceTree = "<group>"; };
 		8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQNewFeatureVC.xib; sourceTree = "<group>"; };
+		847C0C9B1B6B66DD00340448 /* UIColor+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LQExtension.h"; sourceTree = "<group>"; };
+		847C0C9C1B6B66DD00340448 /* UIColor+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LQExtension.m"; sourceTree = "<group>"; };
 		849709971B632FD400C497B6 /* NSString+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LQExtension.h"; sourceTree = "<group>"; };
 		849709981B632FD400C497B6 /* NSString+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LQExtension.m"; sourceTree = "<group>"; };
 		849709A01B63719500C497B6 /* UIImage+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LQExtension.h"; sourceTree = "<group>"; };
@@ -143,7 +145,6 @@
 		84E81EF81B66218F0089A0A7 /* LQTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQTableViewController.m; sourceTree = "<group>"; };
 		84E81EFA1B66278D0089A0A7 /* LQMeunTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQMeunTableViewCell.h; sourceTree = "<group>"; };
 		84E81EFB1B66278D0089A0A7 /* LQMeunTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQMeunTableViewCell.m; sourceTree = "<group>"; };
-		84E81EFC1B66278D0089A0A7 /* LQMeunTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQMeunTableViewCell.xib; sourceTree = "<group>"; };
 		84EEB5FF1B60BC78008E7731 /* UIBarButtonItem+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LQExtension.h"; sourceTree = "<group>"; };
 		84EEB6001B60BC78008E7731 /* UIBarButtonItem+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LQExtension.m"; sourceTree = "<group>"; };
 		84EFEA5E1B5CC6670049D6FA /* 美发沙龙网.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美发沙龙网.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,7 +393,6 @@
 			children = (
 				84E81EFA1B66278D0089A0A7 /* LQMeunTableViewCell.h */,
 				84E81EFB1B66278D0089A0A7 /* LQMeunTableViewCell.m */,
-				84E81EFC1B66278D0089A0A7 /* LQMeunTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -691,6 +691,8 @@
 				849709981B632FD400C497B6 /* NSString+LQExtension.m */,
 				849709A01B63719500C497B6 /* UIImage+LQExtension.h */,
 				849709A11B63719500C497B6 /* UIImage+LQExtension.m */,
+				847C0C9B1B6B66DD00340448 /* UIColor+LQExtension.h */,
+				847C0C9C1B6B66DD00340448 /* UIColor+LQExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -781,7 +783,6 @@
 				84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */,
 				84E81EF61B65DD890089A0A7 /* LQInformationTableViewCell.xib in Resources */,
 				84CEF0721B5E36F00017D798 /* LQLoginVC.xib in Resources */,
-				84E81EFE1B66278D0089A0A7 /* LQMeunTableViewCell.xib in Resources */,
 				845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */,
 				84F3CA771B5F283400DD44A9 /* LQNewRecommendVC.xib in Resources */,
 				84CEF0841B5E38FA0017D798 /* LQLeftMeunVC.xib in Resources */,
@@ -812,6 +813,7 @@
 				D546A40F1B5FC9C30003A581 /* SDWebImageManager.m in Sources */,
 				845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
+				847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */,
 				84E81EFD1B66278D0089A0A7 /* LQMeunTableViewCell.m in Sources */,
 				84EEB6011B60BC78008E7731 /* UIBarButtonItem+LQExtension.m in Sources */,
 				84EFEA6A1B5CC6670049D6FA /* _____.xcdatamodeld in Sources */,
@@ -916,6 +918,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -952,6 +955,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

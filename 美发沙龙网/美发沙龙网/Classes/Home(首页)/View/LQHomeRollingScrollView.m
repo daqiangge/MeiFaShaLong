@@ -19,6 +19,7 @@
 @property (nonatomic, weak) UIImageView *nextImageView;
 @property (nonatomic, weak) UIImageView *currentImageView;
 @property (nonatomic, assign) int page;
+@property (nonatomic, weak) NSTimer *timer;
 
 @end
 
@@ -38,6 +39,8 @@
         self.page = 0;
         
         [self doLoading];
+//        [self addTimer];
+        
     }
     
     return self;
@@ -94,6 +97,27 @@
                 break;
         }
     }
+}
+
+- (void)addTimer
+{
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(nextImage) userInfo:nil repeats:YES];
+    self.timer = timer;
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)removeTimer
+{
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+- (void)nextImage
+{
+    CGFloat offestX = self.contentOffset.x + LQScreen_Width;
+    CGPoint offest = CGPointMake(offestX, 0);
+    [self setContentOffset:offest animated:YES];
 }
 
 /**
@@ -157,5 +181,15 @@
         [self.homeRollingScrollViewDelegate homeRollingScrollViewDidUpdatePageControl:self currentPage:self.page];
     }
 }
+
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+//{
+//    [self removeTimer];
+//}
+//
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+//{
+//    [self addTimer];
+//}
 
 @end

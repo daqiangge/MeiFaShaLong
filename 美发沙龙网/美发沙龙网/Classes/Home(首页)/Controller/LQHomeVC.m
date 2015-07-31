@@ -96,7 +96,6 @@
 {
     self.homeRollingView.hidden = NO;
     self.homeModularView.hidden = NO;
-    
 }
 
 - (void)openMeun
