@@ -169,6 +169,8 @@
 {
     LQInformationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LQInformationTableViewCell"];
     
+    [cell.titleImageView sd_setImageWithURL:[NSURL URLWithString:@"http://img.firefoxchina.cn/2015/07/5/201507300849040.jpg"] placeholderImage:[UIImage imageNamed:@"123"] options:SDWebImageRetryFailed];
+    
     return cell;
 }
 

@@ -44,21 +44,21 @@
     LQNewRecommendVC *newRecommendVC = [[LQNewRecommendVC alloc] init];
     [self addChildVC:newRecommendVC
          tabBarTitle:@"最新"
-      navgationTitle:@"中国美发沙龙网"
+      navgationTitle:@"最新"
            imageName:@"tabbar_message_center"
    selectedImageName:@"tabbar_message_center_selected"];
     
     LQCommunityVC *communityVC = [[LQCommunityVC alloc] init];
     [self addChildVC:communityVC
          tabBarTitle:@"美发人社区"
-      navgationTitle:@"中国美发沙龙网"
+      navgationTitle:@"美发人社区"
            imageName:@"tabbar_discover"
    selectedImageName:@"tabbar_discover_selected"];
     
     LQPersonalCenterVC *personalCenterVC = [[LQPersonalCenterVC alloc] init];
     [self addChildVC:personalCenterVC
          tabBarTitle:@"个人中心"
-      navgationTitle:@"中国美发沙龙网"
+      navgationTitle:@"个人中心"
            imageName:@"tabbar_profile"
    selectedImageName:@"tabbar_profile_selected"];
     
@@ -79,7 +79,7 @@
     childNav.tabBarItem.title        = tabBarTitle;
     childVC.navigationItem.title     = navgationTitle;
     childNav.tabBarItem.image        = [UIImage imageNamed:imageName];
-    childNav.tabBarItem.badgeValue = @"10";
+//    childNav.tabBarItem.badgeValue = @"10";
     
     //住tabbar对图片在进行渲染
     UIImage *selectedImage = [UIImage imageNamed:selectedImageName];

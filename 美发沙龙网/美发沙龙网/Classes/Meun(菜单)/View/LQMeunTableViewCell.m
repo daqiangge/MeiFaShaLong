@@ -23,6 +23,8 @@
 
 - (void)doLoading
 {
+    self.backgroundColor = Meun_BackgroundColor;
+    
     UILabel *titleLable = [[UILabel alloc] init];
     titleLable.frame = CGRectMake(35, 0, self.width - 35, self.height);
     titleLable.font = [UIFont systemFontOfSize:15];

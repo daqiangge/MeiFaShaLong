@@ -65,4 +65,7 @@
 //画边框---边框线的宽度
 #define Layer_BorderWidth 0.5
 
+
+#define Meun_BackgroundColor ([UIColor colorWithRed:26/255. green:26/255. blue:26/255. alpha:1])
+
 #endif

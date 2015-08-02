@@ -47,7 +47,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.view.backgroundColor = [UIColor colorWithRed:26/255. green:26/255. blue:26/255. alpha:1];
+    self.view.backgroundColor = Meun_BackgroundColor;
     
     [self doLoading];
     
@@ -55,9 +55,10 @@
 
 - (void)doLoading
 {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.meunTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-    [self setCellTitleLableTextColor:self.meunTableView indexPath:indexPath textColor:[UIColor blackColor]];
+    self.meunTableView.hidden = false;
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+//    [self.meunTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+//    [self setCellTitleLableTextColor:self.meunTableView indexPath:indexPath textColor:[UIColor blackColor]];
 }
 
 #pragma mark - TableViewDelegate&DataSource
@@ -73,12 +74,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LQMeunTableViewCell *cell = [[LQMeunTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    
-    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meunTableview_background"]];
+    static NSString *identifier = @"LQMeunTableViewCell";
+    LQMeunTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[LQMeunTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meunTableview_background"]];
+    }
     
     NSArray *meunTitleArray = MeunTitleArray;
     cell.titleLable.text = meunTitleArray[indexPath.row];
+    cell.titleLable.textColor = [UIColor whiteColor];
+    
+    if ([indexPath isEqual:[self.meunTableView indexPathForSelectedRow]])
+    {
+        cell.titleLable.textColor = [UIColor blackColor];
+    }
     
     return cell;
 }

@@ -98,11 +98,23 @@
     self.homeModularView.hidden = NO;
 }
 
+
+
+#pragma mark - UIBarButtonItem
+/**
+ *  打开菜单
+ */
 - (void)openMeun
 {
     LQLog(@"打开菜单");
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{
+        
+    }];
 }
 
+/**
+ *  刷新
+ */
 - (void)refresh
 {
     
