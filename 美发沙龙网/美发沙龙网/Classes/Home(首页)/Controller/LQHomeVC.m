@@ -61,11 +61,6 @@
     return _homeModularView;
 }
 
-- (MFSideMenuContainerViewController *)menuContainerViewController
-{
-    return (MFSideMenuContainerViewController *)self.tabBarController.parentViewController;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -73,51 +68,13 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"menu-icon" selectedImageName:@"menu-icon" target:self action:@selector(openMeun)];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" selectedImageName:@"navigationbar_pop_highlighted" target:self action:@selector(refresh)];
-    
     [self doLoading];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    //设置菜单栏的状态为可打开
-    self.menuContainerViewController.panMode = MFSideMenuPanModeDefault;
 }
 
 - (void)doLoading
 {
     self.homeRollingView.hidden = NO;
     self.homeModularView.hidden = NO;
-}
-
-
-
-#pragma mark - UIBarButtonItem
-/**
- *  打开菜单
- */
-- (void)openMeun
-{
-    LQLog(@"打开菜单");
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{
-        
-    }];
-}
-
-/**
- *  刷新
- */
-- (void)refresh
-{
-    
 }
 
 #pragma mark - LQHomeModularViewDelegate

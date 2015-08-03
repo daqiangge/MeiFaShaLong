@@ -10,7 +10,7 @@
 #define ______MeiFaShaLong_pch
 
 
-    #import "MFSideMenuContainerViewController.h"
+    #import "LeftSlideViewController.h"
     #import "Masonry.h"
     #import "LQTableViewController.h"
 
@@ -57,7 +57,7 @@
 #define TextFont_20 ([UIFont systemFontOfSize:(LQScreen_Height==480?18:(LQScreen_Height==568?18:(LQScreen_Height==667?20:(LQScreen_Height==736?21:22))))])
 
 //画边框---倒圆角
-#define Layer_CornerRadius 2
+#define Layer_CornerRadius 4
 
 //画边框---边框线的颜色
 #define Layer_BorderColor ([UIColor grayColor].CGColor)

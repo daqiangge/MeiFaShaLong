@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 美发沙龙网. All rights reserved.
 //
 
-#import "LQBaseViewController.h"
+#import "LQOneLevelBaseVC.h"
 
-@interface LQHomeVC : LQBaseViewController
+@interface LQHomeVC : LQOneLevelBaseVC
 
 @end

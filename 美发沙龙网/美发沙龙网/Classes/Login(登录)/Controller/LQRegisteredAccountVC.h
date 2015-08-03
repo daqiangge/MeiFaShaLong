@@ -1,5 +1,5 @@
 //
-//  LQLoginVC.h
+//  LQRegisteredAccountVC.h
 //  美发沙龙网
 //
 //  Created by admin on 15/8/3.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LQLoginVC : UIViewController
+@interface LQRegisteredAccountVC : UIViewController
 
 @end

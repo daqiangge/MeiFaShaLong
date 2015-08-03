@@ -45,7 +45,7 @@
     {
         UISearchBar *searchBar = [[UISearchBar alloc] init];
         searchBar.frame = CGRectMake(0, 58, LQScreen_Width, 44);
-        [searchBar setBackgroundImage:[UIImage imageNamed:@"navigationbar_background_transparent"]];
+        [searchBar setBackgroundImage:[UIImage imageNamed:@"navigationBar_background"]];
         [searchBar setSearchFieldBackgroundImage:[[[UIImage alloc] init] imageWithColor:SearchBar_SeachTextField_BackgroundColor size:CGSizeMake(100, 30) cornerRadius:4.0] forState:UIControlStateNormal];
         searchBar.placeholder = @"搜索栏目内容";
         [searchBar setContentMode:UIViewContentModeLeft];
@@ -99,7 +99,7 @@
         CGFloat x = 0;
         CGFloat y = CGRectGetMaxY(self.btnGroupView.frame);
         CGFloat width = CGRectGetWidth(self.btnGroupView.frame);
-        CGFloat height = LQScreen_Height - y - 44;
+        CGFloat height = LQScreen_Height - y;
         CGRect frame = CGRectMake(x, y, width, height);
         
         UITableView *tableView = [[UITableView alloc] init];
@@ -120,11 +120,7 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"menu-icon" selectedImageName:@"menu-icon" target:self action:@selector(openMeun)];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" selectedImageName:@"navigationbar_pop_highlighted" target:self action:@selector(refresh)];
-    
     [self doLoading];
-    
 }
 
 - (void)doLoading
@@ -172,6 +168,11 @@
     [cell.titleImageView sd_setImageWithURL:[NSURL URLWithString:@"http://img.firefoxchina.cn/2015/07/5/201507300849040.jpg"] placeholderImage:[UIImage imageNamed:@"123"] options:SDWebImageRetryFailed];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.navigationController pushViewController:[[UIViewController alloc] init] animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

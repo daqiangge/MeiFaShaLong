@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 美发沙龙网. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LQOneLevelBaseVC.h"
 
-@interface LQPersonalCenterVC : UIViewController
+@interface LQPersonalCenterVC : LQOneLevelBaseVC
 
 @end

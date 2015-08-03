@@ -1,27 +1,22 @@
 //
-//  LQNewRecommendVC.m
+//  LQRegisteredAccountVC.m
 //  美发沙龙网
 //
-//  Created by admin on 15/7/22.
+//  Created by admin on 15/8/3.
 //  Copyright (c) 2015年 美发沙龙网. All rights reserved.
 //
 
-#import "LQNewRecommendVC.h"
+#import "LQRegisteredAccountVC.h"
 
-@interface LQNewRecommendVC ()
+@interface LQRegisteredAccountVC ()
 
 @end
 
-@implementation LQNewRecommendVC
-
+@implementation LQRegisteredAccountVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    self.view.backgroundColor = [UIColor blackColor];
-    
 }
-
 
 @end

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840F65291B6F3C6A0024B11A /* LQLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F65271B6F3C6A0024B11A /* LQLoginVC.m */; };
+		840F652A1B6F3C6A0024B11A /* LQLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840F65281B6F3C6A0024B11A /* LQLoginVC.xib */; };
+		840F65301B6F428C0024B11A /* LeftSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F652D1B6F428C0024B11A /* LeftSlideViewController.m */; };
+		840F65311B6F428C0024B11A /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F652F1B6F428C0024B11A /* UIView_extra.m */; };
+		840F65341B6F567C0024B11A /* LQOneLevelBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F65331B6F567C0024B11A /* LQOneLevelBaseVC.m */; };
+		840F65381B6F63060024B11A /* LQRegisteredAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F65361B6F63060024B11A /* LQRegisteredAccountVC.m */; };
+		840F65391B6F63060024B11A /* LQRegisteredAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840F65371B6F63060024B11A /* LQRegisteredAccountVC.xib */; };
 		8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */; };
 		845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */; };
 		845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */; };
@@ -16,13 +23,9 @@
 		849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A41B63816C00C497B6 /* LQHomeRollingView.m */; };
 		849709A81B6389CD00C497B6 /* LQInformationBtnGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */; };
 		84AA3D271B61E474003A5E73 /* UIButton+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */; };
-		84CEF0711B5E36F00017D798 /* LQLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF05E1B5E36F00017D798 /* LQLoginVC.m */; };
-		84CEF0721B5E36F00017D798 /* LQLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CEF05F1B5E36F00017D798 /* LQLoginVC.xib */; };
 		84CEF0731B5E36F00017D798 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0671B5E36F00017D798 /* AppDelegate.m */; };
 		84CEF0741B5E36F00017D798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0681B5E36F00017D798 /* main.m */; };
-		84CEF07F1B5E38A80017D798 /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF07E1B5E38A80017D798 /* MFSideMenuContainerViewController.m */; };
 		84CEF0831B5E38FA0017D798 /* LQLeftMeunVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0811B5E38FA0017D798 /* LQLeftMeunVC.m */; };
-		84CEF0841B5E38FA0017D798 /* LQLeftMeunVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CEF0821B5E38FA0017D798 /* LQLeftMeunVC.xib */; };
 		84CEF08E1B5E39BC0017D798 /* LQHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF08C1B5E39BC0017D798 /* LQHomeVC.m */; };
 		84DF631A1B5F873C00B3BF63 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF63041B5F873C00B3BF63 /* MASCompositeConstraint.m */; };
 		84DF631B1B5F873C00B3BF63 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF63071B5F873C00B3BF63 /* MASConstraint.m */; };
@@ -47,7 +50,6 @@
 		84F3CA7B1B5F284E00DD44A9 /* LQCommunityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CA791B5F284E00DD44A9 /* LQCommunityVC.m */; };
 		84F3CA7C1B5F284E00DD44A9 /* LQCommunityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F3CA7A1B5F284E00DD44A9 /* LQCommunityVC.xib */; };
 		84F3CA801B5F287100DD44A9 /* LQPersonalCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CA7E1B5F287100DD44A9 /* LQPersonalCenterVC.m */; };
-		84F3CA811B5F287100DD44A9 /* LQPersonalCenterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F3CA7F1B5F287100DD44A9 /* LQPersonalCenterVC.xib */; };
 		84F3CA851B5F36CE00DD44A9 /* LQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CA841B5F36CE00DD44A9 /* LQTabBarController.m */; };
 		84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CA871B5F3F2E00DD44A9 /* LQBaseViewController.m */; };
 		84F3CA8C1B5F3F4E00DD44A9 /* LQInformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3CA8A1B5F3F4E00DD44A9 /* LQInformationVC.m */; };
@@ -83,6 +85,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840F65261B6F3C6A0024B11A /* LQLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQLoginVC.h; sourceTree = "<group>"; };
+		840F65271B6F3C6A0024B11A /* LQLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQLoginVC.m; sourceTree = "<group>"; };
+		840F65281B6F3C6A0024B11A /* LQLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQLoginVC.xib; sourceTree = "<group>"; };
+		840F652C1B6F428C0024B11A /* LeftSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSlideViewController.h; sourceTree = "<group>"; };
+		840F652D1B6F428C0024B11A /* LeftSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSlideViewController.m; sourceTree = "<group>"; };
+		840F652E1B6F428C0024B11A /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_extra.h; sourceTree = "<group>"; };
+		840F652F1B6F428C0024B11A /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_extra.m; sourceTree = "<group>"; };
+		840F65321B6F567C0024B11A /* LQOneLevelBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQOneLevelBaseVC.h; sourceTree = "<group>"; };
+		840F65331B6F567C0024B11A /* LQOneLevelBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQOneLevelBaseVC.m; sourceTree = "<group>"; };
+		840F65351B6F63060024B11A /* LQRegisteredAccountVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQRegisteredAccountVC.h; sourceTree = "<group>"; };
+		840F65361B6F63060024B11A /* LQRegisteredAccountVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQRegisteredAccountVC.m; sourceTree = "<group>"; };
+		840F65371B6F63060024B11A /* LQRegisteredAccountVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQRegisteredAccountVC.xib; sourceTree = "<group>"; };
 		8417A77C1B607CD700B80F54 /* LQHomePageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomePageControlView.h; sourceTree = "<group>"; };
 		8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomePageControlView.m; sourceTree = "<group>"; };
 		8452437D1B69CBC2006E8E26 /* LQNewFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewFeatureVC.h; sourceTree = "<group>"; };
@@ -100,17 +114,11 @@
 		849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQInformationBtnGroupView.m; sourceTree = "<group>"; };
 		84AA3D251B61E474003A5E73 /* UIButton+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LQExtension.h"; sourceTree = "<group>"; };
 		84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LQExtension.m"; sourceTree = "<group>"; };
-		84CEF05D1B5E36F00017D798 /* LQLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQLoginVC.h; sourceTree = "<group>"; };
-		84CEF05E1B5E36F00017D798 /* LQLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQLoginVC.m; sourceTree = "<group>"; };
-		84CEF05F1B5E36F00017D798 /* LQLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQLoginVC.xib; sourceTree = "<group>"; };
 		84CEF0661B5E36F00017D798 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84CEF0671B5E36F00017D798 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		84CEF0681B5E36F00017D798 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		84CEF07D1B5E38A80017D798 /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
-		84CEF07E1B5E38A80017D798 /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
 		84CEF0801B5E38FA0017D798 /* LQLeftMeunVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQLeftMeunVC.h; sourceTree = "<group>"; };
 		84CEF0811B5E38FA0017D798 /* LQLeftMeunVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQLeftMeunVC.m; sourceTree = "<group>"; };
-		84CEF0821B5E38FA0017D798 /* LQLeftMeunVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQLeftMeunVC.xib; sourceTree = "<group>"; };
 		84CEF08B1B5E39BC0017D798 /* LQHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomeVC.h; sourceTree = "<group>"; };
 		84CEF08C1B5E39BC0017D798 /* LQHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomeVC.m; sourceTree = "<group>"; };
 		84DF63031B5F873C00B3BF63 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -162,7 +170,6 @@
 		84F3CA7A1B5F284E00DD44A9 /* LQCommunityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQCommunityVC.xib; sourceTree = "<group>"; };
 		84F3CA7D1B5F287100DD44A9 /* LQPersonalCenterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQPersonalCenterVC.h; sourceTree = "<group>"; };
 		84F3CA7E1B5F287100DD44A9 /* LQPersonalCenterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQPersonalCenterVC.m; sourceTree = "<group>"; };
-		84F3CA7F1B5F287100DD44A9 /* LQPersonalCenterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQPersonalCenterVC.xib; sourceTree = "<group>"; };
 		84F3CA821B5F2BE300DD44A9 /* MeiFaShaLong.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeiFaShaLong.pch; sourceTree = "<group>"; };
 		84F3CA831B5F36CE00DD44A9 /* LQTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQTabBarController.h; sourceTree = "<group>"; };
 		84F3CA841B5F36CE00DD44A9 /* LQTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQTabBarController.m; sourceTree = "<group>"; };
@@ -229,6 +236,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840F652B1B6F428C0024B11A /* LeftSlideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				840F652C1B6F428C0024B11A /* LeftSlideViewController.h */,
+				840F652D1B6F428C0024B11A /* LeftSlideViewController.m */,
+				840F652E1B6F428C0024B11A /* UIView_extra.h */,
+				840F652F1B6F428C0024B11A /* UIView_extra.m */,
+			);
+			path = LeftSlideViewController;
+			sourceTree = "<group>";
+		};
 		8452437B1B69CB8D006E8E26 /* NewFeature(新特性) */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,8 +283,8 @@
 		84CEF0571B5E36F00017D798 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
-				D546A3D01B5FB69E0003A581 /* View */,
 				84CEF08A1B5E399F0017D798 /* Controller */,
+				D546A3D01B5FB69E0003A581 /* View */,
 				84CEF0591B5E36F00017D798 /* Model */,
 			);
 			path = "Home(首页)";
@@ -292,9 +310,12 @@
 		84CEF05C1B5E36F00017D798 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84CEF05D1B5E36F00017D798 /* LQLoginVC.h */,
-				84CEF05E1B5E36F00017D798 /* LQLoginVC.m */,
-				84CEF05F1B5E36F00017D798 /* LQLoginVC.xib */,
+				840F65261B6F3C6A0024B11A /* LQLoginVC.h */,
+				840F65271B6F3C6A0024B11A /* LQLoginVC.m */,
+				840F65281B6F3C6A0024B11A /* LQLoginVC.xib */,
+				840F65351B6F63060024B11A /* LQRegisteredAccountVC.h */,
+				840F65361B6F63060024B11A /* LQRegisteredAccountVC.m */,
+				840F65371B6F63060024B11A /* LQRegisteredAccountVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -323,6 +344,8 @@
 				84E2DBBE1B5F6A730068423C /* LQNavigationController.m */,
 				84E81EF71B66218F0089A0A7 /* LQTableViewController.h */,
 				84E81EF81B66218F0089A0A7 /* LQTableViewController.m */,
+				840F65321B6F567C0024B11A /* LQOneLevelBaseVC.h */,
+				840F65331B6F567C0024B11A /* LQOneLevelBaseVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,9 +353,9 @@
 		84CEF0631B5E36F00017D798 /* Lib(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				840F652B1B6F428C0024B11A /* LeftSlideViewController */,
 				D546A3E61B5FC9C30003A581 /* SDWebImage */,
 				84DF63021B5F873C00B3BF63 /* Masonry */,
-				84CEF07C1B5E38A00017D798 /* SideMeun */,
 			);
 			path = "Lib(第三方库)";
 			sourceTree = "<group>";
@@ -376,7 +399,6 @@
 			children = (
 				84CEF0801B5E38FA0017D798 /* LQLeftMeunVC.h */,
 				84CEF0811B5E38FA0017D798 /* LQLeftMeunVC.m */,
-				84CEF0821B5E38FA0017D798 /* LQLeftMeunVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -395,15 +417,6 @@
 				84E81EFB1B66278D0089A0A7 /* LQMeunTableViewCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		84CEF07C1B5E38A00017D798 /* SideMeun */ = {
-			isa = PBXGroup;
-			children = (
-				84CEF07D1B5E38A80017D798 /* MFSideMenuContainerViewController.h */,
-				84CEF07E1B5E38A80017D798 /* MFSideMenuContainerViewController.m */,
-			);
-			path = SideMeun;
 			sourceTree = "<group>";
 		};
 		84CEF08A1B5E399F0017D798 /* Controller */ = {
@@ -599,7 +612,6 @@
 			children = (
 				84F3CA7D1B5F287100DD44A9 /* LQPersonalCenterVC.h */,
 				84F3CA7E1B5F287100DD44A9 /* LQPersonalCenterVC.m */,
-				84F3CA7F1B5F287100DD44A9 /* LQPersonalCenterVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -778,14 +790,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F3CA811B5F287100DD44A9 /* LQPersonalCenterVC.xib in Resources */,
 				84F3CA7C1B5F284E00DD44A9 /* LQCommunityVC.xib in Resources */,
+				840F65391B6F63060024B11A /* LQRegisteredAccountVC.xib in Resources */,
 				84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */,
+				840F652A1B6F3C6A0024B11A /* LQLoginVC.xib in Resources */,
 				84E81EF61B65DD890089A0A7 /* LQInformationTableViewCell.xib in Resources */,
-				84CEF0721B5E36F00017D798 /* LQLoginVC.xib in Resources */,
 				845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */,
 				84F3CA771B5F283400DD44A9 /* LQNewRecommendVC.xib in Resources */,
-				84CEF0841B5E38FA0017D798 /* LQLeftMeunVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,15 +823,16 @@
 				849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */,
 				D546A40F1B5FC9C30003A581 /* SDWebImageManager.m in Sources */,
 				845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */,
+				840F65311B6F428C0024B11A /* UIView_extra.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
 				847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */,
 				84E81EFD1B66278D0089A0A7 /* LQMeunTableViewCell.m in Sources */,
 				84EEB6011B60BC78008E7731 /* UIBarButtonItem+LQExtension.m in Sources */,
 				84EFEA6A1B5CC6670049D6FA /* _____.xcdatamodeld in Sources */,
 				84E2DBBF1B5F6A730068423C /* LQNavigationController.m in Sources */,
+				840F65301B6F428C0024B11A /* LeftSlideViewController.m in Sources */,
 				849709991B632FD400C497B6 /* NSString+LQExtension.m in Sources */,
 				D546A4171B5FC9C30003A581 /* UIView+WebCacheOperation.m in Sources */,
-				84CEF0711B5E36F00017D798 /* LQLoginVC.m in Sources */,
 				D546A40B1B5FC9C30003A581 /* SDWebImageCompat.m in Sources */,
 				84DF631A1B5F873C00B3BF63 /* MASCompositeConstraint.m in Sources */,
 				84CEF0741B5E36F00017D798 /* main.m in Sources */,
@@ -831,6 +843,8 @@
 				D546A4151B5FC9C30003A581 /* UIImageView+HighlightedWebCache.m in Sources */,
 				D546A3DE1B5FBE8E0003A581 /* LQHomeRollingScrollView.m in Sources */,
 				84E81EF51B65DD890089A0A7 /* LQInformationTableViewCell.m in Sources */,
+				840F65341B6F567C0024B11A /* LQOneLevelBaseVC.m in Sources */,
+				840F65291B6F3C6A0024B11A /* LQLoginVC.m in Sources */,
 				84DF631E1B5F873C00B3BF63 /* MASViewAttribute.m in Sources */,
 				84F3CA7B1B5F284E00DD44A9 /* LQCommunityVC.m in Sources */,
 				84DF63211B5F873C00B3BF63 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -844,11 +858,11 @@
 				D546A4111B5FC9C30003A581 /* UIButton+WebCache.m in Sources */,
 				D546A4161B5FC9C30003A581 /* UIImageView+WebCache.m in Sources */,
 				84F3CA801B5F287100DD44A9 /* LQPersonalCenterVC.m in Sources */,
+				840F65381B6F63060024B11A /* LQRegisteredAccountVC.m in Sources */,
 				84DF63201B5F873C00B3BF63 /* NSArray+MASAdditions.m in Sources */,
 				D546A4121B5FC9C30003A581 /* UIImage+GIF.m in Sources */,
 				D546A40D1B5FC9C30003A581 /* SDWebImageDownloader.m in Sources */,
 				849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */,
-				84CEF07F1B5E38A80017D798 /* MFSideMenuContainerViewController.m in Sources */,
 				8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */,
 				84DF631F1B5F873C00B3BF63 /* MASViewConstraint.m in Sources */,
 				D546A3E11B5FBEB40003A581 /* LQHomeModularView.m in Sources */,

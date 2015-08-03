@@ -7,6 +7,7 @@
 //
 
 #import "LQNavigationController.h"
+#import "AppDelegate.h"
 
 @interface LQNavigationController ()
 
@@ -17,21 +18,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbar_background_transparent"] forBarMetrics:UIBarMetricsCompact];
+    
+    if (self.viewControllers.count == 0)//给一级的界面添加左右按钮
+    {
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"menu-icon" selectedImageName:@"menu-icon" target:self action:@selector(openMeun)];
+        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" selectedImageName:@"navigationbar_pop_highlighted" target:self action:@selector(refresh)];
+    }else
+    {
+        viewController.hidesBottomBarWhenPushed = YES;
+        
+        
+        NSArray *array = self.viewControllers;
+        long int count = array.count;
+        UIViewController *vc = array[count - 1];
+        vc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    }
+    
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar_background"] forBarMetrics:UIBarMetricsDefault];
     
     //设置导航栏的title为白色
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor]}];
+    [self.navigationBar setTintColor:[UIColor whiteColor]];
     
     [super pushViewController:viewController animated:animated];
+}
+
+#pragma mark - UIBarButtonItem
+/**
+ *  打开菜单
+ */
+- (void)openMeun
+{
+    AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [tempAppDelegate.LeftSlideVC openLeftView];
+}
+
+/**
+ *  刷新
+ */
+- (void)refresh
+{
+    
 }
 
 @end

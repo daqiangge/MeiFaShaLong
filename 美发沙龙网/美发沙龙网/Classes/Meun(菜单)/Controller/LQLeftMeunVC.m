@@ -8,6 +8,8 @@
 
 #import "LQLeftMeunVC.h"
 #import "LQMeunTableViewCell.h"
+#import "LQLoginVC.h"
+#import "AppDelegate.h"
 
 #define MeunTitleArray (@[@"美业资讯",@"美发技术",@"发廊经营",@"发现图片",@"求职招聘",@"美发视频",@"免费视频",@"美发商城",@"美发人社区",@"每日正能量"])
 
@@ -15,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *nameBackgroundView;
 @property (nonatomic, weak) UITableView *meunTableView;
+@property (nonatomic, weak) UIButton *iconButton;
 
 @end
 
@@ -25,9 +28,9 @@
     if (_meunTableView == nil)
     {
         CGFloat x = 0;
-        CGFloat y = CGRectGetMaxY(self.nameBackgroundView.frame);
+        CGFloat y = CGRectGetMaxY(self.iconButton.frame);
         CGFloat width = LQScreen_Width;
-        CGFloat height = LQScreen_Height - CGRectGetMaxY(self.nameBackgroundView.frame)-10;
+        CGFloat height = LQScreen_Height - CGRectGetMaxY(self.iconButton.frame)-10;
         CGRect frame = CGRectMake(x, y, width, height);
         
         UITableView *meunTableView = [[UITableView alloc] init];
@@ -43,6 +46,27 @@
     return _meunTableView;
 }
 
+- (UIButton *)iconButton
+{
+    if (_iconButton == nil)
+    {
+        UIButton *iconButton = [[UIButton alloc] init];
+        [iconButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+        iconButton.backgroundColor = [UIColor redColor];
+        [self.view addSubview:iconButton];
+        _iconButton = iconButton;
+        
+        [_iconButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_top).with.offset(70);
+            make.centerX.equalTo(self.view.mas_centerX).with.offset(0);
+            make.width.equalTo(@80);
+            make.height.equalTo(@80);
+        }];
+    }
+    
+    return _iconButton;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -55,10 +79,18 @@
 
 - (void)doLoading
 {
-    self.meunTableView.hidden = false;
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
-//    [self.meunTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-//    [self setCellTitleLableTextColor:self.meunTableView indexPath:indexPath textColor:[UIColor blackColor]];
+    self.iconButton.hidden = false;
+    
+    
+}
+
+- (void)login:(id)sender
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.LeftSlideVC closeLeftView];//关闭左侧抽屉
+    
+    LQLoginVC *loginVC = [[LQLoginVC alloc] init];
+    [(UINavigationController *)appDelegate.tabBarController.selectedViewController pushViewController:loginVC animated:YES];
 }
 
 #pragma mark - TableViewDelegate&DataSource

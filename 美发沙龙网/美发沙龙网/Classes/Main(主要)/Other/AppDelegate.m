@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "LQTabBarController.h"
 #import "LQLeftMeunVC.h"
 #import "LQNewFeatureVC.h"
 
@@ -23,6 +22,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
@@ -36,22 +36,15 @@
     if ([currentVersion isEqualToString:lastVersion])
     {
         LQLeftMeunVC *leftMeunVC = [[LQLeftMeunVC alloc] init];
-        LQTabBarController *tabBarController = [[LQTabBarController alloc] init];
-        MFSideMenuContainerViewController *mfSideMenu = [MFSideMenuContainerViewController
-                                                         containerWithCenterViewController:tabBarController
-                                                         leftMenuViewController:leftMeunVC
-                                                         rightMenuViewController:nil];
+        self.tabBarController = [[LQTabBarController alloc] init];
+        self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftMeunVC andMainView:self.tabBarController];
         
-        self.window.rootViewController = mfSideMenu;
+        self.window.rootViewController = self.LeftSlideVC;
     }else {
         self.window.rootViewController = [[LQNewFeatureVC alloc] init];
         
         [defaults setValue:currentVersion forKey:versionKey];
     }
-    
-
-    
-    [self.window makeKeyAndVisible];
     
     return YES;
 }

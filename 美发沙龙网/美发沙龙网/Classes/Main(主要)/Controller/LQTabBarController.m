@@ -19,12 +19,6 @@
 
 @implementation LQTabBarController
 
-
-- (MFSideMenuContainerViewController *)menuContainerViewController
-{
-    return (MFSideMenuContainerViewController *)self.parentViewController;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -87,13 +81,6 @@
     childNav.tabBarItem.selectedImage = selectedImage;
     
     [self addChildViewController:childNav];
-}
-
-#pragma mark - UITabBarControllerDelegaet
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-    //设置菜单栏的状态为不可打开
-    self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
 }
 
 @end

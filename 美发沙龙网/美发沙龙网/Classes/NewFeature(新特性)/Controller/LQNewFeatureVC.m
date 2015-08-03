@@ -9,6 +9,7 @@
 #import "LQNewFeatureVC.h"
 #import "LQTabBarController.h"
 #import "LQLeftMeunVC.h"
+#import "AppDelegate.h"
 
 @interface LQNewFeatureVC ()
 
@@ -38,12 +39,13 @@
 {
     LQLeftMeunVC *leftMeunVC = [[LQLeftMeunVC alloc] init];
     LQTabBarController *tabBarController = [[LQTabBarController alloc] init];
-    MFSideMenuContainerViewController *mfSideMenu = [MFSideMenuContainerViewController
-                                                     containerWithCenterViewController:tabBarController
-                                                     leftMenuViewController:leftMeunVC
-                                                     rightMenuViewController:nil];
+    LeftSlideViewController *LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftMeunVC andMainView:tabBarController];
     
-    [self presentViewController:mfSideMenu animated:NO completion:nil];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.LeftSlideVC = LeftSlideVC;
+    appDelegate.tabBarController = tabBarController;
+    
+    [self presentViewController:LeftSlideVC animated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
