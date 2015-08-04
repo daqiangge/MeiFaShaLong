@@ -66,6 +66,7 @@
 #define Layer_BorderWidth 0.5
 
 
-#define Meun_BackgroundColor ([UIColor colorWithRed:26/255. green:26/255. blue:26/255. alpha:1])
+#define RGB(A, B, C)    [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
+#define Meun_BackgroundColor (RGB(26, 26, 26))
 
 #endif
