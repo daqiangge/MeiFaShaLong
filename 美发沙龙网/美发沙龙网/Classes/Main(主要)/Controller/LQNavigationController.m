@@ -32,7 +32,6 @@
     {
         viewController.hidesBottomBarWhenPushed = YES;
         
-        
         NSArray *array = self.viewControllers;
         long int count = array.count;
         UIViewController *vc = array[count - 1];

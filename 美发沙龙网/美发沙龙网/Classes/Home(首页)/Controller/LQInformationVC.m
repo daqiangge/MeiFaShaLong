@@ -81,7 +81,7 @@
         CGFloat x = 0;
         CGFloat y = CGRectGetMaxY(self.homeRollingView.frame);
         CGFloat width = LQScreen_Width;
-        CGFloat height = 45;
+        CGFloat height = 0;
         CGRect frame = CGRectMake(x, y, width, height);
         
         LQInformationBtnGroupView *btnGroupView = [LQInformationBtnGroupView informationBtnGroupViewWithFrame:frame];
@@ -135,11 +135,9 @@
     [self.informationTableView registerNib:nib forCellReuseIdentifier:identifer];
     
     //设置tableview的分割线
-    if([self.informationTableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        
+    if([self.informationTableView respondsToSelector:@selector(setSeparatorInset:)])
+    {
         [self.informationTableView setSeparatorInset:UIEdgeInsetsMake(0,15,0,15)];
-        
-//        [self.informationTableView setSeparatorColor:[UIColor redColor]];
     }
 
 }

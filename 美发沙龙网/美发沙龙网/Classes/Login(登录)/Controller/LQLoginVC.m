@@ -7,6 +7,7 @@
 //
 
 #import "LQLoginVC.h"
+#import "LQRegisteredAccountVC.h"
 
 #define loginButton_backgroundColor ([UIColor colorWithRed:230/255. green:74/255. blue:94/255. alpha:1])
 
@@ -39,7 +40,13 @@
 
 - (void)registeredAccount
 {
+    LQRegisteredAccountVC *registeredAccountVC = [[LQRegisteredAccountVC alloc] init];
+    [self.navigationController pushViewController:registeredAccountVC animated:YES];
+}
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 @end

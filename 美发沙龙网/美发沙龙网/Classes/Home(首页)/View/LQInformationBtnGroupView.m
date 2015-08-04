@@ -8,6 +8,9 @@
 
 #import "LQInformationBtnGroupView.h"
 
+#define space 10
+#define button_height 30
+
 @implementation LQInformationBtnGroupView
 
 + (instancetype)informationBtnGroupViewWithFrame:(CGRect)frame
@@ -27,16 +30,19 @@
 
 - (void)doLoading
 {
-    NSArray *titleArray = @[@"剪发技术",@"烫发技术",@"染发技术",@"吹风造型"];
+    NSArray *titleArray = @[@"剪发技术",@"烫发技术",@"染发技术",@"吹风造型",@"吹风造型",@"染发技术",@"吹风造型",@"吹风造型"];
+    long int num = titleArray.count;
+    long int rows = (num - 1) / 4 + 1;
+    self.height = space + (button_height + space) * rows;
     
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < num; i++)
     {
+        int row = i/4;//行
         int colum = i%4;
-        CGFloat space = 10;
         CGFloat width = (self.width - 5*space)/4;
-        CGFloat height = self.height - space*2;
+        CGFloat height = button_height;
         CGFloat x = space +(width + space) * colum;
-        CGFloat y = space;
+        CGFloat y = space + (height + space) * row;
         CGRect frame = CGRectMake(x, y, width, height);
         
         UIButton *btn = [[UIButton alloc] init];
@@ -62,6 +68,7 @@
                 break;
                 
             default:
+                btn.backgroundColor = [UIColor colorWithRed:252/255. green:170/255. blue:136/255. alpha:1];
                 break;
         }
     }
