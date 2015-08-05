@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define loginButton_backgroundColor (RGB(230, 74, 94))
+
 @interface LQRegisteredAccountVC : UIViewController
 
 @end

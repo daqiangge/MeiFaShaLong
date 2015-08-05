@@ -9,8 +9,6 @@
 #import "LQLoginVC.h"
 #import "LQRegisteredAccountVC.h"
 
-#define loginButton_backgroundColor ([UIColor colorWithRed:230/255. green:74/255. blue:94/255. alpha:1])
-
 @interface LQLoginVC ()
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -36,6 +34,11 @@
     self.loginButton.layer.borderColor  = [UIColor clearColor].CGColor;
     self.loginButton.layer.borderWidth  = Layer_BorderWidth;
     self.loginButton.layer.cornerRadius = Layer_CornerRadius;
+}
+
+- (void)close
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)registeredAccount

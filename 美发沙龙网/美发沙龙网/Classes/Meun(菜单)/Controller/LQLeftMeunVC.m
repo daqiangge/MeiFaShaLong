@@ -51,7 +51,7 @@
     if (_iconButton == nil)
     {
         UIButton *iconButton = [[UIButton alloc] init];
-        [iconButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+        [iconButton addTarget:self action:@selector(gotoLoginVC:) forControlEvents:UIControlEventTouchUpInside];
         iconButton.backgroundColor = [UIColor redColor];
         [self.view addSubview:iconButton];
         _iconButton = iconButton;
@@ -84,7 +84,7 @@
     
 }
 
-- (void)login:(id)sender
+- (void)gotoLoginVC:(id)sender
 {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.LeftSlideVC closeLeftView];//关闭左侧抽屉

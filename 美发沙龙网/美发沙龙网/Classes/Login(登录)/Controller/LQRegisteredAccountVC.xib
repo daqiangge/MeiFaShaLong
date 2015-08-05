@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LQRegisteredAccountVC">
             <connections>
                 <outlet property="emailTextField" destination="j9V-qZ-Mad" id="DKM-yV-E3X"/>
+                <outlet property="finishRegistered" destination="b6C-ge-SdJ" id="HlG-Ur-eNK"/>
                 <outlet property="nameTextField" destination="Alq-dA-ELX" id="gOA-aN-vh6"/>
                 <outlet property="passwordTextField" destination="3yF-By-TBX" id="inY-xQ-lCV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -42,7 +43,7 @@
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="邮箱" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9V-qZ-Mad" userLabel="邮箱">
                             <rect key="frame" x="20" y="51" width="580" height="50"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yF-By-TBX" userLabel="密码">
                             <rect key="frame" x="20" y="102" width="580" height="50"/>
@@ -73,14 +74,32 @@
                         <constraint firstAttribute="trailing" secondItem="EJg-k0-p3b" secondAttribute="trailing" id="oiT-c2-LbO"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6C-ge-SdJ">
+                    <rect key="frame" x="20" y="256" width="560" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="UF5-C1-yV8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="完成">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="finishRegistered:" destination="-1" eventType="touchUpInside" id="ojs-aN-gEi"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.95312153700000002" green="0.95312153700000002" blue="0.95312153700000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Mbq-rN-xKH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CX3-Lx-nAh"/>
+                <constraint firstItem="b6C-ge-SdJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="DP2-wW-xNd"/>
+                <constraint firstItem="b6C-ge-SdJ" firstAttribute="top" secondItem="Mbq-rN-xKH" secondAttribute="bottom" constant="20" id="GFf-kA-jap"/>
                 <constraint firstAttribute="trailing" secondItem="Mbq-rN-xKH" secondAttribute="trailing" id="OCi-p3-Qvj"/>
                 <constraint firstItem="Mbq-rN-xKH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="RcA-hc-Q4b"/>
+                <constraint firstAttribute="trailing" secondItem="b6C-ge-SdJ" secondAttribute="trailing" constant="20" id="waa-SF-H4y"/>
             </constraints>
-            <point key="canvasLocation" x="280" y="334"/>
+            <point key="canvasLocation" x="-26" y="309"/>
         </view>
     </objects>
 </document>
