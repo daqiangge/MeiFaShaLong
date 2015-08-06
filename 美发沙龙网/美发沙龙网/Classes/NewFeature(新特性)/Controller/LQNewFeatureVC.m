@@ -41,7 +41,7 @@
     LQTabBarController *tabBarController = [[LQTabBarController alloc] init];
     LeftSlideViewController *LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftMeunVC andMainView:tabBarController];
     
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.LeftSlideVC = LeftSlideVC;
     appDelegate.tabBarController = tabBarController;
     

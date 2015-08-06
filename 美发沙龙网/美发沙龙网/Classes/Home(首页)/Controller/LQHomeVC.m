@@ -26,15 +26,15 @@
 {
     if (_homeRollingView == nil)
     {
-        CGFloat x = 0;
-        CGFloat y = 64;
-        CGFloat width = LQScreen_Width;
-        CGFloat height = (130 * LQScreen_Width)/320;
-        CGRect frame = CGRectMake(x, y, width, height);
-        
+        CGFloat x                          = 0;
+        CGFloat y                          = 64;
+        CGFloat width                      = LQScreen_Width;
+        CGFloat height                     = (130 * LQScreen_Width)/320;
+        CGRect frame                       = CGRectMake(x, y, width, height);
+
         LQHomeRollingView *homeRollingView = [LQHomeRollingView homeRollingViewWithFrame:frame];
         [self.view addSubview:homeRollingView];
-        _homeRollingView = homeRollingView;
+        _homeRollingView                   = homeRollingView;
         
     }
     
@@ -45,17 +45,17 @@
 {
     if (_homeModularView == nil)
     {
-        CGFloat x = 0.0;
-        CGFloat y = CGRectGetMaxY(self.homeRollingView.frame);
-        CGFloat width = LQScreen_Width;
-        CGFloat height = LQScreen_Height - y - 49;
-        CGRect frame = CGRectMake(x, y, width, height);
-        
-        LQHomeModularView *homeModularView = [LQHomeModularView homeModularViewWithFrame:frame];
-        homeModularView.backgroundColor = [UIColor whiteColor];
+        CGFloat x                               = 0.0;
+        CGFloat y                               = CGRectGetMaxY(self.homeRollingView.frame);
+        CGFloat width                           = LQScreen_Width;
+        CGFloat height                          = LQScreen_Height - y - 49;
+        CGRect frame                            = CGRectMake(x, y, width, height);
+
+        LQHomeModularView *homeModularView      = [LQHomeModularView homeModularViewWithFrame:frame];
+        homeModularView.backgroundColor         = [UIColor whiteColor];
         homeModularView.homeModularViewDelegate = self;
         [self.view addSubview:homeModularView];
-        _homeModularView = homeModularView;
+        _homeModularView                        = homeModularView;
     }
     
     return _homeModularView;
@@ -81,7 +81,7 @@
 - (void)homeModularViewDidClickBtnWithView:(LQHomeModularView *)view btn:(UIButton *)btn
 {
     LQInformationVC *informationVC = [[LQInformationVC alloc] init];
-    informationVC.title = btn.titleLabel.text;
+    informationVC.title            = btn.titleLabel.text;
     [self.navigationController pushViewController:informationVC animated:YES];
 }
 

@@ -10,6 +10,9 @@
 #import "LQHomeRollingView.h"
 #import "LQInformationBtnGroupView.h"
 #import "LQInformationTableViewCell.h"
+#import "LQNewsClass.h"
+#import "LQNewsList.h"
+#import "LQNewsListContent.h"
 
 #define SearchBar_SeachTextField_BackgroundColor ([UIColor colorWithRed:59/255. green:59/255. blue:59/255. alpha:1])
 
@@ -20,6 +23,7 @@
 @property (nonatomic, weak) UISearchBar *searchBar;
 @property (nonatomic, weak) LQInformationBtnGroupView *btnGroupView;
 @property (nonatomic, weak) UITableView *informationTableView;
+@property (nonatomic, strong) NSMutableArray *newsListArray;
 
 @end
 
@@ -59,15 +63,15 @@
 {
     if (_homeRollingView == nil)
     {
-        CGFloat x = 0;
-        CGFloat y = CGRectGetMaxY(self.searchBarBsckgroundView.frame);
-        CGFloat width = LQScreen_Width;
-        CGFloat height = (145 * LQScreen_Width)/320;
-        CGRect frame = CGRectMake(x, y, width, height);
-        
+        CGFloat x                          = 0;
+        CGFloat y                          = CGRectGetMaxY(self.searchBarBsckgroundView.frame);
+        CGFloat width                      = LQScreen_Width;
+        CGFloat height                     = (145 * LQScreen_Width)/320;
+        CGRect frame                       = CGRectMake(x, y, width, height);
+
         LQHomeRollingView *homeRollingView = [LQHomeRollingView homeRollingViewWithFrame:frame];
         [self.view addSubview:homeRollingView];
-        _homeRollingView = homeRollingView;
+        _homeRollingView                   = homeRollingView;
         
     }
     
@@ -78,36 +82,48 @@
 {
     if (_btnGroupView == nil)
     {
-        CGFloat x = 0;
-        CGFloat y = CGRectGetMaxY(self.homeRollingView.frame);
-        CGFloat width = LQScreen_Width;
-        CGFloat height = 0;
-        CGRect frame = CGRectMake(x, y, width, height);
-        
+        CGFloat x                               = 0;
+        CGFloat y                               = CGRectGetMaxY(self.homeRollingView.frame);
+        CGFloat width                           = LQScreen_Width;
+        CGFloat height                          = 0;
+        CGRect frame                            = CGRectMake(x, y, width, height);
+
         LQInformationBtnGroupView *btnGroupView = [LQInformationBtnGroupView informationBtnGroupViewWithFrame:frame];
         [self.view addSubview:btnGroupView];
-        _btnGroupView = btnGroupView;
+        _btnGroupView                           = btnGroupView;
     }
     
     return _btnGroupView;
+}
+
+- (NSMutableArray *)newsListArray
+{
+    if (_newsListArray == nil)
+    {
+        NSMutableArray *array = [NSMutableArray array];
+        
+        _newsListArray = array;
+    }
+    
+    return _newsListArray;
 }
 
 - (UITableView *)informationTableView
 {
     if (_informationTableView == nil)
     {
-        CGFloat x = 0;
-        CGFloat y = CGRectGetMaxY(self.btnGroupView.frame);
-        CGFloat width = CGRectGetWidth(self.btnGroupView.frame);
-        CGFloat height = LQScreen_Height - y;
-        CGRect frame = CGRectMake(x, y, width, height);
-        
+        CGFloat x              = 0;
+        CGFloat y              = CGRectGetMaxY(self.btnGroupView.frame);
+        CGFloat width          = CGRectGetWidth(self.btnGroupView.frame);
+        CGFloat height         = LQScreen_Height - y;
+        CGRect frame           = CGRectMake(x, y, width, height);
+
         UITableView *tableView = [[UITableView alloc] init];
-        tableView.frame = frame;
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        tableView.frame        = frame;
+        tableView.delegate     = self;
+        tableView.dataSource   = self;
         [self.view addSubview:tableView];
-        _informationTableView = tableView;
+        _informationTableView  = tableView;
     }
     
     return _informationTableView;
@@ -121,19 +137,21 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self doLoading];
+//    [self requestGetNewClass];
+    [self requestGetNewsList];
 }
 
 - (void)doLoading
 {
-    self.searchBar.hidden = NO;
+    self.searchBar.hidden       = NO;
     self.homeRollingView.hidden = NO;
-    self.btnGroupView.hidden = NO;
-    
+    self.btnGroupView.hidden    = NO;
+
     //给tableview注册一个cell模板
     NSString *identifer=@"LQInformationTableViewCell";
     UINib *nib=[UINib nibWithNibName:@"LQInformationTableViewCell" bundle:nil];
     [self.informationTableView registerNib:nib forCellReuseIdentifier:identifer];
-    
+
     //设置tableview的分割线
     if([self.informationTableView respondsToSelector:@selector(setSeparatorInset:)])
     {
@@ -153,17 +171,60 @@
     LQLog(@"刷新。。。");
 }
 
+#pragma mark - 网络请求
+- (void)requestGetNewClass
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsClass.php";
+    NSDictionary *parameters = @{@"bclassid":@"58"};
+    
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSData *jsonData = [operation.responseString dataUsingEncoding:NSASCIIStringEncoding];
+//        NSError *error;
+//        NSDictionary *resultDic = [[CJSONDeserializer deserializer] deserialize:jsonData error:&error];
+        
+        LQNewsClass *newsClass = [LQNewsClass objectWithKeyValues:operation.responseString];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        LQLog(@"请求失败%@",error);
+    }];
+}
+
+- (void)requestGetNewsList
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsList.php";
+    NSDictionary *parameters = @{@"classid":@"62",@"pageSize":@"10"};
+    
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
+        
+        self.newsListArray = [NSMutableArray arrayWithArray:newsList.data];
+        LQLog(@"%@",[newsList.data[5] titlepicurl]);
+        [self.informationTableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        LQLog(@"请求失败%@",error);
+    }];
+}
+
 #pragma mark - TableViewDelegate&DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.newsListArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LQInformationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LQInformationTableViewCell"];
     
-    [cell.titleImageView sd_setImageWithURL:[NSURL URLWithString:@"http://img.firefoxchina.cn/2015/07/5/201507300849040.jpg"] placeholderImage:[UIImage imageNamed:@"123"] options:SDWebImageRetryFailed];
+    LQNewsListContent *listContent = self.newsListArray[indexPath.row];
+    
+    [cell.titleImageView sd_setImageWithURL:[NSURL URLWithString:listContent.titlepicurl] placeholderImage:nil options:SDWebImageRetryFailed];
+    cell.titleLable.text = listContent.titlename;
+    cell.dateLable.text = listContent.newstime;
+    cell.numLable.text = listContent.onclick;
     
     return cell;
 }
