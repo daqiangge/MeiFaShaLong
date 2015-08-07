@@ -147,15 +147,10 @@
     self.homeRollingView.hidden = NO;
     self.btnGroupView.hidden    = NO;
 
-    //给tableview注册一个cell模板
-    NSString *identifer=@"LQInformationTableViewCell";
-    UINib *nib=[UINib nibWithNibName:@"LQInformationTableViewCell" bundle:nil];
-    [self.informationTableView registerNib:nib forCellReuseIdentifier:identifer];
-
     //设置tableview的分割线
     if([self.informationTableView respondsToSelector:@selector(setSeparatorInset:)])
     {
-        [self.informationTableView setSeparatorInset:UIEdgeInsetsMake(0,15,0,15)];
+        [self.informationTableView setSeparatorInset:UIEdgeInsetsMake(0,12.5,0,12.5)];
     }
 
 }
@@ -201,7 +196,6 @@
         LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
         
         self.newsListArray = [NSMutableArray arrayWithArray:newsList.data];
-        LQLog(@"%@",[newsList.data[5] titlepicurl]);
         [self.informationTableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -217,14 +211,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LQInformationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LQInformationTableViewCell"];
-    
-    LQNewsListContent *listContent = self.newsListArray[indexPath.row];
-    
-    [cell.titleImageView sd_setImageWithURL:[NSURL URLWithString:listContent.titlepicurl] placeholderImage:nil options:SDWebImageRetryFailed];
-    cell.titleLable.text = listContent.titlename;
-    cell.dateLable.text = listContent.newstime;
-    cell.numLable.text = listContent.onclick;
+    LQInformationTableViewCell *cell = [LQInformationTableViewCell cellWithTableView:tableView];
+    cell.listContent = self.newsListArray[indexPath.row];
     
     return cell;
 }

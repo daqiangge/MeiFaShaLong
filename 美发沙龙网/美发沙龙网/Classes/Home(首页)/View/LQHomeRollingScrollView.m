@@ -66,6 +66,7 @@
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.userInteractionEnabled = YES;
         imageView.frame = CGRectMake(LQScreen_Width * i, 0, LQScreen_Width, self.height);
+        imageView.image = [UIImage imageNamed:@"placehodeImage"];
         [self addSubview:imageView];
         
         UIButton *btn = [[UIButton alloc] init];
@@ -78,21 +79,21 @@
             case 0:
             {
                 self.previousImageView = imageView;
-                [imageView sd_setImageWithURL:[NSURL URLWithString:array[kCount - 1]] placeholderImage:[UIImage imageNamed:@"123"] options:SDWebImageRetryFailed];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:array[kCount - 1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
             }
                 break;
                 
             case 1:
             {
                 self.currentImageView = imageView;
-                [imageView sd_setImageWithURL:[NSURL URLWithString:array[0]] placeholderImage:[UIImage imageNamed:@"123"] options:SDWebImageRetryFailed];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:array[0]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
             }
                 break;
                 
             case 2:
             {
                 self.nextImageView = imageView;
-                [imageView sd_setImageWithURL:[NSURL URLWithString:array[1]] placeholderImage:[UIImage imageNamed:@"123"] options:SDWebImageRetryFailed];
+                [imageView sd_setImageWithURL:[NSURL URLWithString:array[1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
             }
                 break;
         }
@@ -142,8 +143,8 @@
     
     if (self.previousImageView.image == nil || self.nextImageView.image == nil)
     {
-        [self.previousImageView sd_setImageWithURL:array[self.page == 0 ? kCount - 1:self.page - 1] placeholderImage:[UIImage imageNamed:@"123"] options:SDWebImageRetryFailed];
-        [self.nextImageView sd_setImageWithURL:array[self.page == kCount - 1 ? 0 : self.page + 1] placeholderImage:[UIImage imageNamed:@"123"] options:SDWebImageRetryFailed];
+        [self.previousImageView sd_setImageWithURL:[NSURL URLWithString:array[self.page == 0 ? kCount - 1:self.page - 1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+        [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:array[self.page == kCount - 1 ? 0 : self.page + 1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
     }
     
     if (offestX == 0)

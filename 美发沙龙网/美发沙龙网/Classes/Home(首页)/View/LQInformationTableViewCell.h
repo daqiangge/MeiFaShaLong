@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LQNewsListContent.h"
+
+#define cell_height 75
 
 @interface LQInformationTableViewCell : UITableViewCell
 
+@property (weak, nonatomic)  UIImageView *titleImageView;
+@property (weak, nonatomic)  UILabel *titleLable;
+@property (weak, nonatomic)  UILabel *dateLable;
+@property (weak, nonatomic)  UILabel *numLable;
+@property (nonatomic, strong) LQNewsListContent *listContent;
 
-@property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
-@property (weak, nonatomic) IBOutlet UILabel *dateLable;
-@property (weak, nonatomic) IBOutlet UILabel *numLable;
++ (LQInformationTableViewCell *)cellWithTableView:(UITableView *)tableView;
 
 @end
