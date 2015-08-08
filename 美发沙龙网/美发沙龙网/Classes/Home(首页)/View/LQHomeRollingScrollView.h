@@ -22,6 +22,7 @@
 @interface LQHomeRollingScrollView : UIScrollView
 
 @property (nonatomic, weak) id<LQHomeRollingScrollViewDelegate> homeRollingScrollViewDelegate;
+@property (nonatomic, strong) NSMutableArray *imageUrlArray;
 
 + (instancetype)homeRollingScrollViewWithFrame:(CGRect)frame;
 

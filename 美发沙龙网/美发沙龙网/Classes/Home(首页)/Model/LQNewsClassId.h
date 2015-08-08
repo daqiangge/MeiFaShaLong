@@ -13,6 +13,6 @@
 @interface LQNewsClassId : NSObject
 
 @property (nonatomic, strong) LQNewsBClass *bclass;
-@property (nonatomic, strong) LQNewsSonClass *sonclass;
+@property (nonatomic, strong) NSArray *sonclass;
 
 @end

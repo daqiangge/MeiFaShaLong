@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8408BCD21B75E93700C73932 /* LQNewsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8408BCD11B75E93700C73932 /* LQNewsListVC.m */; };
 		840A00851B72ED9A007F7E78 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A00611B72ED99007F7E78 /* AFHTTPRequestOperation.m */; };
 		840A00861B72ED9A007F7E78 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A00631B72ED99007F7E78 /* AFHTTPRequestOperationManager.m */; };
 		840A00871B72ED9A007F7E78 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A00651B72ED99007F7E78 /* AFHTTPSessionManager.m */; };
@@ -111,6 +112,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8408BCD01B75E93700C73932 /* LQNewsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewsListVC.h; sourceTree = "<group>"; };
+		8408BCD11B75E93700C73932 /* LQNewsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewsListVC.m; sourceTree = "<group>"; };
 		840A00601B72ED99007F7E78 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		840A00611B72ED99007F7E78 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		840A00621B72ED99007F7E78 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -605,6 +608,8 @@
 				84CEF08C1B5E39BC0017D798 /* LQHomeVC.m */,
 				84F3CA891B5F3F4E00DD44A9 /* LQInformationVC.h */,
 				84F3CA8A1B5F3F4E00DD44A9 /* LQInformationVC.m */,
+				8408BCD01B75E93700C73932 /* LQNewsListVC.h */,
+				8408BCD11B75E93700C73932 /* LQNewsListVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1016,6 +1021,7 @@
 				84E98F351B7450C60022D47D /* MKAnnotationView+WebCache.m in Sources */,
 				84E81EFD1B66278D0089A0A7 /* LQMeunTableViewCell.m in Sources */,
 				84E98F3B1B7450C60022D47D /* SDWebImageDownloaderOperation.m in Sources */,
+				8408BCD21B75E93700C73932 /* LQNewsListVC.m in Sources */,
 				84EEB6011B60BC78008E7731 /* UIBarButtonItem+LQExtension.m in Sources */,
 				84835C341B733B38001859E9 /* LQNewsClassData.m in Sources */,
 				84EFEA6A1B5CC6670049D6FA /* _____.xcdatamodeld in Sources */,

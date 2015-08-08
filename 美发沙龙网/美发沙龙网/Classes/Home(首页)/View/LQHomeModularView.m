@@ -31,7 +31,7 @@
 - (void)doLoading
 {
     
-    NSArray *titles = @[@"美业资讯",@"美发视频",@"",@"",@"发现图片",@"免费视频",@"美发商城",@"美发人社区",@"美发技术",@"每日正能量",@"发廊经营",@"求职招聘"];
+    NSArray *titles = @[@"美业资讯",@"美发视频",@"",@"",@"发型图片",@"免费视频",@"美发商城",@"美发人社区",@"美发技术",@"每日正能量",@"发廊经营",@"求职招聘"];
     
     for (int i = 0; i < 12; i++)
     {
@@ -60,26 +60,61 @@
         [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         
-        switch (i)
-        {
+        //设置按钮的标签
+        switch (i) {
             case 0:
+                btn.tag = 58;
                 btn.frame = CGRectMake(x,y, minBtnWidth, minBtnHeight*2+space);
                 btn.titleLabel.font = TextFont_16;
                 [btn setBackgroundImageAndTitlePositionRelationWithUpDownSpace:10.0];
                 break;
+                
             case 1:
                 btn.frame = CGRectMake(x,y, minBtnWidth*2+space, minBtnHeight);
                 btn.titleLabel.font = TextFont_16;
                 [btn setBackgroundImageAndTitlePositionRelationWithLeftRightSpace:10.0];
                 break;
                 
-            default:
-                if (IPhone4_4s) {
-                    [btn setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
-                }
-                btn.frame = CGRectMake(x,y, minBtnWidth, minBtnHeight);
-                [btn setBackgroundImageAndTitlePositionRelationWithUpDownSpace:5.0];
+            case 4:
+                
                 break;
+                
+            case 5:
+                
+                break;
+                
+            case 6:
+                
+                break;
+                
+            case 7:
+                
+                break;
+                
+            case 8:
+                btn.tag = 62;
+                break;
+                
+            case 9:
+                
+                break;
+                
+            case 10:
+                btn.tag = 74;
+                break;
+                
+            case 11:
+                break;
+        }
+        
+        if (i !=0 && i != 1)
+        {
+            if (IPhone4_4s)
+            {
+                [btn setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
+            }
+            btn.frame = CGRectMake(x,y, minBtnWidth, minBtnHeight);
+            [btn setBackgroundImageAndTitlePositionRelationWithUpDownSpace:5.0];
         }
     }
 }

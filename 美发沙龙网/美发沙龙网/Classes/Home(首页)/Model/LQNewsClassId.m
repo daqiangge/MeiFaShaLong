@@ -10,4 +10,9 @@
 
 @implementation LQNewsClassId
 
++ (NSDictionary *)objectClassInArray
+{
+    return @{@"sonclass":@"LQNewsSonClass"};
+}
+
 @end

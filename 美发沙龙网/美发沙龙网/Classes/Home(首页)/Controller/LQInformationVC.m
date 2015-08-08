@@ -13,10 +13,11 @@
 #import "LQNewsClass.h"
 #import "LQNewsList.h"
 #import "LQNewsListContent.h"
+#import "LQNewsListVC.h"
 
 #define SearchBar_SeachTextField_BackgroundColor ([UIColor colorWithRed:59/255. green:59/255. blue:59/255. alpha:1])
 
-@interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate,LQInformationBtnGroupViewDelegate>
 
 @property (nonatomic, weak) LQHomeRollingView *homeRollingView;
 @property (nonatomic, weak) UIView *searchBarBsckgroundView;
@@ -78,6 +79,9 @@
     return _homeRollingView;
 }
 
+/**
+ *  按钮组
+ */
 - (LQInformationBtnGroupView *)btnGroupView
 {
     if (_btnGroupView == nil)
@@ -89,6 +93,8 @@
         CGRect frame                            = CGRectMake(x, y, width, height);
 
         LQInformationBtnGroupView *btnGroupView = [LQInformationBtnGroupView informationBtnGroupViewWithFrame:frame];
+        btnGroupView.sonclassArray = self.sonclassArray;
+        btnGroupView.btnGroupViewDelegate = self;
         [self.view addSubview:btnGroupView];
         _btnGroupView                           = btnGroupView;
     }
@@ -127,6 +133,16 @@
     }
     
     return _informationTableView;
+}
+
+- (void)setClassid:(NSString *)classid
+{
+    _classid = classid;
+}
+
+- (void)setSonclassArray:(NSArray *)sonclassArray
+{
+    _sonclassArray = sonclassArray;
 }
 
 - (void)viewDidLoad
@@ -189,12 +205,11 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsList.php";
-    NSDictionary *parameters = @{@"classid":@"62",@"pageSize":@"10"};
+    NSDictionary *parameters = @{@"classid":self.classid,@"pageSize":@"10"};
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
-        
         self.newsListArray = [NSMutableArray arrayWithArray:newsList.data];
         [self.informationTableView reloadData];
         
@@ -225,6 +240,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75;
+}
+
+#pragma mark - LQInformationBtnGroupViewDelegate
+- (void)InformationBtnGroupViewDidClickBtnWithView:(LQInformationBtnGroupView *)btnGroupView btn:(UIButton *)btn
+{
+    LQNewsListVC *newsListVC = [[LQNewsListVC alloc] init];
+    newsListVC.classid = [NSString stringWithFormat:@"%ld",btn.tag];
+    [self.navigationController pushViewController:newsListVC animated:YES];
 }
 
 @end

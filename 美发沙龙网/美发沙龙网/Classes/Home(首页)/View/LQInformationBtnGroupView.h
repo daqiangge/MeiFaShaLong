@@ -12,7 +12,7 @@
 
 @protocol LQInformationBtnGroupViewDelegate <NSObject>
 
-- (void)InformationBtnGroupViewDidClickBtn:(LQInformationBtnGroupView *)btnGroupView;
+- (void)InformationBtnGroupViewDidClickBtnWithView:(LQInformationBtnGroupView *)btnGroupView btn:(UIButton *)btn;
 
 @end
 
@@ -20,6 +20,7 @@
 @interface LQInformationBtnGroupView : UIView
 
 @property (nonatomic, weak) id<LQInformationBtnGroupViewDelegate> btnGroupViewDelegate;
+@property (nonatomic, strong) NSArray *sonclassArray;
 
 + (instancetype)informationBtnGroupViewWithFrame:(CGRect)frame;
 

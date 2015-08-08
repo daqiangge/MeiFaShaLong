@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LQHomeRollingScrollView.h"
+#import "LQHomePageControlView.h"
 
 @interface LQHomeRollingView : UIView
+
+@property (weak, nonatomic) LQHomeRollingScrollView *homeRollingScrollView;
+@property (nonatomic, weak) LQHomePageControlView *homePageControlView;
 
 + (instancetype)homeRollingViewWithFrame:(CGRect)frame;
 

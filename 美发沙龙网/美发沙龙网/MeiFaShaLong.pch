@@ -37,6 +37,8 @@
  */
 #define LQScreen_Height ([UIScreen mainScreen].bounds.size.height)
 
+#define Navigation_Height 64
+
 /**
  *  NSLog Debug
  */

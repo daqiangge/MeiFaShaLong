@@ -7,13 +7,8 @@
 //
 
 #import "LQHomeRollingView.h"
-#import "LQHomeRollingScrollView.h"
-#import "LQHomePageControlView.h"
 
 @interface LQHomeRollingView()<LQHomeRollingScrollViewDelegate>
-
-@property (weak, nonatomic) LQHomeRollingScrollView *homeRollingScrollView;
-@property (nonatomic, weak) LQHomePageControlView *homePageControlView;
 
 @end
 

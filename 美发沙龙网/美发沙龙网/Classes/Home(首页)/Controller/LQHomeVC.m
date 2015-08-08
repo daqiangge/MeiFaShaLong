@@ -11,12 +11,17 @@
 #import "LQHomePageControlView.h"
 #import "LQInformationVC.h"
 #import "LQHomeRollingView.h"
+#import "LQNewsClass.h"
+#import "LQNewsClassId.h"
+#import "LQNewsList.h"
+#import "LQNewsListContent.h"
 
 @interface LQHomeVC ()<LQHomeModularViewDelegate>
 
-@property (weak, nonatomic) LQHomeModularView *homeModularView;
-@property (nonatomic, weak) LQHomePageControlView *homePageControlView;
-@property (nonatomic, weak) LQHomeRollingView *homeRollingView;
+@property (weak, nonatomic  ) LQHomeModularView     *homeModularView;
+@property (nonatomic, weak  ) LQHomePageControlView *homePageControlView;
+@property (nonatomic, weak  ) LQHomeRollingView     *homeRollingView;
+@property (nonatomic, strong) LQNewsClass           *newsClass;
 
 @end
 
@@ -69,6 +74,8 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     [self doLoading];
+    [self requestAllNewsClass];
+    [self requestNewsList];
 }
 
 - (void)doLoading
@@ -77,12 +84,64 @@
     self.homeModularView.hidden = NO;
 }
 
+#pragma mark - 网络请求
+- (void)requestAllNewsClass
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsClass.php";
+
+    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        self.newsClass = [LQNewsClass objectWithKeyValues:operation.responseString];
+        LQLog(@"123123");
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        LQLog(@"请求失败%@",error);
+    }];
+}
+
+- (void)requestNewsList
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsList.php";
+    NSDictionary *parameters = @{@"pageSize":@"4"};
+    
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
+        self.homeRollingView.homeRollingScrollView.imageUrlArray = [NSMutableArray arrayWithArray:newsList.data];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        LQLog(@"请求失败%@",error);
+    }];
+}
+
 #pragma mark - LQHomeModularViewDelegate
 - (void)homeModularViewDidClickBtnWithView:(LQHomeModularView *)view btn:(UIButton *)btn
 {
     LQInformationVC *informationVC = [[LQInformationVC alloc] init];
     informationVC.title            = btn.titleLabel.text;
+    informationVC.classid = [NSString stringWithFormat:@"%ld",btn.tag];
+
+    switch (btn.tag)
+    {
+        case 58:
+            informationVC.sonclassArray = self.newsClass.data.newsClassId_58.sonclass;
+            break;
+            
+        case 62:
+            informationVC.sonclassArray = self.newsClass.data.newsClassId_62.sonclass;
+            break;
+            
+        case 74:
+            informationVC.sonclassArray = self.newsClass.data.newsClassId_74.sonclass;
+            break;
+    }
+    
     [self.navigationController pushViewController:informationVC animated:YES];
+    
+    
+    
 }
 
 @end
