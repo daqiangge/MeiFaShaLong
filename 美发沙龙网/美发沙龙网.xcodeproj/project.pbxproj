@@ -99,6 +99,7 @@
 		D546A3DE1B5FBE8E0003A581 /* LQHomeRollingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A3DD1B5FBE8D0003A581 /* LQHomeRollingScrollView.m */; };
 		D546A3E11B5FBEB40003A581 /* LQHomeModularView.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */; };
 		D546A41B1B5FCECC0003A581 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A41A1B5FCECC0003A581 /* UIView+Extension.m */; };
+		D56FC34B1B764E8D00862568 /* LQNewsWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,6 +302,8 @@
 		D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomeModularView.m; sourceTree = "<group>"; };
 		D546A4191B5FCECC0003A581 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		D546A41A1B5FCECC0003A581 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		D56FC3491B764E8D00862568 /* LQNewsWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewsWebVC.h; sourceTree = "<group>"; };
+		D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewsWebVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -610,6 +613,8 @@
 				84F3CA8A1B5F3F4E00DD44A9 /* LQInformationVC.m */,
 				8408BCD01B75E93700C73932 /* LQNewsListVC.h */,
 				8408BCD11B75E93700C73932 /* LQNewsListVC.m */,
+				D56FC3491B764E8D00862568 /* LQNewsWebVC.h */,
+				D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -859,12 +864,12 @@
 			children = (
 				D546A3DC1B5FBE8D0003A581 /* LQHomeRollingScrollView.h */,
 				D546A3DD1B5FBE8D0003A581 /* LQHomeRollingScrollView.m */,
-				D546A3DF1B5FBEB40003A581 /* LQHomeModularView.h */,
-				D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */,
 				8417A77C1B607CD700B80F54 /* LQHomePageControlView.h */,
 				8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */,
 				849709A31B63816C00C497B6 /* LQHomeRollingView.h */,
 				849709A41B63816C00C497B6 /* LQHomeRollingView.m */,
+				D546A3DF1B5FBEB40003A581 /* LQHomeModularView.h */,
+				D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */,
 				849709A61B6389CD00C497B6 /* LQInformationBtnGroupView.h */,
 				849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */,
 				84E81EF21B65DD890089A0A7 /* LQInformationTableViewCell.h */,
@@ -1037,6 +1042,7 @@
 				840A00871B72ED9A007F7E78 /* AFHTTPSessionManager.m in Sources */,
 				84CEF0731B5E36F00017D798 /* AppDelegate.m in Sources */,
 				84E98F421B7450C60022D47D /* UIImageView+HighlightedWebCache.m in Sources */,
+				D56FC34B1B764E8D00862568 /* LQNewsWebVC.m in Sources */,
 				D546A3DE1B5FBE8E0003A581 /* LQHomeRollingScrollView.m in Sources */,
 				84E81EF51B65DD890089A0A7 /* LQInformationTableViewCell.m in Sources */,
 				840A00941B72ED9A007F7E78 /* NSObject+MJProperty.m in Sources */,

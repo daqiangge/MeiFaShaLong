@@ -18,7 +18,6 @@
 @property (nonatomic, weak) UIImageView *nextImageView;
 @property (nonatomic, weak) UIImageView *currentImageView;
 @property (nonatomic, assign) int page;
-@property (nonatomic, weak) NSTimer *timer;
 
 @end
 
@@ -51,6 +50,11 @@
     
     LQNewsListContent *content = imageUrlArray[self.page];
     [self.currentImageView sd_setImageWithURL:[NSURL URLWithString:content.titlepicurl] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+    
+    //更改小圆点的位置及标题
+    if ([self.homeRollingScrollViewDelegate respondsToSelector:@selector(homeRollingScrollViewDidUpdatePageControl:currentPage:titleName:)]) {
+        [self.homeRollingScrollViewDelegate homeRollingScrollViewDidUpdatePageControl:self currentPage:self.page titleName:content.titlename];
+    }
 }
 
 - (void)doLoading
@@ -84,21 +88,21 @@
             case 0:
             {
                 self.previousImageView = imageView;
-                [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlArray[kCount - 1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+//                [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlArray[kCount - 1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
             }
                 break;
                 
             case 1:
             {
                 self.currentImageView = imageView;
-                [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlArray[0]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+//                [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlArray[0]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
             }
                 break;
                 
             case 2:
             {
                 self.nextImageView = imageView;
-                [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlArray[1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+//                [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlArray[1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
             }
                 break;
         }
@@ -132,8 +136,11 @@
     
     if (self.previousImageView.image == nil || self.nextImageView.image == nil)
     {
-        [self.previousImageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlArray[self.page == 0 ? kCount - 1:self.page - 1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
-        [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrlArray[self.page == kCount - 1 ? 0 : self.page + 1]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+        LQNewsListContent *previouCcontent = self.imageUrlArray[self.page == 0 ? kCount - 1:self.page - 1];
+        LQNewsListContent *nextCcontent = self.imageUrlArray[self.page == kCount - 1 ? 0 : self.page + 1];
+        
+        [self.previousImageView sd_setImageWithURL:[NSURL URLWithString:previouCcontent.titlepicurl] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+        [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:nextCcontent.titlepicurl] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
     }
     
     if (offestX == 0)
@@ -166,9 +173,10 @@
         }
     }
     
-    //更改小圆点的位置
-    if ([self.homeRollingScrollViewDelegate respondsToSelector:@selector(homeRollingScrollViewDidUpdatePageControl:currentPage:)]) {
-        [self.homeRollingScrollViewDelegate homeRollingScrollViewDidUpdatePageControl:self currentPage:self.page];
+    //更改小圆点的位置及标题
+    if ([self.homeRollingScrollViewDelegate respondsToSelector:@selector(homeRollingScrollViewDidUpdatePageControl:currentPage:titleName:)]) {
+        LQNewsListContent *content = self.imageUrlArray[self.page];
+        [self.homeRollingScrollViewDelegate homeRollingScrollViewDidUpdatePageControl:self currentPage:self.page titleName:content.titlename];
     }
 }
 

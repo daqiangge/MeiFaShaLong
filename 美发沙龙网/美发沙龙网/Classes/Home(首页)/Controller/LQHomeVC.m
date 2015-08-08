@@ -104,7 +104,7 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsList.php";
-    NSDictionary *parameters = @{@"pageSize":@"4"};
+    NSDictionary *parameters = @{@"pageSize":@"5"};
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         

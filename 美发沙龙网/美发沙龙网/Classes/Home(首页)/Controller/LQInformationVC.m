@@ -247,6 +247,7 @@
 {
     LQNewsListVC *newsListVC = [[LQNewsListVC alloc] init];
     newsListVC.classid = [NSString stringWithFormat:@"%ld",btn.tag];
+    newsListVC.navigationItem.title = btn.titleLabel.text;
     [self.navigationController pushViewController:newsListVC animated:YES];
 }
 

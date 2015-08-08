@@ -39,8 +39,14 @@
 - (void)doLoading
 {
     long int num = self.sonclassArray.count;
-    long int rows = (num - 1) / 4 + 1;
-    self.height = space + (button_height + space) * rows;
+    
+    if (num == 0)
+    {
+        self.height = space;
+    }else {
+        long int rows = (num - 1) / 4 + 1;//计算行数
+        self.height = space + (button_height + space) * rows;//计算按钮组的高度
+    }
     
     CGFloat width = (self.width - 5*space)/4;
     CGFloat height = button_height;

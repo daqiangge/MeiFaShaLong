@@ -45,7 +45,6 @@
         CGRect homePageControlViewF = CGRectMake(homePageControlViewX, homePageControlViewY, homePageControlViewW, homePageControlViewH);
         
         LQHomePageControlView *homePageControlView = [LQHomePageControlView homePageControlViewWithFrame:homePageControlViewF];
-        homePageControlView.titleLable.text = @"史上最全打蜡配方，高端学习教程";
         homePageControlView.pageControl.currentPage = 0;
         [self addSubview:homePageControlView];
         self.homePageControlView = homePageControlView;
@@ -75,10 +74,10 @@
 }
 
 #pragma mark - LQHomeRollingScrollViewDelegate
-- (void)homeRollingScrollViewDidUpdatePageControl:(LQHomeRollingScrollView *)scrollView currentPage:(NSInteger)currentPage
+- (void)homeRollingScrollViewDidUpdatePageControl:(LQHomeRollingScrollView *)scrollView currentPage:(NSInteger)currentPage titleName:(NSString *)titleName
 {
     self.homePageControlView.pageControl.currentPage = currentPage;
-    self.homePageControlView.titleLable.text = @"史上最全打蜡配方，高端学习教程";
+    self.homePageControlView.titleLable.text = titleName;
 }
 
 
