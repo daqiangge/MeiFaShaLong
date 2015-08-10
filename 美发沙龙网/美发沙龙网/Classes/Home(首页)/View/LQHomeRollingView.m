@@ -80,5 +80,12 @@
     self.homePageControlView.titleLable.text = titleName;
 }
 
+- (void)homeRollingScrollViewDidClickImageView:(LQHomeRollingScrollView *)scrollView newsListContent:(LQNewsListContent *)newsContent
+{
+    if ([self.deleagte respondsToSelector:@selector(homeRollingViewDidClickImageView:newsListContent:)])
+    {
+        [self.deleagte homeRollingViewDidClickImageView:self newsListContent:newsContent];
+    }
+}
 
 @end

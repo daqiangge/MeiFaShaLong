@@ -9,6 +9,8 @@
 #import "LQNewsListVC.h"
 #import "LQInformationTableViewCell.h"
 #import "LQNewsList.h"
+#import "LQNewsListContent.h"
+#import "LQNewsWebVC.h"
 
 @interface LQNewsListVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -94,7 +96,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.navigationController pushViewController:[[UIViewController alloc] init] animated:YES];
+    LQNewsListContent *newsContent = self.newsListArray[indexPath.row];
+    
+    LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
+    newWebVC.urlStr = newsContent.titleurl;
+    newWebVC.navigationItem.title = newsContent.classname;
+    [self.navigationController pushViewController:newWebVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

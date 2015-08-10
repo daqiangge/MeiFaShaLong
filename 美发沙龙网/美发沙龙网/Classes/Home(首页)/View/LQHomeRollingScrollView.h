@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class LQHomeRollingScrollView;
+@class LQNewsListContent;
 
 @protocol LQHomeRollingScrollViewDelegate <NSObject>
 
 @optional
 - (void)homeRollingScrollViewDidUpdatePageControl:(LQHomeRollingScrollView *)scrollView currentPage:(NSInteger)currentPage titleName:(NSString *)titleName;
-- (void)homeRollingScrollViewDidClickImageView:(LQHomeRollingScrollView *)scrollView;
+- (void)homeRollingScrollViewDidClickImageView:(LQHomeRollingScrollView *)scrollView newsListContent:(LQNewsListContent *)newsContent;
 
 @end
 

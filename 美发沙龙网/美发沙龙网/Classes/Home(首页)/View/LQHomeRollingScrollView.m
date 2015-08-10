@@ -121,11 +121,10 @@
  */
 - (void)clickImageView:(UIButton *)btn
 {
-    LQLog(@"点击了图片");
-    
-    if ([self.homeRollingScrollViewDelegate respondsToSelector:@selector(homeRollingScrollViewDidClickImageView:)])
+    if ([self.homeRollingScrollViewDelegate respondsToSelector:@selector(homeRollingScrollViewDidClickImageView:newsListContent:)])
     {
-        [self.homeRollingScrollViewDelegate homeRollingScrollViewDidClickImageView:self];
+        LQNewsListContent *newListContent = self.imageUrlArray[self.page];
+        [self.homeRollingScrollViewDelegate homeRollingScrollViewDidClickImageView:self newsListContent:newListContent];
     }
 }
 

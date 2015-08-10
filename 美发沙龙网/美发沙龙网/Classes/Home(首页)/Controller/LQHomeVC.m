@@ -15,13 +15,15 @@
 #import "LQNewsClassId.h"
 #import "LQNewsList.h"
 #import "LQNewsListContent.h"
+#import "LQNewsWebVC.h"
 
-@interface LQHomeVC ()<LQHomeModularViewDelegate>
+@interface LQHomeVC ()<LQHomeModularViewDelegate,LQHomeRollingViewDelegate>
 
 @property (weak, nonatomic  ) LQHomeModularView     *homeModularView;
 @property (nonatomic, weak  ) LQHomePageControlView *homePageControlView;
 @property (nonatomic, weak  ) LQHomeRollingView     *homeRollingView;
 @property (nonatomic, strong) LQNewsClass           *newsClass;
+@property (nonatomic, strong) NSArray *newsListArray;
 
 @end
 
@@ -38,6 +40,7 @@
         CGRect frame                       = CGRectMake(x, y, width, height);
 
         LQHomeRollingView *homeRollingView = [LQHomeRollingView homeRollingViewWithFrame:frame];
+        homeRollingView.deleagte = self;
         [self.view addSubview:homeRollingView];
         _homeRollingView                   = homeRollingView;
         
@@ -64,6 +67,16 @@
     }
     
     return _homeModularView;
+}
+
+- (NSArray *)newsListArray
+{
+    if (_newsListArray == nil)
+    {
+        _newsListArray = [NSArray array];
+    }
+    
+    return _newsListArray;
 }
 
 - (void)viewDidLoad
@@ -109,7 +122,8 @@
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
-        self.homeRollingView.homeRollingScrollView.imageUrlArray = [NSMutableArray arrayWithArray:newsList.data];
+        self.newsListArray = newsList.data;
+        self.homeRollingView.homeRollingScrollView.imageUrlArray = [NSMutableArray arrayWithArray:self.newsListArray];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
@@ -139,9 +153,15 @@
     }
     
     [self.navigationController pushViewController:informationVC animated:YES];
-    
-    
-    
+}
+
+#pragma mark - LQHomeRollingViewDelegate
+- (void)homeRollingViewDidClickImageView:(LQHomeRollingView *)homeRollingView newsListContent:(LQNewsListContent *)newsContent
+{
+    LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
+    newWebVC.urlStr = newsContent.titleurl;
+    newWebVC.navigationItem.title = newsContent.classname;
+    [self.navigationController pushViewController:newWebVC animated:YES];
 }
 
 @end

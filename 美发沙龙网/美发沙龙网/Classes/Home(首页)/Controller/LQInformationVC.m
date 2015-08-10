@@ -14,6 +14,7 @@
 #import "LQNewsList.h"
 #import "LQNewsListContent.h"
 #import "LQNewsListVC.h"
+#import "LQNewsWebVC.h"
 
 #define SearchBar_SeachTextField_BackgroundColor ([UIColor colorWithRed:59/255. green:59/255. blue:59/255. alpha:1])
 
@@ -234,7 +235,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.navigationController pushViewController:[[UIViewController alloc] init] animated:YES];
+    LQNewsListContent *newsContent = self.newsListArray[indexPath.row];
+    
+    LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
+    newWebVC.urlStr = newsContent.titleurl;
+    newWebVC.navigationItem.title = newsContent.classname;
+    [self.navigationController pushViewController:newWebVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
