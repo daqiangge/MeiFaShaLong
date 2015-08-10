@@ -24,8 +24,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
     NSString *versionKey = @"CFBundleVersion";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
