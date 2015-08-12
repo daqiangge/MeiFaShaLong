@@ -86,7 +86,7 @@
         self.price.textColor = [UIColor orangeColor];
         self.price.text = [NSString stringWithFormat:@"￥%.1f",model.ticketModel.ticketPrice];
     }
-
+    
     switch (model.style) {
         case CellDayTypeEmpty:
             self.selectImageView.hidden = YES;

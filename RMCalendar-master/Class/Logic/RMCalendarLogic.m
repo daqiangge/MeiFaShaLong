@@ -185,9 +185,6 @@
     }
 }
 
-
-
-
 - (void)changStyle:(RMCalendarModel *)model
 {
     
@@ -212,7 +209,6 @@
             calendarToDay.day < model.day) {
             
             model.style = CellDayTypePast;
-            
             //之后的时间时间段
         }else if (calendarbefore.year >= model.year &
                   calendarbefore.month >= model.month &
@@ -222,7 +218,6 @@
             
             //需要正常显示的时间段
         }else{
-            
             //周末
             if (model.week == 1 || model.week == 7){
                 model.style = CellDayTypeWeek;
@@ -233,6 +228,7 @@
             }
         }
     }
+    
 #warning for进行模型日期匹配,将价格和日期关联，此处可根据项目需求进行修改
     for (int i = 0; i < self.priceModelArr.count; i++) {
         TicketModel *tModel = self.priceModelArr[i];

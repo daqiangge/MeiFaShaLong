@@ -14,7 +14,6 @@
 		EE4A4FFE1B43E881004B6590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4A4FFC1B43E881004B6590 /* Main.storyboard */; };
 		EE4A50001B43E881004B6590 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE4A4FFF1B43E881004B6590 /* Images.xcassets */; };
 		EE4A50031B43E881004B6590 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE4A50011B43E881004B6590 /* LaunchScreen.xib */; };
-		EE4A500F1B43E881004B6590 /* RMCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4A500E1B43E881004B6590 /* RMCalendarTests.m */; };
 		EE4A503B1B43E8EF004B6590 /* NSDate+RMCalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4A501B1B43E8EF004B6590 /* NSDate+RMCalendarLogic.m */; };
 		EE4A503C1B43E8EF004B6590 /* UIView+CustomFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4A501D1B43E8EF004B6590 /* UIView+CustomFrame.m */; };
 		EE4A503D1B43E8EF004B6590 /* RMCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4A50201B43E8EF004B6590 /* RMCalendarController.m */; };
@@ -47,16 +46,6 @@
 		EEDB72371B4A4A0C003F6AC6 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDB722F1B4A4A0C003F6AC6 /* NSString+MJExtension.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		EE4A50091B43E881004B6590 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE4A4FE71B43E881004B6590 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EE4A4FEE1B43E881004B6590;
-			remoteInfo = RMCalendar;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		84096C9E1B7B38720066A851 /* LQCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCalendarView.h; sourceTree = "<group>"; };
 		84096C9F1B7B38720066A851 /* LQCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCalendarView.m; sourceTree = "<group>"; };
@@ -70,7 +59,6 @@
 		EE4A4FFD1B43E881004B6590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE4A4FFF1B43E881004B6590 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EE4A50021B43E881004B6590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EE4A50081B43E881004B6590 /* RMCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4A500D1B43E881004B6590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4A500E1B43E881004B6590 /* RMCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMCalendarTests.m; sourceTree = "<group>"; };
 		EE4A501A1B43E8EF004B6590 /* NSDate+RMCalendarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RMCalendarLogic.h"; sourceTree = "<group>"; };
@@ -131,13 +119,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE4A50051B43E881004B6590 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -154,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				EE4A4FEF1B43E881004B6590 /* RMCalendar.app */,
-				EE4A50081B43E881004B6590 /* RMCalendarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,24 +314,6 @@
 			productReference = EE4A4FEF1B43E881004B6590 /* RMCalendar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EE4A50071B43E881004B6590 /* RMCalendarTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EE4A50151B43E881004B6590 /* Build configuration list for PBXNativeTarget "RMCalendarTests" */;
-			buildPhases = (
-				EE4A50041B43E881004B6590 /* Sources */,
-				EE4A50051B43E881004B6590 /* Frameworks */,
-				EE4A50061B43E881004B6590 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EE4A500A1B43E881004B6590 /* PBXTargetDependency */,
-			);
-			name = RMCalendarTests;
-			productName = RMCalendarTests;
-			productReference = EE4A50081B43E881004B6590 /* RMCalendarTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -363,10 +325,6 @@
 				TargetAttributes = {
 					EE4A4FEE1B43E881004B6590 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					EE4A50071B43E881004B6590 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = EE4A4FEE1B43E881004B6590;
 					};
 				};
 			};
@@ -384,7 +342,6 @@
 			projectRoot = "";
 			targets = (
 				EE4A4FEE1B43E881004B6590 /* RMCalendar */,
-				EE4A50071B43E881004B6590 /* RMCalendarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -410,13 +367,6 @@
 				EE4A50501B43E902004B6590 /* Default-568h@2x.png in Resources */,
 				EE4A50471B43E8EF004B6590 /* CalendarRowBottom@2x.png in Resources */,
 				EE4A50001B43E881004B6590 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EE4A50061B43E881004B6590 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,23 +401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE4A50041B43E881004B6590 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EE4A500F1B43E881004B6590 /* RMCalendarTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EE4A500A1B43E881004B6590 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EE4A4FEE1B43E881004B6590 /* RMCalendar */;
-			targetProxy = EE4A50091B43E881004B6590 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EE4A4FFC1B43E881004B6590 /* Main.storyboard */ = {
@@ -506,8 +440,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Haodong Chi (J2Q67UL82P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Haodong Chi (J2Q67UL82P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: haibo wei (R6NHM7EA2H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: haibo wei (R6NHM7EA2H)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -529,6 +463,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -550,8 +485,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Haodong Chi (J2Q67UL82P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: haibo wei (R6NHM7EA2H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: haibo wei (R6NHM7EA2H)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -566,6 +501,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -593,40 +529,6 @@
 			};
 			name = Release;
 		};
-		EE4A50161B43E881004B6590 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RMCalendarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMCalendar.app/RMCalendar";
-			};
-			name = Debug;
-		};
-		EE4A50171B43E881004B6590 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RMCalendarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMCalendar.app/RMCalendar";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -644,15 +546,6 @@
 			buildConfigurations = (
 				EE4A50131B43E881004B6590 /* Debug */,
 				EE4A50141B43E881004B6590 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EE4A50151B43E881004B6590 /* Build configuration list for PBXNativeTarget "RMCalendarTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EE4A50161B43E881004B6590 /* Debug */,
-				EE4A50171B43E881004B6590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -52,25 +52,23 @@ static NSString *DayCell = @"DayCell";
         self.days = days;
         self.type = type;
         self.calendarLogic.singleShowMonth = singleShowMonth;
-        [self doLoading];
     }
     
     return self;
 }
 
-- (void)setModelArr:(NSMutableArray *)modelArr {
-#if __has_feature(objc_arc)
+- (void)setModelArr:(NSMutableArray *)modelArr
+{
     _modelArr = modelArr;
-#else
-    if (_modelArr != modelArr) {
-        [_modelArr release];
-        _modelArr = [modelArr retain];
-    }
-#endif
 }
 
 -(void)setIsEnable:(BOOL)isEnable {
     _isEnable = isEnable;
+}
+
+- (void)layoutSubviews
+{
+    [self doLoading];
 }
 
 - (void)doLoading
@@ -80,10 +78,6 @@ static NSString *DayCell = @"DayCell";
     
     // 初始化CollectionView
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
-    
-#if !__has_feature(objc_arc)
-    [layout release];
-#endif
     
     // 注册CollectionView的Cell
     [self.collectionView registerClass:[RMCollectionCell class] forCellWithReuseIdentifier:DayCell];
