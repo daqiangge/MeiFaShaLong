@@ -136,7 +136,7 @@
     LQInformationVC *informationVC = [[LQInformationVC alloc] init];
     informationVC.title            = btn.titleLabel.text;
     informationVC.classid = [NSString stringWithFormat:@"%ld",btn.tag];
-
+    
     switch (btn.tag)
     {
         case 58:
@@ -149,6 +149,18 @@
             
         case 74:
             informationVC.sonclassArray = self.newsClass.data.newsClassId_74.sonclass;
+            break;
+            
+        case 81:
+            informationVC.sonclassArray = self.newsClass.data.newsClassId_81.sonclass;
+            break;
+            
+        case 94:
+            informationVC.sonclassArray = self.newsClass.data.newsClassId_94.sonclass;
+            break;
+            
+        case 107:
+            informationVC.sonclassArray = self.newsClass.data.newsClassId_107.sonclass;
             break;
     }
     

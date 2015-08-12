@@ -70,13 +70,14 @@
                 break;
                 
             case 1:
+                btn.tag = 107;
                 btn.frame = CGRectMake(x,y, minBtnWidth*2+space, minBtnHeight);
                 btn.titleLabel.font = TextFont_16;
                 [btn setBackgroundImageAndTitlePositionRelationWithLeftRightSpace:10.0];
                 break;
                 
             case 4:
-                
+                btn.tag = 81;
                 break;
                 
             case 5:
@@ -84,7 +85,7 @@
                 break;
                 
             case 6:
-                
+                btn.tag = 94;
                 break;
                 
             case 7:

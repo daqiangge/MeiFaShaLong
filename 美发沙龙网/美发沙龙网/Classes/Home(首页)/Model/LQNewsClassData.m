@@ -34,7 +34,10 @@
              @"newsClassId_77":@"77",
              @"newsClassId_78":@"78",
              @"newsClassId_79":@"79",
-             @"newsClassId_80":@"80"};
+             @"newsClassId_80":@"80",
+             @"newsClassId_81":@"81",
+             @"newsClassId_94":@"94",
+             @"newsClassId_107":@"107"};
 }
 
 @end
