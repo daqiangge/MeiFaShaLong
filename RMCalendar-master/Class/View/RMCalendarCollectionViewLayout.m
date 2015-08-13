@@ -17,6 +17,7 @@
     if (self) {
         // 头部年月视图的大小
         self.headerReferenceSize = CGSizeMake(screen, 75.0f);
+        self.footerReferenceSize = CGSizeMake(screen, 30.0f);
         // 每个Cell大小 -1是用作1个像素的间距
         self.itemSize = CGSizeMake(screen/7.0-1, screen/7.0);
         // 每行的最小间距
@@ -32,80 +33,87 @@
 
 
 
-- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
+//- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
+
+//    NSMutableArray *answer = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
+//    UICollectionView * const cv = self.collectionView;
+//    CGPoint const contentOffset = cv.contentOffset;
+//    
+//    NSMutableIndexSet *missingSections = [NSMutableIndexSet indexSet];
+//    for (UICollectionViewLayoutAttributes *layoutAttributes in answer) {
+//        if (layoutAttributes.representedElementCategory == UICollectionElementCategoryCell) {
+//            [missingSections addIndex:layoutAttributes.indexPath.section];
+//        }
+//    }
+//    for (UICollectionViewLayoutAttributes *layoutAttributes in answer) {
+//        if ([layoutAttributes.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+//            [missingSections removeIndex:layoutAttributes.indexPath.section];
+//        }
+//    }
+//    for (UICollectionViewLayoutAttributes *layoutAttributes in answer) {
+//        if ([layoutAttributes.representedElementKind isEqualToString:UICollectionElementKindSectionFooter]) {
+//            [missingSections removeIndex:layoutAttributes.indexPath.section];
+//        }
+//    }
+//    
+//    [missingSections enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+//        
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:idx];
+//        
+//        UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
+//        UICollectionViewLayoutAttributes *layoutAttributess = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:indexPath];
+//        
+//        [answer addObject:layoutAttributes];
+//        [answer addObject:layoutAttributess];
+//        
+//    }];
+//    
+//    for (UICollectionViewLayoutAttributes *layoutAttributes in answer) {
+//        
+//        if ([layoutAttributes.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+//            
+//            NSInteger section = layoutAttributes.indexPath.section;
+//            NSInteger numberOfItemsInSection = [cv numberOfItemsInSection:section];
+//            
+//            NSIndexPath *firstObjectIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
+//            NSIndexPath *lastObjectIndexPath = [NSIndexPath indexPathForItem:MAX(0, (numberOfItemsInSection - 1)) inSection:section];
+//            
+//            UICollectionViewLayoutAttributes *firstObjectAttrs;
+//            UICollectionViewLayoutAttributes *lastObjectAttrs;
+//            
+//            if (numberOfItemsInSection > 0) {
+//                firstObjectAttrs = [self layoutAttributesForItemAtIndexPath:firstObjectIndexPath];
+//                lastObjectAttrs = [self layoutAttributesForItemAtIndexPath:lastObjectIndexPath];
+//            } else {
+//                firstObjectAttrs = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+//                                                                        atIndexPath:firstObjectIndexPath];
+//                lastObjectAttrs = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+//                                                                       atIndexPath:lastObjectIndexPath];
+//            }
+//            
+//            CGFloat headerHeight = CGRectGetHeight(layoutAttributes.frame);
+//            CGPoint origin = layoutAttributes.frame.origin;
+//            origin.y = MIN(
+//                           MAX(
+//                               contentOffset.y + cv.contentInset.top,
+//                               (CGRectGetMinY(firstObjectAttrs.frame) - headerHeight)
+//                               ),
+//                           (CGRectGetMaxY(lastObjectAttrs.frame) - headerHeight)
+//                           );
+//            
+//            layoutAttributes.zIndex = 1024;
+//            layoutAttributes.frame = (CGRect){
+//                .origin = origin,
+//                .size = layoutAttributes.frame.size
+//            };
+//            
+//        }
+//        
+//    }
+//    
+//    return answer;
     
-    NSMutableArray *answer = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
-    UICollectionView * const cv = self.collectionView;
-    CGPoint const contentOffset = cv.contentOffset;
-    
-    NSMutableIndexSet *missingSections = [NSMutableIndexSet indexSet];
-    for (UICollectionViewLayoutAttributes *layoutAttributes in answer) {
-        if (layoutAttributes.representedElementCategory == UICollectionElementCategoryCell) {
-            [missingSections addIndex:layoutAttributes.indexPath.section];
-        }
-    }
-    for (UICollectionViewLayoutAttributes *layoutAttributes in answer) {
-        if ([layoutAttributes.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
-            [missingSections removeIndex:layoutAttributes.indexPath.section];
-        }
-    }
-    
-    [missingSections enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-        
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:idx];
-        
-        UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
-        
-        [answer addObject:layoutAttributes];
-        
-    }];
-    
-    for (UICollectionViewLayoutAttributes *layoutAttributes in answer) {
-        
-        if ([layoutAttributes.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
-            
-            NSInteger section = layoutAttributes.indexPath.section;
-            NSInteger numberOfItemsInSection = [cv numberOfItemsInSection:section];
-            
-            NSIndexPath *firstObjectIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
-            NSIndexPath *lastObjectIndexPath = [NSIndexPath indexPathForItem:MAX(0, (numberOfItemsInSection - 1)) inSection:section];
-            
-            UICollectionViewLayoutAttributes *firstObjectAttrs;
-            UICollectionViewLayoutAttributes *lastObjectAttrs;
-            
-            if (numberOfItemsInSection > 0) {
-                firstObjectAttrs = [self layoutAttributesForItemAtIndexPath:firstObjectIndexPath];
-                lastObjectAttrs = [self layoutAttributesForItemAtIndexPath:lastObjectIndexPath];
-            } else {
-                firstObjectAttrs = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                                                                        atIndexPath:firstObjectIndexPath];
-                lastObjectAttrs = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter
-                                                                       atIndexPath:lastObjectIndexPath];
-            }
-            
-            CGFloat headerHeight = CGRectGetHeight(layoutAttributes.frame);
-            CGPoint origin = layoutAttributes.frame.origin;
-            origin.y = MIN(
-                           MAX(
-                               contentOffset.y + cv.contentInset.top,
-                               (CGRectGetMinY(firstObjectAttrs.frame) - headerHeight)
-                               ),
-                           (CGRectGetMaxY(lastObjectAttrs.frame) - headerHeight)
-                           );
-            
-            layoutAttributes.zIndex = 1024;
-            layoutAttributes.frame = (CGRect){
-                .origin = origin,
-                .size = layoutAttributes.frame.size
-            };
-            
-        }
-        
-    }
-    
-    return answer;
-    
-}
+//}
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBound {
     

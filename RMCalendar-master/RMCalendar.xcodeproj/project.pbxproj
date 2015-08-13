@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84096CA01B7B38720066A851 /* LQCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84096C9F1B7B38720066A851 /* LQCalendarView.m */; };
+		84099A361B7C3F10005C0E80 /* LQCalendarFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84099A351B7C3F10005C0E80 /* LQCalendarFooterView.m */; };
 		EE4A4FF51B43E881004B6590 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4A4FF41B43E881004B6590 /* main.m */; };
 		EE4A4FF81B43E881004B6590 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4A4FF71B43E881004B6590 /* AppDelegate.m */; };
 		EE4A4FFB1B43E881004B6590 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4A4FFA1B43E881004B6590 /* ViewController.m */; };
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		84096C9E1B7B38720066A851 /* LQCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCalendarView.h; sourceTree = "<group>"; };
 		84096C9F1B7B38720066A851 /* LQCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCalendarView.m; sourceTree = "<group>"; };
+		84099A341B7C3F10005C0E80 /* LQCalendarFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCalendarFooterView.h; sourceTree = "<group>"; };
+		84099A351B7C3F10005C0E80 /* LQCalendarFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCalendarFooterView.m; sourceTree = "<group>"; };
 		EE4A4FEF1B43E881004B6590 /* RMCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4A4FF31B43E881004B6590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4A4FF41B43E881004B6590 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				EE4A50381B43E8EF004B6590 /* RMCalendarMonthHeaderView.m */,
 				EE4A50391B43E8EF004B6590 /* RMCollectionCell.h */,
 				EE4A503A1B43E8EF004B6590 /* RMCollectionCell.m */,
+				84099A341B7C3F10005C0E80 /* LQCalendarFooterView.h */,
+				84099A351B7C3F10005C0E80 /* LQCalendarFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				EE4A4FF51B43E881004B6590 /* main.m in Sources */,
 				EE4A503D1B43E8EF004B6590 /* RMCalendarController.m in Sources */,
 				EE4A503F1B43E8EF004B6590 /* RMCalendarModel.m in Sources */,
+				84099A361B7C3F10005C0E80 /* LQCalendarFooterView.m in Sources */,
 				EE4A504C1B43E8EF004B6590 /* RMCalendarCollectionViewLayout.m in Sources */,
 				EEDB72361B4A4A0C003F6AC6 /* NSObject+MJProperty.m in Sources */,
 				EE4A503C1B43E8EF004B6590 /* UIView+CustomFrame.m in Sources */,

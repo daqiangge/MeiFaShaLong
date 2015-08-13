@@ -27,7 +27,7 @@
 
 - (void)aaa
 {
-    LQCalendarView *c = [LQCalendarView calendarWithDays:-150 showType:CalendarShowTypeSingle singleShowMonth:1 frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    LQCalendarView *c = [LQCalendarView calendarWithDays:-150 showType:CalendarShowTypeSingle singleShowMonth:1 frame:CGRectMake(0, 100, self.view.frame.size.width, 300)];
     
     // 此处用到MJ大神开发的框架，根据自己需求调整是否需要
     c.modelArr = [TicketModel objectArrayWithKeyValuesArray:@[@{@"year":@2015, @"month":@8, @"day":@10,

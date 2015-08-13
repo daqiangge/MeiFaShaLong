@@ -11,6 +11,7 @@
 #import "RMCollectionCell.h"
 #import "RMCalendarMonthHeaderView.h"
 #import "RMCalendarLogic.h"
+#import "LQCalendarFooterView.h"
 
 @interface LQCalendarView()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -83,6 +84,7 @@ static NSString *DayCell = @"DayCell";
     [self.collectionView registerClass:[RMCollectionCell class] forCellWithReuseIdentifier:DayCell];
     
     [self.collectionView registerClass:[RMCalendarMonthHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:MonthHeader];
+    [self.collectionView registerClass:[LQCalendarFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer"];
     
     //    self.collectionView.bounces = NO;//将网格视图的下拉效果关闭
     
@@ -90,7 +92,7 @@ static NSString *DayCell = @"DayCell";
     
     self.collectionView.dataSource = self;//实现网格视图的dataSource
     
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor redColor];
     
     [self addSubview:self.collectionView];
     
@@ -150,6 +152,16 @@ static NSString *DayCell = @"DayCell";
         monthHeader.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8f];
         reusableview = monthHeader;
     }
+    
+    if (kind == UICollectionElementKindSectionFooter){
+        
+        LQCalendarFooterView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer" forIndexPath:indexPath];
+        footerview.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.8f];
+        
+        reusableview = footerview;
+        
+    }
+    
     return reusableview;
     
 }
