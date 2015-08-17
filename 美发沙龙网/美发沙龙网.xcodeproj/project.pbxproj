@@ -100,6 +100,9 @@
 		D546A3E11B5FBEB40003A581 /* LQHomeModularView.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */; };
 		D546A41B1B5FCECC0003A581 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A41A1B5FCECC0003A581 /* UIView+Extension.m */; };
 		D56FC34B1B764E8D00862568 /* LQNewsWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */; };
+		D5A9B7261B803F0A00645B13 /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A9B7211B803F0A00645B13 /* CustomURLCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D5A9B7271B803F0A00645B13 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A9B7231B803F0A00645B13 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D5A9B7281B803F0A00645B13 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A9B7251B803F0A00645B13 /* Util.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +307,12 @@
 		D546A41A1B5FCECC0003A581 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		D56FC3491B764E8D00862568 /* LQNewsWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewsWebVC.h; sourceTree = "<group>"; };
 		D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewsWebVC.m; sourceTree = "<group>"; };
+		D5A9B7201B803F0A00645B13 /* CustomURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLCache.h; sourceTree = "<group>"; };
+		D5A9B7211B803F0A00645B13 /* CustomURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLCache.m; sourceTree = "<group>"; };
+		D5A9B7221B803F0A00645B13 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		D5A9B7231B803F0A00645B13 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		D5A9B7241B803F0A00645B13 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		D5A9B7251B803F0A00645B13 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +544,7 @@
 		84CEF0631B5E36F00017D798 /* Lib(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				D5A9B71F1B803F0A00645B13 /* MBProgressHUD */,
 				84E98F131B7450C60022D47D /* SDWebImage */,
 				84835C181B72FF2C001859E9 /* TouchJSON */,
 				840A005F1B72ED99007F7E78 /* AFNetworking */,
@@ -897,6 +907,19 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D5A9B71F1B803F0A00645B13 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D5A9B7201B803F0A00645B13 /* CustomURLCache.h */,
+				D5A9B7211B803F0A00645B13 /* CustomURLCache.m */,
+				D5A9B7221B803F0A00645B13 /* MBProgressHUD.h */,
+				D5A9B7231B803F0A00645B13 /* MBProgressHUD.m */,
+				D5A9B7241B803F0A00645B13 /* Util.h */,
+				D5A9B7251B803F0A00645B13 /* Util.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1011,11 +1034,13 @@
 				840A00951B72ED9A007F7E78 /* NSString+MJExtension.m in Sources */,
 				849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */,
 				84E98F3D1B7450C60022D47D /* SDWebImagePrefetcher.m in Sources */,
+				D5A9B7281B803F0A00645B13 /* Util.m in Sources */,
 				840A00851B72ED9A007F7E78 /* AFHTTPRequestOperation.m in Sources */,
 				840A008E1B72ED9A007F7E78 /* MJExtensionConst.m in Sources */,
 				84835C211B72FF2C001859E9 /* CJSONSerializer.m in Sources */,
 				845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */,
 				84E98F3A1B7450C60022D47D /* SDWebImageDownloader.m in Sources */,
+				D5A9B7271B803F0A00645B13 /* MBProgressHUD.m in Sources */,
 				840F65311B6F428C0024B11A /* UIView_extra.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
 				840A00861B72ED9A007F7E78 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1035,6 +1060,7 @@
 				849709991B632FD400C497B6 /* NSString+LQExtension.m in Sources */,
 				84DF631A1B5F873C00B3BF63 /* MASCompositeConstraint.m in Sources */,
 				84835C311B733AC7001859E9 /* LQNewsClass.m in Sources */,
+				D5A9B7261B803F0A00645B13 /* CustomURLCache.m in Sources */,
 				84CEF0741B5E36F00017D798 /* main.m in Sources */,
 				84E98F401B7450C60022D47D /* UIImage+MultiFormat.m in Sources */,
 				84DF631C1B5F873C00B3BF63 /* MASConstraintMaker.m in Sources */,
@@ -1148,7 +1174,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1185,7 +1211,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1201,7 +1227,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 			};
 			name = Debug;
 		};
@@ -1215,7 +1241,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 			};
 			name = Release;
 		};
@@ -1234,7 +1260,7 @@
 				INFOPLIST_FILE = "美发沙龙网Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
 			};
 			name = Debug;
@@ -1250,7 +1276,7 @@
 				INFOPLIST_FILE = "美发沙龙网Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
 			};
 			name = Release;

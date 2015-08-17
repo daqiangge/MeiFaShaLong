@@ -18,6 +18,7 @@
     #import "MJExtension.h"
     #import "CJSONDeserializer.h"
     #import "CJSONSerializer.h"
+    #import "MBProgressHUD.h"
     #import "UIImageView+WebCache.h"
 
     #import "UIView+Extension.h"

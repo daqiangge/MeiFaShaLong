@@ -100,6 +100,8 @@
 #pragma mark - 网络请求
 - (void)requestAllNewsClass
 {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsClass.php";
 
@@ -107,9 +109,13 @@
 
         self.newsClass = [LQNewsClass objectWithKeyValues:operation.responseString];
         LQLog(@"123123");
+        
+        [hud hide:YES];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
+        
+        [hud hide:YES];
     }];
 }
 

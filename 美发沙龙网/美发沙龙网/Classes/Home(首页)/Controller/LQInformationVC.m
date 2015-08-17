@@ -204,6 +204,8 @@
 
 - (void)requestGetNewsList
 {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsList.php";
     NSDictionary *parameters = @{@"classid":self.classid,@"pageSize":@"10"};
@@ -214,8 +216,12 @@
         self.newsListArray = [NSMutableArray arrayWithArray:newsList.data];
         [self.informationTableView reloadData];
         
+        [hud hide:YES];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
+        
+        [hud hide:YES];
     }];
 }
 

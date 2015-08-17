@@ -65,6 +65,8 @@
 #pragma mark - 网络请求
 - (void)RequsetNewsList
 {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsList.php";
     NSDictionary *parameters = @{@"classid":self.classid,@"pageSize":@"20"};
@@ -75,8 +77,12 @@
         self.newsListArray = [NSMutableArray arrayWithArray:newsList.data];
         [self.tableView reloadData];
         
+        [hud hide:YES];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
+        
+        [hud hide:YES];
     }];
 }
 
