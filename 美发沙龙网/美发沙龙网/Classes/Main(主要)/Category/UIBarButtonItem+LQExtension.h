@@ -12,4 +12,6 @@
 
 + (UIBarButtonItem *)barButtonItemWithImageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName target:(id)target action:(SEL)action;
 
++ (NSArray *)barbarButtonItemWithImageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName target:(id)target action:(SEL)action space:(int)space;
+
 @end

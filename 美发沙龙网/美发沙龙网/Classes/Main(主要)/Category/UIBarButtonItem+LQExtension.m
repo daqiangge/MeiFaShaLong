@@ -20,4 +20,15 @@
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
++ (NSArray *)barbarButtonItemWithImageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName target:(id)target action:(SEL)action space:(int)space
+{
+    
+    UIBarButtonItem *BarButton = [UIBarButtonItem barButtonItemWithImageName:imageName selectedImageName:selectedImageName target:target action:action];
+    //调整间距
+    UIBarButtonItem *navigationSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    navigationSpacer.width = space;
+    
+    return [NSArray arrayWithObjects:navigationSpacer,BarButton, nil];
+}
+
 @end
