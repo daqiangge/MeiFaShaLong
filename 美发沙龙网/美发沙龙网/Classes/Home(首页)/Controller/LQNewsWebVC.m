@@ -7,6 +7,7 @@
 //
 
 #import "LQNewsWebVC.h"
+#import "LQWebView.h"
 
 @interface LQNewsWebVC ()<UIWebViewDelegate>
 
@@ -27,7 +28,7 @@
 
 - (void)doLoading
 {
-    UIWebView *webView = [[UIWebView alloc] init];
+    LQWebView *webView = [[LQWebView alloc] init];
     webView.frame = CGRectMake(0, Navigation_Height, LQScreen_Width, LQScreen_Height-Navigation_Height);
     webView.scalesPageToFit = YES;
     webView.delegate = self;
@@ -46,6 +47,9 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    
+    //去除长按后出现的文本选取框
+    [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
 }
 
 @end

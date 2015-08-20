@@ -12,4 +12,6 @@
 
 - (CGSize)calculateStringSizeWithMaxSize:(CGSize)maxSize font:(UIFont *)font;
 
+-(BOOL)isChinese:(NSString*)c;
+
 @end

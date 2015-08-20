@@ -18,4 +18,20 @@
     return size;
 }
 
+- (BOOL)isChinese:(NSString*)c
+{
+    int strlength = 0;
+    char* p = (char*)[c cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[c lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+    }
+    return ((strlength/2)==1)?YES:NO;
+}
+
 @end

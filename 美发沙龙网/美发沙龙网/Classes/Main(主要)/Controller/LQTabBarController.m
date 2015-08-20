@@ -70,6 +70,8 @@
 - (void)addChildVC:(UIViewController *)childVC tabBarTitle:(NSString *)tabBarTitle navgationTitle:(NSString *)navgationTitle imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
     LQNavigationController *childNav = [[LQNavigationController alloc] initWithRootViewController:childVC];
+    [childNav.tabBarItem setTitlePositionAdjustment:UIOffsetMake(-5, -5)];
+    [childNav.tabBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
     childNav.tabBarItem.title        = tabBarTitle;
     childVC.navigationItem.title     = navgationTitle;
     childNav.tabBarItem.image        = [UIImage imageNamed:imageName];

@@ -33,6 +33,10 @@
 		840F65381B6F63060024B11A /* LQRegisteredAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F65361B6F63060024B11A /* LQRegisteredAccountVC.m */; };
 		840F65391B6F63060024B11A /* LQRegisteredAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840F65371B6F63060024B11A /* LQRegisteredAccountVC.xib */; };
 		8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */; };
+		8419E8571B85CD0700D18798 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8419E8561B85CD0700D18798 /* 37x-Checkmark.png */; };
+		843CED141B8560B8007631C6 /* LQWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CED131B8560B8007631C6 /* LQWebView.m */; };
+		843CED171B857CA4007631C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CED161B857CA4007631C6 /* AppDelegate.m */; };
+		843CED1A1B857CB8007631C6 /* Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CED191B857CB8007631C6 /* Regex.m */; };
 		845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */; };
 		845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */; };
 		847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C0C9C1B6B66DD00340448 /* UIColor+LQExtension.m */; };
@@ -51,7 +55,6 @@
 		849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A41B63816C00C497B6 /* LQHomeRollingView.m */; };
 		849709A81B6389CD00C497B6 /* LQInformationBtnGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */; };
 		84AA3D271B61E474003A5E73 /* UIButton+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */; };
-		84CEF0731B5E36F00017D798 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0671B5E36F00017D798 /* AppDelegate.m */; };
 		84CEF0741B5E36F00017D798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0681B5E36F00017D798 /* main.m */; };
 		84CEF0831B5E38FA0017D798 /* LQLeftMeunVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0811B5E38FA0017D798 /* LQLeftMeunVC.m */; };
 		84CEF08E1B5E39BC0017D798 /* LQHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF08C1B5E39BC0017D798 /* LQHomeVC.m */; };
@@ -168,6 +171,13 @@
 		840F65371B6F63060024B11A /* LQRegisteredAccountVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQRegisteredAccountVC.xib; sourceTree = "<group>"; };
 		8417A77C1B607CD700B80F54 /* LQHomePageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomePageControlView.h; sourceTree = "<group>"; };
 		8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomePageControlView.m; sourceTree = "<group>"; };
+		8419E8561B85CD0700D18798 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
+		843CED121B8560B8007631C6 /* LQWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQWebView.h; sourceTree = "<group>"; };
+		843CED131B8560B8007631C6 /* LQWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQWebView.m; sourceTree = "<group>"; };
+		843CED151B857CA4007631C6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		843CED161B857CA4007631C6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		843CED181B857CB8007631C6 /* Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Regex.h; sourceTree = "<group>"; };
+		843CED191B857CB8007631C6 /* Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Regex.m; sourceTree = "<group>"; };
 		8452437D1B69CBC2006E8E26 /* LQNewFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewFeatureVC.h; sourceTree = "<group>"; };
 		8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewFeatureVC.m; sourceTree = "<group>"; };
 		8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQNewFeatureVC.xib; sourceTree = "<group>"; };
@@ -204,8 +214,6 @@
 		849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQInformationBtnGroupView.m; sourceTree = "<group>"; };
 		84AA3D251B61E474003A5E73 /* UIButton+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LQExtension.h"; sourceTree = "<group>"; };
 		84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LQExtension.m"; sourceTree = "<group>"; };
-		84CEF0661B5E36F00017D798 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		84CEF0671B5E36F00017D798 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		84CEF0681B5E36F00017D798 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84CEF0801B5E38FA0017D798 /* LQLeftMeunVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQLeftMeunVC.h; sourceTree = "<group>"; };
 		84CEF0811B5E38FA0017D798 /* LQLeftMeunVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQLeftMeunVC.m; sourceTree = "<group>"; };
@@ -527,6 +535,8 @@
 		84CEF0621B5E36F00017D798 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				843CED151B857CA4007631C6 /* AppDelegate.h */,
+				843CED161B857CA4007631C6 /* AppDelegate.m */,
 				84F3CA831B5F36CE00DD44A9 /* LQTabBarController.h */,
 				84F3CA841B5F36CE00DD44A9 /* LQTabBarController.m */,
 				84F3CA861B5F3F2E00DD44A9 /* LQBaseViewController.h */,
@@ -565,8 +575,8 @@
 		84CEF0651B5E36F00017D798 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				84CEF0661B5E36F00017D798 /* AppDelegate.h */,
-				84CEF0671B5E36F00017D798 /* AppDelegate.m */,
+				843CED181B857CB8007631C6 /* Regex.h */,
+				843CED191B857CB8007631C6 /* Regex.m */,
 				84CEF0681B5E36F00017D798 /* main.m */,
 			);
 			path = Other;
@@ -575,6 +585,8 @@
 		84CEF0691B5E36F00017D798 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				843CED121B8560B8007631C6 /* LQWebView.h */,
+				843CED131B8560B8007631C6 /* LQWebView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -910,6 +922,7 @@
 		D5A9B71F1B803F0A00645B13 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
+				8419E8561B85CD0700D18798 /* 37x-Checkmark.png */,
 				D5A9B7201B803F0A00645B13 /* CustomURLCache.h */,
 				D5A9B7211B803F0A00645B13 /* CustomURLCache.m */,
 				D5A9B7221B803F0A00645B13 /* MBProgressHUD.h */,
@@ -1003,6 +1016,7 @@
 			files = (
 				84F3CA7C1B5F284E00DD44A9 /* LQCommunityVC.xib in Resources */,
 				840F65391B6F63060024B11A /* LQRegisteredAccountVC.xib in Resources */,
+				8419E8571B85CD0700D18798 /* 37x-Checkmark.png in Resources */,
 				84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */,
 				840F652A1B6F3C6A0024B11A /* LQLoginVC.xib in Resources */,
 				845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */,
@@ -1031,6 +1045,7 @@
 				84835C3A1B733C2F001859E9 /* LQNewsBClass.m in Sources */,
 				84835C371B733B97001859E9 /* LQNewsClassId.m in Sources */,
 				840A00881B72ED9A007F7E78 /* AFNetworkReachabilityManager.m in Sources */,
+				843CED1A1B857CB8007631C6 /* Regex.m in Sources */,
 				840A00951B72ED9A007F7E78 /* NSString+MJExtension.m in Sources */,
 				849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */,
 				84E98F3D1B7450C60022D47D /* SDWebImagePrefetcher.m in Sources */,
@@ -1042,7 +1057,9 @@
 				84E98F3A1B7450C60022D47D /* SDWebImageDownloader.m in Sources */,
 				D5A9B7271B803F0A00645B13 /* MBProgressHUD.m in Sources */,
 				840F65311B6F428C0024B11A /* UIView_extra.m in Sources */,
+				843CED141B8560B8007631C6 /* LQWebView.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
+				843CED171B857CA4007631C6 /* AppDelegate.m in Sources */,
 				840A00861B72ED9A007F7E78 /* AFHTTPRequestOperationManager.m in Sources */,
 				847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */,
 				84E98F431B7450C60022D47D /* UIImageView+WebCache.m in Sources */,
@@ -1066,7 +1083,6 @@
 				84DF631C1B5F873C00B3BF63 /* MASConstraintMaker.m in Sources */,
 				84DF63221B5F873C00B3BF63 /* View+MASAdditions.m in Sources */,
 				840A00871B72ED9A007F7E78 /* AFHTTPSessionManager.m in Sources */,
-				84CEF0731B5E36F00017D798 /* AppDelegate.m in Sources */,
 				84E98F421B7450C60022D47D /* UIImageView+HighlightedWebCache.m in Sources */,
 				D56FC34B1B764E8D00862568 /* LQNewsWebVC.m in Sources */,
 				D546A3DE1B5FBE8E0003A581 /* LQHomeRollingScrollView.m in Sources */,
@@ -1174,7 +1190,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1211,7 +1227,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1227,7 +1243,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 			};
 			name = Debug;
 		};
@@ -1241,7 +1257,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 			};
 			name = Release;
 		};
@@ -1260,7 +1276,7 @@
 				INFOPLIST_FILE = "美发沙龙网Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
 			};
 			name = Debug;
@@ -1276,7 +1292,7 @@
 				INFOPLIST_FILE = "美发沙龙网Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
 			};
 			name = Release;
