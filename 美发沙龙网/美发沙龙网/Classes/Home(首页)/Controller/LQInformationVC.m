@@ -131,6 +131,7 @@
         tableView.dataSource   = self;
         [self.view addSubview:tableView];
         _informationTableView  = tableView;
+        
     }
     
     return _informationTableView;
