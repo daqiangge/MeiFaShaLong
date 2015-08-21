@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -15,6 +16,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQh-6V-Gm2">
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <color key="backgroundColor" red="0.95992316990000004" green="0.95992316990000004" blue="0.95992316990000004" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ4-Ho-z5A">
                     <rect key="frame" x="0.0" y="84" width="600" height="101"/>
                     <subviews>
@@ -79,13 +84,17 @@
             <color key="backgroundColor" red="0.95312153701241131" green="0.95312153701241131" blue="0.95312153701241131" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="e2K-x2-Yf8" secondAttribute="trailing" constant="20" id="BBY-XU-OLm"/>
+                <constraint firstItem="rQh-6V-Gm2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Dlw-Rz-Jlj"/>
+                <constraint firstAttribute="bottom" secondItem="rQh-6V-Gm2" secondAttribute="bottom" id="Iox-Qb-HOe"/>
                 <constraint firstItem="e2K-x2-Yf8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Reg-LC-4ia"/>
                 <constraint firstItem="DZ4-Ho-z5A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="b7c-Wy-tH0"/>
                 <constraint firstAttribute="trailing" secondItem="VQ9-Zz-n2I" secondAttribute="trailing" constant="34" id="bqq-oS-VnI"/>
+                <constraint firstAttribute="trailing" secondItem="rQh-6V-Gm2" secondAttribute="trailing" id="giv-4M-c0R"/>
                 <constraint firstAttribute="centerX" secondItem="e2K-x2-Yf8" secondAttribute="centerX" id="lSz-bd-3DC"/>
                 <constraint firstItem="VQ9-Zz-n2I" firstAttribute="top" secondItem="e2K-x2-Yf8" secondAttribute="bottom" constant="20" id="laf-sv-cKE"/>
                 <constraint firstItem="DZ4-Ho-z5A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mtd-Ze-wQj"/>
                 <constraint firstAttribute="trailing" secondItem="DZ4-Ho-z5A" secondAttribute="trailing" id="rFI-Eh-B8r"/>
+                <constraint firstItem="rQh-6V-Gm2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="s3l-kI-Yd6"/>
                 <constraint firstItem="e2K-x2-Yf8" firstAttribute="top" secondItem="DZ4-Ho-z5A" secondAttribute="bottom" constant="20" id="xc9-hk-Jd7"/>
             </constraints>
             <point key="canvasLocation" x="-438" y="70"/>

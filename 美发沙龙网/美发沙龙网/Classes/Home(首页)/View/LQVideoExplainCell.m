@@ -8,6 +8,7 @@
 
 #import "LQVideoExplainCell.h"
 #import "LQVideoExplainCellFrame.h"
+#import "LQVideoModel.h"
 
 @interface LQVideoExplainCell()
 
@@ -20,15 +21,14 @@
 
 + (LQVideoExplainCell *)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
 {
-    NSString *idenifier = @"LQVideoExplainCell";
-    UINib *nib = [UINib nibWithNibName:idenifier bundle:nil];
-    [tableView registerNib:nib forCellReuseIdentifier:idenifier];
-    
     LQVideoExplainCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LQVideoExplainCell"];
-    cell.backgroundColor = RGB(246, 246, 246);
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (cell == nil)
+    {
+        cell = [[LQVideoExplainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LQVideoExplainCell"];
+    }
     
-    cell.contentLable.text = @"我湿\n答答\n啊地\n\n方各位\n 啊的身\n份嘎\n\n的水电费人工费";
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -38,11 +38,18 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        UILabel *lable = [[UILabel alloc] init];
-        lable.frame = CGRectMake(15, 15, 60, 15);
-        lable.font = [UIFont systemFontOfSize:15];
-        [self addSubview:lable];
+        UILabel *titleLable = [[UILabel alloc] init];
+        titleLable.frame = CGRectMake(15, 15, 60, 15);
+        titleLable.font = [UIFont systemFontOfSize:15];
+        [self addSubview:titleLable];
+        self.titleLable = titleLable;
         
+        UILabel *contentLable = [[UILabel alloc] init];
+        contentLable.font = ContentLable_Font;
+        contentLable.textColor = [UIColor lightGrayColor];
+        contentLable.numberOfLines = 0;
+        [self addSubview:contentLable];
+        self.contentLable = contentLable;
         
     }
     return self;
@@ -51,6 +58,13 @@
 - (void)setCellFrame:(LQVideoExplainCellFrame *)cellFrame
 {
     _cellFrame = cellFrame;
+    
+    LQVideoModel *videoModel = cellFrame.videoModel;
+    
+    self.contentLable.frame = CGRectMake(15, CGRectGetMaxY(self.titleLable.frame)+10, LQScreen_Width-30, cellFrame.contentHeight);
+    
+    self.titleLable.text = videoModel.title;
+    self.contentLable.text = videoModel.content;
 }
 
 @end

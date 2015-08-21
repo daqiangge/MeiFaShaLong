@@ -30,7 +30,7 @@
     [tableView registerNib:nib forCellReuseIdentifier:idenifier];
     
     LQVideoNumberCell *cell = [tableView dequeueReusableCellWithIdentifier:idenifier];
-    cell.backgroundColor = RGB(246, 246, 246);
+    cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     for (id obj in cell.subviews)

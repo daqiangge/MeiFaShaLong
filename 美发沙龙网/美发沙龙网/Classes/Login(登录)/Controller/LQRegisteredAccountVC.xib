@@ -19,6 +19,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8T6-Bn-GUe">
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <color key="backgroundColor" red="0.95992316988950277" green="0.95992316988950277" blue="0.95992316988950277" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbq-rN-xKH">
                     <rect key="frame" x="0.0" y="84" width="600" height="152"/>
                     <subviews>
@@ -104,10 +108,14 @@
             <constraints>
                 <constraint firstItem="Mbq-rN-xKH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CX3-Lx-nAh"/>
                 <constraint firstItem="b6C-ge-SdJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="DP2-wW-xNd"/>
+                <constraint firstAttribute="bottom" secondItem="8T6-Bn-GUe" secondAttribute="bottom" id="FW2-E5-YJr"/>
                 <constraint firstItem="b6C-ge-SdJ" firstAttribute="top" secondItem="Mbq-rN-xKH" secondAttribute="bottom" constant="20" id="GFf-kA-jap"/>
                 <constraint firstAttribute="trailing" secondItem="Mbq-rN-xKH" secondAttribute="trailing" id="OCi-p3-Qvj"/>
+                <constraint firstItem="8T6-Bn-GUe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PEI-kK-UBi"/>
                 <constraint firstItem="Mbq-rN-xKH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="RcA-hc-Q4b"/>
                 <constraint firstAttribute="trailing" secondItem="b6C-ge-SdJ" secondAttribute="trailing" constant="20" id="waa-SF-H4y"/>
+                <constraint firstAttribute="trailing" secondItem="8T6-Bn-GUe" secondAttribute="trailing" id="xCh-Ik-YYf"/>
+                <constraint firstItem="8T6-Bn-GUe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="z7T-ER-4v6"/>
             </constraints>
             <point key="canvasLocation" x="-26" y="309"/>
         </view>

@@ -61,7 +61,6 @@
 		841810991B87024600BC372D /* LQVideoNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841810971B87024600BC372D /* LQVideoNumberCell.m */; };
 		8418109A1B87024600BC372D /* LQVideoNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841810981B87024600BC372D /* LQVideoNumberCell.xib */; };
 		8418109E1B8713E800BC372D /* LQVideoExplainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418109C1B8713E800BC372D /* LQVideoExplainCell.m */; };
-		8418109F1B8713E800BC372D /* LQVideoExplainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8418109D1B8713E800BC372D /* LQVideoExplainCell.xib */; };
 		841810A31B871EDF00BC372D /* LQVideoExplainCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 841810A21B871EDF00BC372D /* LQVideoExplainCellFrame.m */; };
 		841810A61B871F6300BC372D /* LQVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 841810A51B871F6300BC372D /* LQVideoModel.m */; };
 		8419E8571B85CD0700D18798 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8419E8561B85CD0700D18798 /* 37x-Checkmark.png */; };
@@ -156,6 +155,7 @@
 		D5E0F3011B85E58B005B19DC /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E0F2E61B85E58B005B19DC /* UIScrollView+MJExtension.m */; };
 		D5E0F3021B85E58B005B19DC /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E0F2E81B85E58B005B19DC /* UIScrollView+MJRefresh.m */; };
 		D5E0F3031B85E58B005B19DC /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E0F2EA1B85E58B005B19DC /* UIView+MJExtension.m */; };
+		D5E9058B1B873D9100D5D1B4 /* LQVideoModels.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E9058A1B873D9100D5D1B4 /* LQVideoModels.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,7 +261,6 @@
 		841810981B87024600BC372D /* LQVideoNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQVideoNumberCell.xib; sourceTree = "<group>"; };
 		8418109B1B8713E800BC372D /* LQVideoExplainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQVideoExplainCell.h; sourceTree = "<group>"; };
 		8418109C1B8713E800BC372D /* LQVideoExplainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQVideoExplainCell.m; sourceTree = "<group>"; };
-		8418109D1B8713E800BC372D /* LQVideoExplainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQVideoExplainCell.xib; sourceTree = "<group>"; };
 		841810A11B871EDF00BC372D /* LQVideoExplainCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQVideoExplainCellFrame.h; sourceTree = "<group>"; };
 		841810A21B871EDF00BC372D /* LQVideoExplainCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQVideoExplainCellFrame.m; sourceTree = "<group>"; };
 		841810A41B871F6300BC372D /* LQVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQVideoModel.h; sourceTree = "<group>"; };
@@ -454,6 +453,8 @@
 		D5E0F2E81B85E58B005B19DC /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		D5E0F2E91B85E58B005B19DC /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		D5E0F2EA1B85E58B005B19DC /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		D5E905891B873D9100D5D1B4 /* LQVideoModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQVideoModels.h; sourceTree = "<group>"; };
+		D5E9058A1B873D9100D5D1B4 /* LQVideoModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQVideoModels.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -537,12 +538,12 @@
 			path = LeftSlideViewController;
 			sourceTree = "<group>";
 		};
-		8418104F1B86AB8E00BC372D /* WorkSapces */ = {
+		8418104F1B86AB8E00BC372D /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
 				8418104D1B86AB2500BC372D /* libsqlite3.dylib */,
 			);
-			name = WorkSapces;
+			name = FrameWork;
 			sourceTree = "<group>";
 		};
 		841810501B86ABEB00BC372D /* KeyValue */ = {
@@ -611,6 +612,8 @@
 				841810A21B871EDF00BC372D /* LQVideoExplainCellFrame.m */,
 				841810A41B871F6300BC372D /* LQVideoModel.h */,
 				841810A51B871F6300BC372D /* LQVideoModel.m */,
+				D5E905891B873D9100D5D1B4 /* LQVideoModels.h */,
+				D5E9058A1B873D9100D5D1B4 /* LQVideoModels.m */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -974,7 +977,7 @@
 		84EFEA611B5CC6670049D6FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8418104F1B86AB8E00BC372D /* WorkSapces */,
+				8418104F1B86AB8E00BC372D /* FrameWork */,
 				84EFEA711B5CC6670049D6FA /* Images.xcassets */,
 				84EFEA681B5CC6670049D6FA /* _____.xcdatamodeld */,
 				84EFEA621B5CC6670049D6FA /* Info.plist */,
@@ -1124,7 +1127,6 @@
 				841810981B87024600BC372D /* LQVideoNumberCell.xib */,
 				8418109B1B8713E800BC372D /* LQVideoExplainCell.h */,
 				8418109C1B8713E800BC372D /* LQVideoExplainCell.m */,
-				8418109D1B8713E800BC372D /* LQVideoExplainCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1346,7 +1348,6 @@
 				8418109A1B87024600BC372D /* LQVideoNumberCell.xib in Resources */,
 				841810811B86C35D00BC372D /* kr-video-player-play@2x.png in Resources */,
 				841810831B86C35D00BC372D /* kr-video-player-point@2x.png in Resources */,
-				8418109F1B8713E800BC372D /* LQVideoExplainCell.xib in Resources */,
 				84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */,
 				841810821B86C35D00BC372D /* kr-video-player-play@3x.png in Resources */,
 				840F652A1B6F3C6A0024B11A /* LQLoginVC.xib in Resources */,
@@ -1402,6 +1403,7 @@
 				D5A9B7271B803F0A00645B13 /* MBProgressHUD.m in Sources */,
 				841810A31B871EDF00BC372D /* LQVideoExplainCellFrame.m in Sources */,
 				D5E0F3001B85E58B005B19DC /* MJRefreshConst.m in Sources */,
+				D5E9058B1B873D9100D5D1B4 /* LQVideoModels.m in Sources */,
 				D5E0F3011B85E58B005B19DC /* UIScrollView+MJExtension.m in Sources */,
 				841810621B86ABEB00BC372D /* FMResultSet.m in Sources */,
 				841810991B87024600BC372D /* LQVideoNumberCell.m in Sources */,

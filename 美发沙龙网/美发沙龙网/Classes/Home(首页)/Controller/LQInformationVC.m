@@ -244,6 +244,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     LQNewsListContent *newsContent = self.newsListArray[indexPath.row];
     
     if ([self.newsList.table isEqualToString:@"news"])
@@ -263,8 +265,6 @@
         
         return;
     }
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 

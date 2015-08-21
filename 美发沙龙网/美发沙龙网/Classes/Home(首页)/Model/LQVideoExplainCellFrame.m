@@ -15,10 +15,10 @@
 {
     _videoModel = videoModel;
     
-    CGSize contentSize = [videoModel.content calculateStringSizeWithMaxSize:CGSizeMake(LQScreen_Height-30, MAXFLOAT) font:[UIFont systemFontOfSize:15]];
+    CGSize contentSize = [videoModel.content calculateStringSizeWithMaxSize:CGSizeMake(LQScreen_Width-30, MAXFLOAT) font:ContentLable_Font];
     
     self.contentHeight = contentSize.height;
-    self.cellheight =  self.contentHeight + 55;
+    self.cellheight =  self.contentHeight + 50;
 }
 
 @end

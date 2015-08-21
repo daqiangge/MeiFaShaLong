@@ -11,11 +11,15 @@
 #import "LQVideoPlayerTitleCell.h"
 #import "LQVideoNumberCell.h"
 #import "LQVideoExplainCell.h"
+#import "LQVideoExplainCellFrame.h"
+#import "LQVideoModel.h"
+#import "LQVideoModels.h"
 
 @interface LQVideoPlayerVC ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) KrVideoPlayerController  *videoController;
 @property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, strong) LQVideoModels *videoModels;
 
 @end
 
@@ -26,13 +30,13 @@
     if (!_tableView)
     {
         CGFloat x = 0;
-        CGFloat y = self.videoController.view.height + 20;
+        CGFloat y = LQScreen_Width*(9.0/16.0) + 20;
         CGFloat w = LQScreen_Width;
         CGFloat h = LQScreen_Height - y;
         
         UITableView *tableView    = [[UITableView alloc] init];
         tableView.frame           = CGRectMake(x, y, w, h);
-        tableView.backgroundColor = [UIColor redColor];
+        tableView.backgroundColor = RGB(246, 246, 246);
         tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
         tableView.delaysContentTouches = NO;//使列表上按钮出现高亮状态
         tableView.dataSource = self;
@@ -52,15 +56,16 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor blackColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self doLoading];
+    [self videoRequest];
 }
 
 - (void)doLoading
 {
-    [self playVideo];
-    
     self.tableView.hidden = NO;
+    [self playVideo];
 }
 
 - (void)playVideo
@@ -95,14 +100,31 @@
 - (void)toolbarHidden:(BOOL)Bool
 {
     self.navigationController.navigationBar.hidden = Bool;
-    self.tabBarController.tabBar.hidden = Bool;
+//    self.tabBarController.tabBar.hidden = Bool;
     [[UIApplication sharedApplication] setStatusBarHidden:Bool withAnimation:UIStatusBarAnimationFade];
+}
+
+#pragma mark - 网络请求
+- (void)videoRequest
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSDictionary *dic1 = @{@"title":@"简介",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
+        NSDictionary *dic2 = @{@"title":@"影片介绍",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
+        NSDictionary *dic3 = @{@"title":@"使用帮助",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
+        
+        NSDictionary *videoModels = @{@"videoModels":@[dic1,dic2,dic3]};
+        
+        self.videoModels = [LQVideoModels objectWithKeyValues:videoModels];
+        
+        [self.tableView reloadData];
+    });
 }
 
 #pragma mark - UITableViewDataSource,UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [self.videoModels.videoModels count] + 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,16 +143,13 @@
         return cell;
     }
     
-    if (indexPath.row == 2)
-    {
-        LQVideoExplainCell *cell = [LQVideoExplainCell cellWithTableView:tableView indexPath:indexPath];
+    LQVideoExplainCell *cell = [LQVideoExplainCell cellWithTableView:tableView indexPath:indexPath];
         
-        return cell;
-    }
+    LQVideoExplainCellFrame * cellFrame = [[LQVideoExplainCellFrame alloc] init];
+    cellFrame.videoModel = self.videoModels.videoModels[indexPath.row - 2];
     
-    
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-    
+    cell.cellFrame = cellFrame;
+        
     return cell;
 }
 
@@ -146,14 +165,10 @@
         return 100;
     }
     
-    if (indexPath.row == 2)
-    {
-        NSString *str = @"我湿\n答答\n啊地\n\n方各位\n 啊的身\n份嘎\n\n的水电费人工费";
-        CGSize size = [str calculateStringSizeWithMaxSize:CGSizeMake(LQScreen_Width-30, MAXFLOAT) font:[UIFont systemFontOfSize:15]];
-        return size.height + 55;
-    }
-    
-    return 100;
+    LQVideoExplainCellFrame * cellFrame = [[LQVideoExplainCellFrame alloc] init];
+    cellFrame.videoModel = self.videoModels.videoModels[indexPath.row - 2];
+        
+    return cellFrame.cellheight;
 }
 
 #pragma mark - viewWillDisappear

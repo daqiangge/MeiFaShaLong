@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define ContentLable_Font ([UIFont systemFontOfSize:14])
+
 @class LQVideoModel;
 
 @interface LQVideoExplainCellFrame : NSObject
