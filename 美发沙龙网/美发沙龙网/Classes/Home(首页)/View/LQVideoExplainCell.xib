@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="KGk-i7-Jjw" customClass="LQVideoExplainCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="介绍" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv4-AJ-Hc9">
+                        <rect key="frame" x="15" y="15" width="34" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="CtH-a8-pW9"/>
+                            <constraint firstAttribute="width" constant="34" id="n6s-HL-fAe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhP-cb-eDC">
+                        <rect key="frame" x="15" y="47" width="280" height="60"/>
+                        <color key="backgroundColor" red="0.0039215688589999999" green="0.86666673419999996" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="nhP-cb-eDC" secondAttribute="bottom" constant="15" id="AAt-FD-nvd"/>
+                    <constraint firstItem="gv4-AJ-Hc9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Jvs-qn-R01"/>
+                    <constraint firstItem="gv4-AJ-Hc9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="NY9-Sl-Pyg"/>
+                    <constraint firstAttribute="trailing" secondItem="nhP-cb-eDC" secondAttribute="trailing" constant="15" id="eQC-KU-dhU"/>
+                    <constraint firstItem="nhP-cb-eDC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vAu-uv-1tL"/>
+                    <constraint firstItem="nhP-cb-eDC" firstAttribute="top" secondItem="gv4-AJ-Hc9" secondAttribute="bottom" constant="10" id="zQy-Cj-8ne"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLable" destination="nhP-cb-eDC" id="CUI-mT-Qgi"/>
+            </connections>
+            <point key="canvasLocation" x="305" y="210"/>
+        </tableViewCell>
+    </objects>
+</document>

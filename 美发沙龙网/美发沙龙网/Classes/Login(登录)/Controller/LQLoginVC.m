@@ -21,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.view.backgroundColor = [UIColor blackColor];
     self.navigationItem.title = @"登录";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(registeredAccount)];

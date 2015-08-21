@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor blackColor];
     self.navigationItem.title = @"注册";
     
     [self doLoading];

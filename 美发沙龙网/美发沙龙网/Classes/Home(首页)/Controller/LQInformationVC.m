@@ -15,6 +15,7 @@
 #import "LQNewsListContent.h"
 #import "LQNewsListVC.h"
 #import "LQNewsWebVC.h"
+#import "LQVideoPlayerVC.h"
 
 #define SearchBar_SeachTextField_BackgroundColor ([UIColor colorWithRed:59/255. green:59/255. blue:59/255. alpha:1])
 
@@ -26,6 +27,7 @@
 @property (nonatomic, weak) LQInformationBtnGroupView *btnGroupView;
 @property (nonatomic, weak) UITableView *informationTableView;
 @property (nonatomic, strong) NSMutableArray *newsListArray;
+@property (nonatomic, strong) LQNewsList *newsList;
 
 @end
 
@@ -50,10 +52,10 @@
     if (_searchBar == nil)
     {
         UISearchBar *searchBar = [[UISearchBar alloc] init];
-        searchBar.frame = CGRectMake(0, 58, LQScreen_Width, 44);
+        searchBar.frame        = CGRectMake(0, 58, LQScreen_Width, 44);
+        searchBar.placeholder  = @"搜索栏目内容";
         [searchBar setBackgroundImage:[UIImage imageNamed:@"navigationBar_background"]];
         [searchBar setSearchFieldBackgroundImage:[[[UIImage alloc] init] imageWithColor:SearchBar_SeachTextField_BackgroundColor size:CGSizeMake(100, 30) cornerRadius:4.0] forState:UIControlStateNormal];
-        searchBar.placeholder = @"搜索栏目内容";
         [searchBar setContentMode:UIViewContentModeLeft];
         [self.searchBarBsckgroundView addSubview:searchBar];
     }
@@ -152,7 +154,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     
     [self doLoading];
 //    [self requestGetNewClass];
@@ -205,16 +207,16 @@
 
 - (void)requestGetNewsList
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
+    MBProgressHUD *hud                     = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsList.php";
-    NSDictionary *parameters = @{@"classid":self.classid,@"pageSize":@"10"};
+    NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsList.php";
+    NSDictionary *parameters               = @{@"classid":self.classid,@"pageSize":@"10"};
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
-        self.newsListArray = [NSMutableArray arrayWithArray:newsList.data];
+        self.newsList      = [LQNewsList objectWithKeyValues:operation.responseString];
+        self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
         [self.informationTableView reloadData];
         
         [hud hide:YES];
@@ -244,10 +246,26 @@
 {
     LQNewsListContent *newsContent = self.newsListArray[indexPath.row];
     
-    LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
-    newWebVC.urlStr = newsContent.titleurl;
-    newWebVC.navigationItem.title = newsContent.classname;
-    [self.navigationController pushViewController:newWebVC animated:YES];
+    if ([self.newsList.table isEqualToString:@"news"])
+    {
+        LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
+        newWebVC.urlStr = newsContent.titleurl;
+        newWebVC.navigationItem.title = newsContent.classname;
+        [self.navigationController pushViewController:newWebVC animated:YES];
+        
+        return;
+    }
+    
+    if ([self.newsList.table isEqualToString:@"movie"])
+    {
+        LQVideoPlayerVC *videoPlayerVC = [[LQVideoPlayerVC alloc] init];
+        [self.navigationController pushViewController:videoPlayerVC animated:YES];
+        
+        return;
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

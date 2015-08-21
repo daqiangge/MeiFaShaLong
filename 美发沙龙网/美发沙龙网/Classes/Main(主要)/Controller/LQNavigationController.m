@@ -35,10 +35,11 @@
         NSArray *array = self.viewControllers;
         long int count = array.count;
         UIViewController *vc = array[count - 1];
-        vc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+        vc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     }
     
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar_background"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setShadowImage:[[UIImage alloc] init]];
     
     //设置导航栏的title为白色
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor]}];

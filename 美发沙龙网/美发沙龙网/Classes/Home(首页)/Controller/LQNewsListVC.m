@@ -11,11 +11,13 @@
 #import "LQNewsList.h"
 #import "LQNewsListContent.h"
 #import "LQNewsWebVC.h"
+#import "LQVideoPlayerVC.h"
 
 @interface LQNewsListVC ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *newsListArray;
 @property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, strong) LQNewsList *newsList;
 
 @end
 
@@ -40,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor blackColor];
     
     [self doLoading];
     [self RequsetNewsList];
@@ -73,8 +77,8 @@
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
-        self.newsListArray = [NSMutableArray arrayWithArray:newsList.data];
+        self.newsList = [LQNewsList objectWithKeyValues:operation.responseString];
+        self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
         [self.tableView reloadData];
         
         [hud hide:YES];
@@ -104,10 +108,25 @@
 {
     LQNewsListContent *newsContent = self.newsListArray[indexPath.row];
     
-    LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
-    newWebVC.urlStr = newsContent.titleurl;
-    newWebVC.navigationItem.title = newsContent.classname;
-    [self.navigationController pushViewController:newWebVC animated:YES];
+    if ([self.newsList.table isEqualToString:@"news"])
+    {
+        LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
+        newWebVC.urlStr = newsContent.titleurl;
+        newWebVC.navigationItem.title = newsContent.classname;
+        [self.navigationController pushViewController:newWebVC animated:YES];
+        
+        return;
+    }
+    
+    if ([self.newsList.table isEqualToString:@"movie"])
+    {
+        LQVideoPlayerVC *videoPlayerVC = [[LQVideoPlayerVC alloc] init];
+        [self.navigationController pushViewController:videoPlayerVC animated:YES];
+        
+        return;
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

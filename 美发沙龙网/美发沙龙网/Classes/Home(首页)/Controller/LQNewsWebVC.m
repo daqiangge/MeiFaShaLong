@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor blackColor];
+    
     [self doLoading];
 }
 
