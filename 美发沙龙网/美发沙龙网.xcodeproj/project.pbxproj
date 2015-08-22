@@ -85,6 +85,7 @@
 		849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A41B63816C00C497B6 /* LQHomeRollingView.m */; };
 		849709A81B6389CD00C497B6 /* LQInformationBtnGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */; };
 		84AA3D271B61E474003A5E73 /* UIButton+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */; };
+		84B7C60E1B88039500C16E79 /* LQVideoNumberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B7C60D1B88039500C16E79 /* LQVideoNumberVC.m */; };
 		84CEF0741B5E36F00017D798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0681B5E36F00017D798 /* main.m */; };
 		84CEF0831B5E38FA0017D798 /* LQLeftMeunVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF0811B5E38FA0017D798 /* LQLeftMeunVC.m */; };
 		84CEF08E1B5E39BC0017D798 /* LQHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF08C1B5E39BC0017D798 /* LQHomeVC.m */; };
@@ -308,6 +309,8 @@
 		849709A71B6389CD00C497B6 /* LQInformationBtnGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQInformationBtnGroupView.m; sourceTree = "<group>"; };
 		84AA3D251B61E474003A5E73 /* UIButton+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LQExtension.h"; sourceTree = "<group>"; };
 		84AA3D261B61E474003A5E73 /* UIButton+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LQExtension.m"; sourceTree = "<group>"; };
+		84B7C60C1B88039500C16E79 /* LQVideoNumberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQVideoNumberVC.h; sourceTree = "<group>"; };
+		84B7C60D1B88039500C16E79 /* LQVideoNumberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQVideoNumberVC.m; sourceTree = "<group>"; };
 		84CEF0681B5E36F00017D798 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84CEF0801B5E38FA0017D798 /* LQLeftMeunVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQLeftMeunVC.h; sourceTree = "<group>"; };
 		84CEF0811B5E38FA0017D798 /* LQLeftMeunVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQLeftMeunVC.m; sourceTree = "<group>"; };
@@ -859,6 +862,8 @@
 				D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */,
 				841810651B86C30700BC372D /* LQVideoPlayerVC.h */,
 				841810661B86C30700BC372D /* LQVideoPlayerVC.m */,
+				84B7C60C1B88039500C16E79 /* LQVideoNumberVC.h */,
+				84B7C60D1B88039500C16E79 /* LQVideoNumberVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1448,6 +1453,7 @@
 				84E81EF51B65DD890089A0A7 /* LQInformationTableViewCell.m in Sources */,
 				840A00941B72ED9A007F7E78 /* NSObject+MJProperty.m in Sources */,
 				840F65341B6F567C0024B11A /* LQOneLevelBaseVC.m in Sources */,
+				84B7C60E1B88039500C16E79 /* LQVideoNumberVC.m in Sources */,
 				84E98F371B7450C60022D47D /* SDImageCache.m in Sources */,
 				840F65291B6F3C6A0024B11A /* LQLoginVC.m in Sources */,
 				84DF631E1B5F873C00B3BF63 /* MASViewAttribute.m in Sources */,

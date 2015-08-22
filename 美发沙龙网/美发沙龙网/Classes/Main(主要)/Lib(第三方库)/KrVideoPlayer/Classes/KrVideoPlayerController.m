@@ -157,6 +157,11 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 
 - (void)playButtonClick
 {
+    if (self.contentURL == nil)
+    {
+        return;
+    }
+    
     [self play];
     self.videoControl.playButton.hidden = YES;
     self.videoControl.pauseButton.hidden = NO;

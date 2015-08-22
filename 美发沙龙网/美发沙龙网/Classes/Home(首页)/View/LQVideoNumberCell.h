@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class LQVideoNumberCell;
+
+@protocol LQVideoNumberCellDelegate <NSObject>
+
+- (void)videoNumberCellDidClickBtnWithView:(LQVideoNumberCell *)view btn:(UIButton *)btn;
+
+@end
+
+
 @interface LQVideoNumberCell : UITableViewCell
+
+@property (nonatomic, weak) id<LQVideoNumberCellDelegate> delegate;
 
 + (LQVideoNumberCell *)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 

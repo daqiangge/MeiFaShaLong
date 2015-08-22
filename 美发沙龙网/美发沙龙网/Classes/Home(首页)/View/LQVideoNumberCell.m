@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *fourBrn;
 @property (weak, nonatomic) IBOutlet UIButton *fiveBrn;
 @property (weak, nonatomic) IBOutlet UIButton *sixBtn;
+@property (nonatomic, strong) UIButton *btn;
 
 @end
 
@@ -49,6 +50,23 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+    
+    self.oneBtn.selected = YES;
+    self.btn = self.oneBtn;
 }
+
+- (IBAction)buttonDidClick:(UIButton *)sender
+{
+    self.btn.selected = NO;
+    
+    sender.selected = YES;
+    self.btn = sender;
+    
+    if ([self.delegate respondsToSelector:@selector(videoNumberCellDidClickBtnWithView:btn:)])
+    {
+        [self.delegate videoNumberCellDidClickBtnWithView:self btn:sender];
+    }
+}
+
 
 @end

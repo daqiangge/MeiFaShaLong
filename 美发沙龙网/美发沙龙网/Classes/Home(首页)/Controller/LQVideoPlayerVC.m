@@ -14,12 +14,18 @@
 #import "LQVideoExplainCellFrame.h"
 #import "LQVideoModel.h"
 #import "LQVideoModels.h"
+#import "LQVideoNumberVC.h"
 
-@interface LQVideoPlayerVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface LQVideoPlayerVC ()<UITableViewDataSource,UITableViewDelegate,LQVideoNumberCellDelegate>
 
 @property (nonatomic, strong) KrVideoPlayerController  *videoController;
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, strong) LQVideoModels *videoModels;
+
+/**
+ *  记录播放的第几集
+ */
+@property (nonatomic, assign) int videoBtnSelecteNum;
 
 @end
 
@@ -70,11 +76,10 @@
 
 - (void)playVideo
 {
-    NSURL *url = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
-    [self addVideoPlayerWithURL:url];
+    [self addVideoPlayer];
 }
 
-- (void)addVideoPlayerWithURL:(NSURL *)url
+- (void)addVideoPlayer
 {
     if (!self.videoController)
     {
@@ -92,8 +97,6 @@
         }];
         [self.view addSubview:self.videoController.view];
     }
-    
-    self.videoController.contentURL = url;
 }
 
 //隐藏navigation tabbar 电池栏
@@ -107,7 +110,9 @@
 #pragma mark - 网络请求
 - (void)videoRequest
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         NSDictionary *dic1 = @{@"title":@"简介",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
         NSDictionary *dic2 = @{@"title":@"影片介绍",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
@@ -115,9 +120,16 @@
         
         NSDictionary *videoModels = @{@"videoModels":@[dic1,dic2,dic3]};
         
+        
+        self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
+        
         self.videoModels = [LQVideoModels objectWithKeyValues:videoModels];
         
         [self.tableView reloadData];
+        
+        self.videoBtnSelecteNum = 1;
+        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     });
 }
 
@@ -139,6 +151,7 @@
     if (indexPath.row == 1)
     {
         LQVideoNumberCell *cell = [LQVideoNumberCell cellWithTableView:tableView indexPath:indexPath];
+        cell.delegate = self;
         
         return cell;
     }
@@ -169,6 +182,22 @@
     cellFrame.videoModel = self.videoModels.videoModels[indexPath.row - 2];
         
     return cellFrame.cellheight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 1)
+    {
+        LQVideoNumberVC *videoNumVC = [[LQVideoNumberVC alloc] init];
+        videoNumVC.videoBtnSelecteNum = self.videoBtnSelecteNum;
+        [self.navigationController pushViewController:videoNumVC animated:YES];
+    }
+}
+
+#pragma mark - LQVideoNumberCellDelegate
+- (void)videoNumberCellDidClickBtnWithView:(LQVideoNumberCell *)view btn:(UIButton *)btn
+{
+    self.videoBtnSelecteNum = (int)btn.tag - 100;
 }
 
 #pragma mark - viewWillDisappear
