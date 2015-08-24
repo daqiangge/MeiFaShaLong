@@ -27,7 +27,6 @@
     if (self.viewControllers.count == 0)//给一级的界面添加左右按钮
     {
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"menu-icon" selectedImageName:@"menu-icon" target:self action:@selector(openMeun)];
-        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" selectedImageName:@"navigationbar_pop_highlighted" target:self action:@selector(refresh)];
     }else
     {
         viewController.hidesBottomBarWhenPushed = YES;
@@ -56,14 +55,6 @@
 {
     AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [tempAppDelegate.LeftSlideVC openLeftView];
-}
-
-/**
- *  刷新
- */
-- (void)refresh
-{
-    
 }
 
 @end

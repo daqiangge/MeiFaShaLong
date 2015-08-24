@@ -10,6 +10,7 @@
 
 @interface LQNewsWebVC : LQBaseViewController
 
-@property (nonatomic, copy) NSString *urlStr;
+@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, copy) NSString *classid;
 
 @end

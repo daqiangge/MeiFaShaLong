@@ -64,6 +64,8 @@
     self.view.backgroundColor = [UIColor blackColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeVideoBtnSelecteNum:) name:KNotificationName_VideoBtnSelecteNum object:nil];
+    
     [self doLoading];
     [self videoRequest];
 }
@@ -107,12 +109,26 @@
     [[UIApplication sharedApplication] setStatusBarHidden:Bool withAnimation:UIStatusBarAnimationFade];
 }
 
+- (void)changeVideoBtnSelecteNum:(NSNotification *)notification
+{
+    id obj = [notification object];
+    
+    LQVideoNumberCell *cell = (LQVideoNumberCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    
+    UIButton *btn = (UIButton *)[cell viewWithTag:[obj intValue]];
+    [cell buttonDidClick:btn];
+    self.videoBtnSelecteNum = [obj intValue];
+    
+    self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
+    [self.videoController play];
+}
+
 #pragma mark - 网络请求
 - (void)videoRequest
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         NSDictionary *dic1 = @{@"title":@"简介",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
         NSDictionary *dic2 = @{@"title":@"影片介绍",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
@@ -127,7 +143,7 @@
         
         [self.tableView reloadData];
         
-        self.videoBtnSelecteNum = 1;
+        self.videoBtnSelecteNum = 101;
         
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     });
@@ -197,15 +213,21 @@
 #pragma mark - LQVideoNumberCellDelegate
 - (void)videoNumberCellDidClickBtnWithView:(LQVideoNumberCell *)view btn:(UIButton *)btn
 {
-    self.videoBtnSelecteNum = (int)btn.tag - 100;
+    self.videoBtnSelecteNum = (int)btn.tag;
+    
+    self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
+    [self.videoController play];
 }
 
 #pragma mark - viewWillDisappear
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    [self.videoController dismiss];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 

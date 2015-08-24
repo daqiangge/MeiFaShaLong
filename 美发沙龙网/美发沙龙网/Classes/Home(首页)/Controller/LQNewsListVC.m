@@ -46,6 +46,9 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     [self doLoading];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [self RequsetNewsList];
 }
 
@@ -64,13 +67,18 @@
     [self.view addSubview:tableView];
     self.tableView = tableView;
     
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshTableView)];
+    
+}
+
+- (void)refreshTableView
+{
+    [self RequsetNewsList];
 }
 
 #pragma mark - 网络请求
 - (void)RequsetNewsList
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsList.php";
     NSDictionary *parameters = @{@"classid":self.classid,@"pageSize":@"20"};
@@ -81,12 +89,21 @@
         self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
         [self.tableView reloadData];
         
-        [hud hide:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        [self.tableView.header endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
         
-        [hud hide:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        [self.tableView.header endRefreshing];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = HTTPRequestErrer_Text;
+        hud.mode = MBProgressHUDModeText;
+        [hud hide:YES afterDelay:1.5];
     }];
 }
 
@@ -113,7 +130,8 @@
     if ([self.newsList.table isEqualToString:@"news"])
     {
         LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
-        newWebVC.urlStr = newsContent.titleurl;
+        newWebVC.ID = newsContent.ID;
+        newWebVC.classid = newsContent.classid;
         newWebVC.navigationItem.title = newsContent.classname;
         [self.navigationController pushViewController:newWebVC animated:YES];
         

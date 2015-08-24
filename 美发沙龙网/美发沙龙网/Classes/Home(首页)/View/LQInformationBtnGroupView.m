@@ -38,6 +38,12 @@
 
 - (void)doLoading
 {
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.frame = CGRectMake(0, 0, self.width, self.height);
+    scrollView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:scrollView];
+    
+    
     long int num = self.sonclassArray.count;
     
     if (num == 0)
@@ -45,8 +51,17 @@
         self.height = space;
     }else {
         long int rows = (num - 1) / 4 + 1;//计算行数
+        
         self.height = space + (button_height + space) * rows;//计算按钮组的高度
+        scrollView.contentSize = CGSizeMake(self.width, self.height);
+        
+        if (rows >= 3)
+        {
+            self.height = space + (button_height + space) * 2.4;//计算按钮组的高度
+        }
     }
+    
+    scrollView.height = self.height - 5;
     
     CGFloat width = (self.width - 5*space)/4;
     CGFloat height = button_height;
@@ -75,7 +90,7 @@
         btn.titleLabel.font = [UIFont systemFontOfSize:13];
         btn.tag = [sonclass.classid intValue];
         [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:btn];
+        [scrollView addSubview:btn];
         
         btn.backgroundColor = RGB(arc4random()%255, arc4random()%255, arc4random()%255);
     }

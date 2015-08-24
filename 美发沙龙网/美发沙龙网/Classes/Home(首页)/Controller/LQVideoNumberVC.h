@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define KNotificationName_VideoBtnSelecteNum @"KNotificationName_VideoBtnSelecteNum"
+
 @interface LQVideoNumberVC : UIViewController
 
 /**

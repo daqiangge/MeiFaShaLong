@@ -28,6 +28,7 @@
 @property (nonatomic, weak) UITableView *informationTableView;
 @property (nonatomic, strong) NSMutableArray *newsListArray;
 @property (nonatomic, strong) LQNewsList *newsList;
+@property (nonatomic, strong) LQNewsClass *newsClass;
 
 @end
 
@@ -132,6 +133,15 @@
         tableView.delegate     = self;
         tableView.dataSource   = self;
         [self.view addSubview:tableView];
+        
+        //设置tableview的分割线
+        if([tableView respondsToSelector:@selector(setSeparatorInset:)])
+        {
+            [tableView setSeparatorInset:UIEdgeInsetsMake(0,12.5,0,12.5)];
+        }
+        
+        tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshTableView)];
+        
         _informationTableView  = tableView;
         
     }
@@ -157,74 +167,113 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     [self doLoading];
-//    [self requestGetNewClass];
-    [self requestGetNewsList];
 }
 
 - (void)doLoading
 {
     self.searchBar.hidden       = NO;
     self.homeRollingView.hidden = NO;
-    self.btnGroupView.hidden    = NO;
-
-    //设置tableview的分割线
-    if([self.informationTableView respondsToSelector:@selector(setSeparatorInset:)])
-    {
-        [self.informationTableView setSeparatorInset:UIEdgeInsetsMake(0,12.5,0,12.5)];
-    }
+    
+    UIView *backgroundView = [[UIView alloc] init];
+    backgroundView.backgroundColor = [UIColor whiteColor];
+    backgroundView.frame = CGRectMake(0, CGRectGetMaxY(self.homeRollingView.frame), LQScreen_Width, LQScreen_Height);
+    [self.view addSubview:backgroundView];
+    
+    [self requestAllNewsClass];
 
 }
 
-- (void)openMeun
+- (void)refreshTableView
 {
-    LQLog(@"打开菜单");
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)refresh
-{
-    LQLog(@"刷新。。。");
+    [self requestGetNewsList];
 }
 
 #pragma mark - 网络请求
-- (void)requestGetNewClass
+- (void)requestAllNewsClass
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsClass.php";
-    NSDictionary *parameters = @{@"bclassid":@"58"};
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSData *jsonData = [operation.responseString dataUsingEncoding:NSASCIIStringEncoding];
-//        NSError *error;
-//        NSDictionary *resultDic = [[CJSONDeserializer deserializer] deserialize:jsonData error:&error];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsClass.php";
+    
+    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        LQNewsClass *newsClass = [LQNewsClass objectWithKeyValues:operation.responseString];
+        self.newsClass = [LQNewsClass objectWithKeyValues:operation.responseString];
+        
+        switch ([self.classid intValue])
+        {
+            case 58:
+                self.sonclassArray = self.newsClass.data.newsClassId_58.sonclass;
+                break;
+                
+            case 62:
+                self.sonclassArray = self.newsClass.data.newsClassId_62.sonclass;
+                break;
+                
+            case 74:
+                self.sonclassArray = self.newsClass.data.newsClassId_74.sonclass;
+                break;
+                
+            case 81:
+                self.sonclassArray = self.newsClass.data.newsClassId_81.sonclass;
+                break;
+                
+            case 94:
+                self.sonclassArray = self.newsClass.data.newsClassId_94.sonclass;
+                break;
+                
+            case 107:
+                self.sonclassArray = self.newsClass.data.newsClassId_107.sonclass;
+                break;
+        }
+        
+        [hud hide:YES];
+        
+        self.btnGroupView.hidden    = NO;
+        self.informationTableView.hidden = NO;
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        [self requestGetNewsList];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
+        
+        hud.labelText = HTTPRequestErrer_Text;
+        hud.mode = MBProgressHUDModeText;
+        [hud hide:YES afterDelay:1.5];
     }];
 }
 
 - (void)requestGetNewsList
 {
-    MBProgressHUD *hud                     = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsList.php";
     NSDictionary *parameters               = @{@"classid":self.classid,@"pageSize":@"10"};
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
+        [self.newsListArray removeAllObjects];
+        
         self.newsList      = [LQNewsList objectWithKeyValues:operation.responseString];
         self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
         [self.informationTableView reloadData];
         
-        [hud hide:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        [self.informationTableView.header endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
         
-        [hud hide:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        [self.informationTableView.header endRefreshing];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = HTTPRequestErrer_Text;
+        hud.mode = MBProgressHUDModeText;
+        [hud hide:YES afterDelay:1.5];
     }];
 }
 
@@ -251,7 +300,8 @@
     if ([self.newsList.table isEqualToString:@"news"])
     {
         LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
-        newWebVC.urlStr = newsContent.titleurl;
+        newWebVC.ID = newsContent.ID;
+        newWebVC.classid = newsContent.classid;
         newWebVC.navigationItem.title = newsContent.classname;
         [self.navigationController pushViewController:newWebVC animated:YES];
         

@@ -56,6 +56,7 @@
         
         UIButton *btn = [[UIButton alloc] init];
         btn.frame = frame;
+        btn.tag = 101 + i;
         btn.backgroundColor = [UIColor whiteColor];
         btn.titleLabel.font = [UIFont systemFontOfSize:15];
         [btn setTitle:[NSString stringWithFormat:@"%02d",i+1] forState:UIControlStateNormal];
@@ -65,7 +66,7 @@
         [btn addTarget:self action:@selector(btnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:btn];
         
-        if (i == self.videoBtnSelecteNum - 1)
+        if (i == self.videoBtnSelecteNum - 101)
         {
             btn.selected = YES;
             self.btn = btn;
@@ -84,6 +85,10 @@
     
     btn.selected = YES;
     self.btn = btn;
+    
+    self.videoBtnSelecteNum = (int)btn.tag;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationName_VideoBtnSelecteNum object:[NSNumber numberWithInt:self.videoBtnSelecteNum]];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

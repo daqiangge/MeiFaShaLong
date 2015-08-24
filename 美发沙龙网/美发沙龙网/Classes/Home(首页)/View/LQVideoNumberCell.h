@@ -22,5 +22,6 @@
 @property (nonatomic, weak) id<LQVideoNumberCellDelegate> delegate;
 
 + (LQVideoNumberCell *)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
+- (IBAction)buttonDidClick:(UIButton *)sender;
 
 @end

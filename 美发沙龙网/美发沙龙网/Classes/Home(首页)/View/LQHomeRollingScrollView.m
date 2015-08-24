@@ -37,7 +37,6 @@
         self.page = 0;
         
         [self doLoading];
-//        [self addTimer];
         
     }
     
