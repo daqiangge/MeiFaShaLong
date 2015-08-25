@@ -29,6 +29,7 @@
 @property (nonatomic, strong) NSMutableArray *newsListArray;
 @property (nonatomic, strong) LQNewsList *newsList;
 @property (nonatomic, strong) LQNewsClass *newsClass;
+@property (nonatomic, strong) YTKKeyValueStore *store;
 
 @end
 
@@ -55,6 +56,7 @@
         UISearchBar *searchBar = [[UISearchBar alloc] init];
         searchBar.frame        = CGRectMake(0, 58, LQScreen_Width, 44);
         searchBar.placeholder  = @"搜索栏目内容";
+//        searchBar.showsCancelButton = YES;
         [searchBar setBackgroundImage:[UIImage imageNamed:@"navigationBar_background"]];
         [searchBar setSearchFieldBackgroundImage:[[[UIImage alloc] init] imageWithColor:SearchBar_SeachTextField_BackgroundColor size:CGSizeMake(100, 30) cornerRadius:4.0] forState:UIControlStateNormal];
         [searchBar setContentMode:UIViewContentModeLeft];
@@ -166,6 +168,8 @@
 
     self.view.backgroundColor = [UIColor blackColor];
     
+    self.store = [[YTKKeyValueStore alloc] initDBWithName:SQL_Name];
+    
     [self doLoading];
 }
 
@@ -180,7 +184,6 @@
     [self.view addSubview:backgroundView];
     
     [self requestAllNewsClass];
-
 }
 
 - (void)refreshTableView
@@ -188,10 +191,66 @@
     [self requestGetNewsList];
 }
 
+/**
+ *  获取本地的列表数据
+ */
+- (NSMutableArray *)getNewsListArray
+{
+    NSString *tableName = @"NewsList";
+    NSString *key       = self.classid;
+    NSString *str       = [self.store getStringById:key fromTable:tableName];
+    
+    self.newsList      = [LQNewsList objectWithKeyValues:str];
+    self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
+    
+    return self.newsListArray;
+}
+
+- (void)setSonclassArray
+{
+    switch ([self.classid intValue])
+    {
+        case 58:
+            self.sonclassArray = self.newsClass.data.newsClassId_58.sonclass;
+            break;
+            
+        case 62:
+            self.sonclassArray = self.newsClass.data.newsClassId_62.sonclass;
+            break;
+            
+        case 74:
+            self.sonclassArray = self.newsClass.data.newsClassId_74.sonclass;
+            break;
+            
+        case 81:
+            self.sonclassArray = self.newsClass.data.newsClassId_81.sonclass;
+            break;
+            
+        case 94:
+            self.sonclassArray = self.newsClass.data.newsClassId_94.sonclass;
+            break;
+            
+        case 107:
+            self.sonclassArray = self.newsClass.data.newsClassId_107.sonclass;
+            break;
+    }
+}
+
+/**
+ *  保存列表数据
+ */
+- (void)saveNewsList:(NSString *)str
+{
+    NSString *tableName = @"NewsList";
+    [self.store createTableWithName:tableName];
+    NSString *key       = self.classid;
+    [self.store putString:str withId:key intoTable:tableName];
+}
+
 #pragma mark - 网络请求
 - (void)requestAllNewsClass
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsClass.php";
@@ -199,46 +258,29 @@
     [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         self.newsClass = [LQNewsClass objectWithKeyValues:operation.responseString];
+        [self setSonclassArray];
         
-        switch ([self.classid intValue])
-        {
-            case 58:
-                self.sonclassArray = self.newsClass.data.newsClassId_58.sonclass;
-                break;
-                
-            case 62:
-                self.sonclassArray = self.newsClass.data.newsClassId_62.sonclass;
-                break;
-                
-            case 74:
-                self.sonclassArray = self.newsClass.data.newsClassId_74.sonclass;
-                break;
-                
-            case 81:
-                self.sonclassArray = self.newsClass.data.newsClassId_81.sonclass;
-                break;
-                
-            case 94:
-                self.sonclassArray = self.newsClass.data.newsClassId_94.sonclass;
-                break;
-                
-            case 107:
-                self.sonclassArray = self.newsClass.data.newsClassId_107.sonclass;
-                break;
-        }
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         
-        [hud hide:YES];
-        
-        self.btnGroupView.hidden    = NO;
+        self.btnGroupView.hidden = NO;
         self.informationTableView.hidden = NO;
         
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        if ([self getNewsListArray].count == 0)
+        {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }else
+        {
+            [self.informationTableView reloadData];
+        }
         
         [self requestGetNewsList];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
         
+        [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = HTTPRequestErrer_Text;
         hud.mode = MBProgressHUDModeText;
         [hud hide:YES afterDelay:1.5];
@@ -255,6 +297,8 @@
         
         [self.newsListArray removeAllObjects];
         
+        [self saveNewsList:operation.responseString];
+        
         self.newsList      = [LQNewsList objectWithKeyValues:operation.responseString];
         self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
         [self.informationTableView reloadData];
@@ -266,7 +310,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
         
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
         
         [self.informationTableView.header endRefreshing];
         

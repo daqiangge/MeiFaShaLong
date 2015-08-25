@@ -66,6 +66,7 @@
 		8419E8571B85CD0700D18798 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8419E8561B85CD0700D18798 /* 37x-Checkmark.png */; };
 		843CED171B857CA4007631C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CED161B857CA4007631C6 /* AppDelegate.m */; };
 		843CED1A1B857CB8007631C6 /* Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CED191B857CB8007631C6 /* Regex.m */; };
+		843E5FC21B8BF5B000DBFA89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 843E5FC11B8BF5B000DBFA89 /* InfoPlist.strings */; };
 		845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */; };
 		845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */; };
 		847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C0C9C1B6B66DD00340448 /* UIColor+LQExtension.m */; };
@@ -271,6 +272,7 @@
 		843CED161B857CA4007631C6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		843CED181B857CB8007631C6 /* Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Regex.h; sourceTree = "<group>"; };
 		843CED191B857CB8007631C6 /* Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Regex.m; sourceTree = "<group>"; };
+		843E5FC11B8BF5B000DBFA89 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		8452437D1B69CBC2006E8E26 /* LQNewFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewFeatureVC.h; sourceTree = "<group>"; };
 		8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewFeatureVC.m; sourceTree = "<group>"; };
 		8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQNewFeatureVC.xib; sourceTree = "<group>"; };
@@ -985,6 +987,7 @@
 				8418104F1B86AB8E00BC372D /* FrameWork */,
 				84EFEA711B5CC6670049D6FA /* Images.xcassets */,
 				84EFEA681B5CC6670049D6FA /* _____.xcdatamodeld */,
+				843E5FC11B8BF5B000DBFA89 /* InfoPlist.strings */,
 				84EFEA621B5CC6670049D6FA /* Info.plist */,
 				84F3CA821B5F2BE300DD44A9 /* MeiFaShaLong.pch */,
 			);
@@ -1323,10 +1326,6 @@
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
 			mainGroup = 84EFEA551B5CC6670049D6FA;
 			productRefGroup = 84EFEA5F1B5CC6670049D6FA /* Products */;
 			projectDirPath = "";
@@ -1352,6 +1351,7 @@
 				8419E8571B85CD0700D18798 /* 37x-Checkmark.png in Resources */,
 				8418109A1B87024600BC372D /* LQVideoNumberCell.xib in Resources */,
 				841810811B86C35D00BC372D /* kr-video-player-play@2x.png in Resources */,
+				843E5FC21B8BF5B000DBFA89 /* InfoPlist.strings in Resources */,
 				841810831B86C35D00BC372D /* kr-video-player-point@2x.png in Resources */,
 				84EFEA721B5CC6670049D6FA /* Images.xcassets in Resources */,
 				841810821B86C35D00BC372D /* kr-video-player-play@3x.png in Resources */,
@@ -1565,7 +1565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
@@ -1603,7 +1603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;

@@ -52,7 +52,7 @@
     {
         UIButton *iconButton = [[UIButton alloc] init];
         [iconButton addTarget:self action:@selector(gotoLoginVC:) forControlEvents:UIControlEventTouchUpInside];
-        iconButton.backgroundColor = [UIColor redColor];
+        [iconButton setBackgroundImage:[UIImage imageNamed:@"默认头像"] forState:UIControlStateNormal];
         [self.view addSubview:iconButton];
         _iconButton = iconButton;
         
@@ -80,8 +80,6 @@
 - (void)doLoading
 {
     self.iconButton.hidden = false;
-    
-    
 }
 
 - (void)gotoLoginVC:(id)sender

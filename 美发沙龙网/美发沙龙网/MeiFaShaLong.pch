@@ -22,6 +22,7 @@
     #import "UIImageView+WebCache.h"
     #import "Regex.h"
     #import "MJRefresh.h"
+    #import "YTKKeyValueStore.h"
 
 
     #import "UIView+Extension.h"
@@ -81,5 +82,7 @@
 #define Meun_BackgroundColor (RGB(26, 26, 26))
 
 #define HTTPRequestErrer_Text @"网络出现问题，请稍后重试"
+
+#define SQL_Name @"test.db"
 
 #endif
