@@ -80,6 +80,7 @@
 
 #define RGB(A, B, C) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
 #define Meun_BackgroundColor (RGB(26, 26, 26))
+#define SearchBar_SeachTextField_BackgroundColor (RGB(59, 59, 59))
 
 #define HTTPRequestErrer_Text @"网络出现问题，请稍后重试"
 

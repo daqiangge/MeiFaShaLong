@@ -16,10 +16,10 @@
 #import "LQNewsListVC.h"
 #import "LQNewsWebVC.h"
 #import "LQVideoPlayerVC.h"
+#import "LQSearchController.h"
+#import "AppDelegate.h"
 
-#define SearchBar_SeachTextField_BackgroundColor ([UIColor colorWithRed:59/255. green:59/255. blue:59/255. alpha:1])
-
-@interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate,LQInformationBtnGroupViewDelegate>
+@interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate,LQInformationBtnGroupViewDelegate,UISearchBarDelegate>
 
 @property (nonatomic, weak) LQHomeRollingView *homeRollingView;
 @property (nonatomic, weak) UIView *searchBarBsckgroundView;
@@ -57,10 +57,13 @@
         searchBar.frame        = CGRectMake(0, 58, LQScreen_Width, 44);
         searchBar.placeholder  = @"搜索栏目内容";
 //        searchBar.showsCancelButton = YES;
+        searchBar.delegate = self;
         [searchBar setBackgroundImage:[UIImage imageNamed:@"navigationBar_background"]];
         [searchBar setSearchFieldBackgroundImage:[[[UIImage alloc] init] imageWithColor:SearchBar_SeachTextField_BackgroundColor size:CGSizeMake(100, 30) cornerRadius:4.0] forState:UIControlStateNormal];
         [searchBar setContentMode:UIViewContentModeLeft];
         [self.searchBarBsckgroundView addSubview:searchBar];
+        
+        _searchBar = searchBar;
     }
     
     return _searchBar;
@@ -374,6 +377,19 @@
     newsListVC.classid = [NSString stringWithFormat:@"%ld",btn.tag];
     newsListVC.navigationItem.title = btn.titleLabel.text;
     [self.navigationController pushViewController:newsListVC animated:YES];
+}
+
+#pragma  mark - UISearchBarDelegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    LQLog(@"点击了搜索");
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    LQSearchController *searchVC = [[LQSearchController alloc] init];
+    [appDelegate.LeftSlideVC presentViewController:searchVC animated:YES completion:nil];
+    
+    return NO;
 }
 
 @end

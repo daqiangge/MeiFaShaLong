@@ -99,6 +99,8 @@
 		84DF63201B5F873C00B3BF63 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF63131B5F873C00B3BF63 /* NSArray+MASAdditions.m */; };
 		84DF63211B5F873C00B3BF63 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF63161B5F873C00B3BF63 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		84DF63221B5F873C00B3BF63 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF63181B5F873C00B3BF63 /* View+MASAdditions.m */; };
+		84E0C4DD1B8D43EC00F77C91 /* LQSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0C4DC1B8D43EC00F77C91 /* LQSearchController.m */; };
+		84E0C5141B8D5B5D00F77C91 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E0C5131B8D5B5D00F77C91 /* LaunchScreen.xib */; };
 		84E2DBBF1B5F6A730068423C /* LQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E2DBBE1B5F6A730068423C /* LQNavigationController.m */; };
 		84E81EF51B65DD890089A0A7 /* LQInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E81EF31B65DD890089A0A7 /* LQInformationTableViewCell.m */; };
 		84E81EF91B66218F0089A0A7 /* LQTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E81EF81B66218F0089A0A7 /* LQTableViewController.m */; };
@@ -341,6 +343,9 @@
 		84DF63171B5F873C00B3BF63 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		84DF63181B5F873C00B3BF63 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		84DF63191B5F873C00B3BF63 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		84E0C4DB1B8D43EC00F77C91 /* LQSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSearchController.h; sourceTree = "<group>"; };
+		84E0C4DC1B8D43EC00F77C91 /* LQSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSearchController.m; sourceTree = "<group>"; };
+		84E0C5131B8D5B5D00F77C91 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		84E2DBBD1B5F6A730068423C /* LQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNavigationController.h; sourceTree = "<group>"; };
 		84E2DBBE1B5F6A730068423C /* LQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNavigationController.m; sourceTree = "<group>"; };
 		84E81EF21B65DD890089A0A7 /* LQInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQInformationTableViewCell.h; sourceTree = "<group>"; };
@@ -866,6 +871,8 @@
 				841810661B86C30700BC372D /* LQVideoPlayerVC.m */,
 				84B7C60C1B88039500C16E79 /* LQVideoNumberVC.h */,
 				84B7C60D1B88039500C16E79 /* LQVideoNumberVC.m */,
+				84E0C4DB1B8D43EC00F77C91 /* LQSearchController.h */,
+				84E0C4DC1B8D43EC00F77C91 /* LQSearchController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -986,6 +993,7 @@
 			children = (
 				8418104F1B86AB8E00BC372D /* FrameWork */,
 				84EFEA711B5CC6670049D6FA /* Images.xcassets */,
+				84E0C5131B8D5B5D00F77C91 /* LaunchScreen.xib */,
 				84EFEA681B5CC6670049D6FA /* _____.xcdatamodeld */,
 				843E5FC11B8BF5B000DBFA89 /* InfoPlist.strings */,
 				84EFEA621B5CC6670049D6FA /* Info.plist */,
@@ -1326,6 +1334,9 @@
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 84EFEA551B5CC6670049D6FA;
 			productRefGroup = 84EFEA5F1B5CC6670049D6FA /* Products */;
 			projectDirPath = "";
@@ -1346,6 +1357,7 @@
 				8418107C1B86C35D00BC372D /* kr-video-player-close@3x.png in Resources */,
 				84F3CA7C1B5F284E00DD44A9 /* LQCommunityVC.xib in Resources */,
 				841810921B86EFBD00BC372D /* LQVideoPlayerTitleCell.xib in Resources */,
+				84E0C5141B8D5B5D00F77C91 /* LaunchScreen.xib in Resources */,
 				840F65391B6F63060024B11A /* LQRegisteredAccountVC.xib in Resources */,
 				841810851B86C35D00BC372D /* kr-video-player-shrinkscreen@2x.png in Resources */,
 				8419E8571B85CD0700D18798 /* 37x-Checkmark.png in Resources */,
@@ -1456,6 +1468,7 @@
 				84B7C60E1B88039500C16E79 /* LQVideoNumberVC.m in Sources */,
 				84E98F371B7450C60022D47D /* SDImageCache.m in Sources */,
 				840F65291B6F3C6A0024B11A /* LQLoginVC.m in Sources */,
+				84E0C4DD1B8D43EC00F77C91 /* LQSearchController.m in Sources */,
 				84DF631E1B5F873C00B3BF63 /* MASViewAttribute.m in Sources */,
 				84F3CA7B1B5F284E00DD44A9 /* LQCommunityVC.m in Sources */,
 				84DF63211B5F873C00B3BF63 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -1615,7 +1628,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "美发沙龙网/MeiFaShaLong.pch";
 				INFOPLIST_FILE = "美发沙龙网/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1629,7 +1641,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "美发沙龙网/MeiFaShaLong.pch";
 				INFOPLIST_FILE = "美发沙龙网/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
