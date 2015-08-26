@@ -108,11 +108,12 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsList.php";
-    NSDictionary *parameters = @{@"pageSize":@"5"};
+    NSDictionary *parameters = @{@"pageSize":@"5",@"classid":@"58"};
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
         self.newsListArray = newsList.data;
+        
         self.homeRollingView.homeRollingScrollView.imageUrlArray = [NSMutableArray arrayWithArray:self.newsListArray];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -84,7 +84,7 @@
     NSDictionary *parameters = @{@"classid":self.classid,@"pageSize":@"20"};
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     
+        
         self.newsList = [LQNewsList objectWithKeyValues:operation.responseString];
         self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
         [self.tableView reloadData];

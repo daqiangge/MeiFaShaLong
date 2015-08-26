@@ -10,18 +10,18 @@
 #import "LQHomeRollingScrollView.h"
 #import "LQNewsListContent.h"
 
-#define kCount 5
-
 @interface LQHomeRollingScrollView()<UIScrollViewDelegate>
 
 @property (nonatomic, weak) UIImageView *previousImageView;
 @property (nonatomic, weak) UIImageView *nextImageView;
 @property (nonatomic, weak) UIImageView *currentImageView;
 @property (nonatomic, assign) int page;
+@property (nonatomic, assign) int count;
 
 @end
 
 @implementation LQHomeRollingScrollView
+
 
 + (instancetype)homeRollingScrollViewWithFrame:(CGRect)frame
 {
@@ -35,6 +35,7 @@
         self.delegate = self;
         
         self.page = 0;
+        self.count = 5;
         
         [self doLoading];
         
@@ -134,8 +135,8 @@
     
     if (self.previousImageView.image == nil || self.nextImageView.image == nil)
     {
-        LQNewsListContent *previouCcontent = self.imageUrlArray[self.page == 0 ? kCount - 1:self.page - 1];
-        LQNewsListContent *nextCcontent = self.imageUrlArray[self.page == kCount - 1 ? 0 : self.page + 1];
+        LQNewsListContent *previouCcontent = self.imageUrlArray[self.page == 0 ? self.count - 1:self.page - 1];
+        LQNewsListContent *nextCcontent = self.imageUrlArray[self.page == self.count - 1 ? 0 : self.page + 1];
         
         [self.previousImageView sd_setImageWithURL:[NSURL URLWithString:previouCcontent.titlepicurl] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
         [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:nextCcontent.titlepicurl] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
@@ -149,7 +150,7 @@
         
         if (self.page == 0)
         {
-            self.page = kCount - 1;
+            self.page = self.count - 1;
         }else
         {
             self.page -= 1;
@@ -162,7 +163,7 @@
         scrollView.contentOffset = CGPointMake(LQScreen_Width, 0);
         self.nextImageView.image = nil;
         
-        if (self.page == kCount - 1)
+        if (self.page == self.count - 1)
         {
             self.page = 0;
         }else
