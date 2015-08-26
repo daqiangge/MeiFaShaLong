@@ -387,7 +387,8 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     LQSearchController *searchVC = [[LQSearchController alloc] init];
-    [appDelegate.LeftSlideVC presentViewController:searchVC animated:YES completion:nil];
+    LQNavigationController *nav = [[LQNavigationController alloc] initWithRootViewController:searchVC];
+    [appDelegate.LeftSlideVC presentViewController:nav animated:YES completion:nil];
     
     return NO;
 }

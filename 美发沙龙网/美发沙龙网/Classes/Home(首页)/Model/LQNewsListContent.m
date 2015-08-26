@@ -16,4 +16,18 @@
              @"titlename":@"title"};
 }
 
+- (NSString *)titlepicurl
+{
+    if ([self.table isEqualToString:@"movie"])
+    {
+        return _titlepicurl;
+    }
+    else if ([self.table isEqualToString:@"news"])
+    {
+        return [NSString stringWithFormat:@"http://old.meifashalong.com%@",_titlepicurl];
+    }
+    
+    return _titlepicurl;
+}
+
 @end
