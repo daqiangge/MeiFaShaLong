@@ -69,6 +69,14 @@
 		843E5FC21B8BF5B000DBFA89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 843E5FC11B8BF5B000DBFA89 /* InfoPlist.strings */; };
 		845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */; };
 		845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */; };
+		8458FB491B8EB6BD002740AB /* LQCommodityIntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB481B8EB6BD002740AB /* LQCommodityIntroductionCell.m */; };
+		8458FB4D1B8EB8AF002740AB /* LQCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB4C1B8EB8AF002740AB /* LQCommodity.m */; };
+		8458FB531B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB521B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m */; };
+		8458FB561B8ED75E002740AB /* LQCommodityCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB551B8ED75E002740AB /* LQCommodityCommentCell.m */; };
+		8458FB591B8ED79E002740AB /* LQCommodityComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB581B8ED79E002740AB /* LQCommodityComment.m */; };
+		8458FB5C1B8ED7AD002740AB /* LQCommodityCommentCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB5B1B8ED7AD002740AB /* LQCommodityCommentCellFrame.m */; };
+		8477BB731B8E954C00A02FB8 /* LQMallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8477BB721B8E954C00A02FB8 /* LQMallVC.m */; };
+		8477BB761B8EA2DC00A02FB8 /* LQCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8477BB751B8EA2DC00A02FB8 /* LQCommodityCell.m */; };
 		847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C0C9C1B6B66DD00340448 /* UIColor+LQExtension.m */; };
 		847CA91D1B8AF20F008A18AE /* LQNewsContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CA91C1B8AF20F008A18AE /* LQNewsContent.m */; };
 		84835C171B72FC89001859E9 /* LQNewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84835C161B72FC89001859E9 /* LQNewsList.m */; };
@@ -278,6 +286,22 @@
 		8452437D1B69CBC2006E8E26 /* LQNewFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewFeatureVC.h; sourceTree = "<group>"; };
 		8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewFeatureVC.m; sourceTree = "<group>"; };
 		8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQNewFeatureVC.xib; sourceTree = "<group>"; };
+		8458FB471B8EB6BD002740AB /* LQCommodityIntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityIntroductionCell.h; sourceTree = "<group>"; };
+		8458FB481B8EB6BD002740AB /* LQCommodityIntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityIntroductionCell.m; sourceTree = "<group>"; };
+		8458FB4B1B8EB8AF002740AB /* LQCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodity.h; sourceTree = "<group>"; };
+		8458FB4C1B8EB8AF002740AB /* LQCommodity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodity.m; sourceTree = "<group>"; };
+		8458FB511B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityIntroductionCellFrame.h; sourceTree = "<group>"; };
+		8458FB521B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityIntroductionCellFrame.m; sourceTree = "<group>"; };
+		8458FB541B8ED75E002740AB /* LQCommodityCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityCommentCell.h; sourceTree = "<group>"; };
+		8458FB551B8ED75E002740AB /* LQCommodityCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityCommentCell.m; sourceTree = "<group>"; };
+		8458FB571B8ED79E002740AB /* LQCommodityComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityComment.h; sourceTree = "<group>"; };
+		8458FB581B8ED79E002740AB /* LQCommodityComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityComment.m; sourceTree = "<group>"; };
+		8458FB5A1B8ED7AD002740AB /* LQCommodityCommentCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityCommentCellFrame.h; sourceTree = "<group>"; };
+		8458FB5B1B8ED7AD002740AB /* LQCommodityCommentCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityCommentCellFrame.m; sourceTree = "<group>"; };
+		8477BB711B8E954C00A02FB8 /* LQMallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQMallVC.h; sourceTree = "<group>"; };
+		8477BB721B8E954C00A02FB8 /* LQMallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQMallVC.m; sourceTree = "<group>"; };
+		8477BB741B8EA2DC00A02FB8 /* LQCommodityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityCell.h; sourceTree = "<group>"; };
+		8477BB751B8EA2DC00A02FB8 /* LQCommodityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityCell.m; sourceTree = "<group>"; };
 		847C0C9B1B6B66DD00340448 /* UIColor+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LQExtension.h"; sourceTree = "<group>"; };
 		847C0C9C1B6B66DD00340448 /* UIColor+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LQExtension.m"; sourceTree = "<group>"; };
 		847CA91B1B8AF20F008A18AE /* LQNewsContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewsContent.h; sourceTree = "<group>"; };
@@ -646,9 +670,25 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		8458FB4A1B8EB893002740AB /* Commodity */ = {
+			isa = PBXGroup;
+			children = (
+				8458FB4B1B8EB8AF002740AB /* LQCommodity.h */,
+				8458FB4C1B8EB8AF002740AB /* LQCommodity.m */,
+				8458FB511B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.h */,
+				8458FB521B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m */,
+				8458FB571B8ED79E002740AB /* LQCommodityComment.h */,
+				8458FB581B8ED79E002740AB /* LQCommodityComment.m */,
+				8458FB5A1B8ED7AD002740AB /* LQCommodityCommentCellFrame.h */,
+				8458FB5B1B8ED7AD002740AB /* LQCommodityCommentCellFrame.m */,
+			);
+			name = Commodity;
+			sourceTree = "<group>";
+		};
 		84835C141B72FC7C001859E9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8458FB4A1B8EB893002740AB /* Commodity */,
 				841810A01B871EA000BC372D /* Video */,
 				84835C481B734770001859E9 /* NewsList */,
 				84835C3E1B7343DB001859E9 /* NewsClass */,
@@ -873,6 +913,8 @@
 				84B7C60D1B88039500C16E79 /* LQVideoNumberVC.m */,
 				84E0C4DB1B8D43EC00F77C91 /* LQSearchController.h */,
 				84E0C4DC1B8D43EC00F77C91 /* LQSearchController.m */,
+				8477BB711B8E954C00A02FB8 /* LQMallVC.h */,
+				8477BB721B8E954C00A02FB8 /* LQMallVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1143,6 +1185,12 @@
 				841810981B87024600BC372D /* LQVideoNumberCell.xib */,
 				8418109B1B8713E800BC372D /* LQVideoExplainCell.h */,
 				8418109C1B8713E800BC372D /* LQVideoExplainCell.m */,
+				8477BB741B8EA2DC00A02FB8 /* LQCommodityCell.h */,
+				8477BB751B8EA2DC00A02FB8 /* LQCommodityCell.m */,
+				8458FB471B8EB6BD002740AB /* LQCommodityIntroductionCell.h */,
+				8458FB481B8EB6BD002740AB /* LQCommodityIntroductionCell.m */,
+				8458FB541B8ED75E002740AB /* LQCommodityCommentCell.h */,
+				8458FB551B8ED75E002740AB /* LQCommodityCommentCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1402,6 +1450,7 @@
 				84E98F391B7450C60022D47D /* SDWebImageDecoder.m in Sources */,
 				D5E0F2F91B85E58B005B19DC /* MJRefreshBackGifFooter.m in Sources */,
 				84835C3A1B733C2F001859E9 /* LQNewsBClass.m in Sources */,
+				8458FB561B8ED75E002740AB /* LQCommodityCommentCell.m in Sources */,
 				84835C371B733B97001859E9 /* LQNewsClassId.m in Sources */,
 				840A00881B72ED9A007F7E78 /* AFNetworkReachabilityManager.m in Sources */,
 				843CED1A1B857CB8007631C6 /* Regex.m in Sources */,
@@ -1430,11 +1479,13 @@
 				D5E0F2F11B85E58B005B19DC /* MJRefreshAutoFooter.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
 				841810A61B871F6300BC372D /* LQVideoModel.m in Sources */,
+				8458FB4D1B8EB8AF002740AB /* LQCommodity.m in Sources */,
 				843CED171B857CA4007631C6 /* AppDelegate.m in Sources */,
 				840A00861B72ED9A007F7E78 /* AFHTTPRequestOperationManager.m in Sources */,
 				847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */,
 				84E98F431B7450C60022D47D /* UIImageView+WebCache.m in Sources */,
 				840A008D1B72ED9A007F7E78 /* AFURLSessionManager.m in Sources */,
+				8458FB491B8EB6BD002740AB /* LQCommodityIntroductionCell.m in Sources */,
 				84835C201B72FF2C001859E9 /* CJSONDeserializer.m in Sources */,
 				84E98F351B7450C60022D47D /* MKAnnotationView+WebCache.m in Sources */,
 				D5E0F2F41B85E58B005B19DC /* MJRefreshFooter.m in Sources */,
@@ -1458,6 +1509,7 @@
 				84E98F401B7450C60022D47D /* UIImage+MultiFormat.m in Sources */,
 				84DF631C1B5F873C00B3BF63 /* MASConstraintMaker.m in Sources */,
 				84DF63221B5F873C00B3BF63 /* View+MASAdditions.m in Sources */,
+				8458FB5C1B8ED7AD002740AB /* LQCommodityCommentCellFrame.m in Sources */,
 				840A00871B72ED9A007F7E78 /* AFHTTPSessionManager.m in Sources */,
 				84E98F421B7450C60022D47D /* UIImageView+HighlightedWebCache.m in Sources */,
 				D56FC34B1B764E8D00862568 /* LQNewsWebVC.m in Sources */,
@@ -1479,6 +1531,7 @@
 				841810611B86ABEB00BC372D /* FMDatabaseQueue.m in Sources */,
 				841810871B86C35D00BC372D /* KrVideoPlayerController.m in Sources */,
 				D546A41B1B5FCECC0003A581 /* UIView+Extension.m in Sources */,
+				8477BB731B8E954C00A02FB8 /* LQMallVC.m in Sources */,
 				849709A81B6389CD00C497B6 /* LQInformationBtnGroupView.m in Sources */,
 				84835C3D1B733C40001859E9 /* LQNewsSonClass.m in Sources */,
 				840A00891B72ED9A007F7E78 /* AFSecurityPolicy.m in Sources */,
@@ -1490,6 +1543,7 @@
 				84E98F381B7450C60022D47D /* SDWebImageCompat.m in Sources */,
 				84E98F3C1B7450C60022D47D /* SDWebImageManager.m in Sources */,
 				D5E0F2FB1B85E58B005B19DC /* MJRefreshBackStateFooter.m in Sources */,
+				8458FB531B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m in Sources */,
 				84835C221B72FF2C001859E9 /* NSDictionary_JSONExtensions.m in Sources */,
 				D5E0F3021B85E58B005B19DC /* UIScrollView+MJRefresh.m in Sources */,
 				84F3CA851B5F36CE00DD44A9 /* LQTabBarController.m in Sources */,
@@ -1504,6 +1558,7 @@
 				84DF63201B5F873C00B3BF63 /* NSArray+MASAdditions.m in Sources */,
 				849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */,
 				840A008B1B72ED9A007F7E78 /* AFURLRequestSerialization.m in Sources */,
+				8458FB591B8ED79E002740AB /* LQCommodityComment.m in Sources */,
 				8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */,
 				84E98F361B7450C60022D47D /* NSData+ImageContentType.m in Sources */,
 				84DF631F1B5F873C00B3BF63 /* MASViewConstraint.m in Sources */,
@@ -1519,6 +1574,7 @@
 				8418109E1B8713E800BC372D /* LQVideoExplainCell.m in Sources */,
 				840A008F1B72ED9A007F7E78 /* MJFoundation.m in Sources */,
 				841810631B86ABEB00BC372D /* YTKKeyValueStore.m in Sources */,
+				8477BB761B8EA2DC00A02FB8 /* LQCommodityCell.m in Sources */,
 				84835C171B72FC89001859E9 /* LQNewsList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1581,7 +1637,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1618,7 +1674,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1633,7 +1689,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 			};
 			name = Debug;
 		};
@@ -1646,7 +1702,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 			};
 			name = Release;
 		};
@@ -1665,7 +1721,7 @@
 				INFOPLIST_FILE = "美发沙龙网Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
 			};
 			name = Debug;
@@ -1681,7 +1737,7 @@
 				INFOPLIST_FILE = "美发沙龙网Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
+				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
 			};
 			name = Release;

@@ -18,6 +18,7 @@
 #import "LQVideoPlayerVC.h"
 #import "LQSearchController.h"
 #import "AppDelegate.h"
+#import "LQMallVC.h"
 
 @interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate,LQInformationBtnGroupViewDelegate,UISearchBarDelegate>
 
@@ -363,6 +364,14 @@
         return;
     }
     
+    if ([self.newsList.table isEqualToString:@"shop"])
+    {
+        LQMallVC *mallVC = [[LQMallVC alloc] init];
+        mallVC.navigationItem.title = newsContent.classname;
+        [self.navigationController pushViewController:mallVC animated:YES];
+        
+        return;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

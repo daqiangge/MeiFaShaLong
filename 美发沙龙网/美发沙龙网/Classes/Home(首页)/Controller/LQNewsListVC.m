@@ -12,6 +12,7 @@
 #import "LQNewsListContent.h"
 #import "LQNewsWebVC.h"
 #import "LQVideoPlayerVC.h"
+#import "LQMallVC.h"
 
 @interface LQNewsListVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -142,6 +143,15 @@
     {
         LQVideoPlayerVC *videoPlayerVC = [[LQVideoPlayerVC alloc] init];
         [self.navigationController pushViewController:videoPlayerVC animated:YES];
+        
+        return;
+    }
+    
+    if ([self.newsList.table isEqualToString:@"shop"])
+    {
+        LQMallVC *mallVC = [[LQMallVC alloc] init];
+        mallVC.navigationItem.title = newsContent.classname;
+        [self.navigationController pushViewController:mallVC animated:YES];
         
         return;
     }
