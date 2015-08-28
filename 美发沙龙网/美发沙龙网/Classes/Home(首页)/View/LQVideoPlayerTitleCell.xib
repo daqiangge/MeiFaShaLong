@@ -36,6 +36,9 @@
                         <state key="highlighted" backgroundImage="button_background">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="fenxiang:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Pdw-DM-8uB"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucY-Uh-fqq">
                         <rect key="frame" x="96" y="29" width="72" height="30"/>
@@ -99,7 +102,7 @@
                 <outlet property="fenxiangBtn" destination="Xtx-Fj-tjF" id="DVb-55-O3I"/>
                 <outlet property="shouchangBtn" destination="XJc-KN-lBq" id="OES-le-zes"/>
             </connections>
-            <point key="canvasLocation" x="310.5" y="264.5"/>
+            <point key="canvasLocation" x="540.5" y="261.5"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class LQVideoPlayerTitleCell;
+
+@protocol LQVideoPlayerTitleCellDelegate <NSObject>
+
+- (void)fenxiangBtnDidClickWithCell:(LQVideoPlayerTitleCell *)cell;
+
+@end
+
 @interface LQVideoPlayerTitleCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *VideoTitleLable;
+
+@property (nonatomic, weak) id<LQVideoPlayerTitleCellDelegate> delegate;
 
 + (LQVideoPlayerTitleCell *)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 

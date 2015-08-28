@@ -27,20 +27,34 @@
     _classid = classid;
 }
 
+- (void)setNewstext:(NSString *)newstext
+{
+    _newstext = newstext;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
     
     [self doLoading];
-    [self RequsetNewsContent];
+    
+    if (self.newstext)
+    {
+        [self.webView loadHTMLString:self.newstext baseURL:nil];
+    }
+    else
+    {
+        [self RequsetNewsContent];
+    }
+    
 }
 
 - (void)doLoading
 {
     UIWebView *webView = [[UIWebView alloc] init];
     webView.frame = CGRectMake(0, Navigation_Height, LQScreen_Width, LQScreen_Height-Navigation_Height);
-    webView.scalesPageToFit = YES;
+    webView.scalesPageToFit = NO;
     webView.delegate = self;
     [self.view addSubview:webView];
     self.webView = webView;
@@ -69,7 +83,7 @@
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         LQNewsContent *newsContent = [LQNewsContent objectWithKeyValues:operation.responseString];
         
-        NSString *html_str = [NSString stringWithFormat:@"<p style=\"text-align:center;font-size:30px;font-weight:bold;\">%@</p>%@",newsContent.title,newsContent.newstext];
+        NSString *html_str = [NSString stringWithFormat:@"<p style=\"text-align:center;font-size:20px;font-weight:bold;\">%@</p>%@",newsContent.title,newsContent.newstext];
         
         [self.webView loadHTMLString:html_str baseURL:nil];
         

@@ -1,5 +1,5 @@
 //
-//  LQCommodityCell.h
+//  LQCommodityIntroductionCell.h
 //  美发沙龙网
 //
 //  Created by admin on 15/8/27.
@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LQNewsContent.h"
+#import "LQCommodityIntroductionCellFrame.h"
 
-@interface LQCommodityCell : UITableViewCell
 
-@property (nonatomic, strong) LQNewsContent *content;
+@interface LQCommodityIntroductionCell : UITableViewCell
+
+@property (nonatomic, strong) LQCommodityIntroductionCellFrame *cellFrame;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 

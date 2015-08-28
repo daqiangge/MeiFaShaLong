@@ -33,14 +33,12 @@
 		840F65381B6F63060024B11A /* LQRegisteredAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F65361B6F63060024B11A /* LQRegisteredAccountVC.m */; };
 		840F65391B6F63060024B11A /* LQRegisteredAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840F65371B6F63060024B11A /* LQRegisteredAccountVC.xib */; };
 		8417A77E1B607CD700B80F54 /* LQHomePageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */; };
-		8418104E1B86AB2500BC372D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8418104D1B86AB2500BC372D /* libsqlite3.dylib */; };
 		8418105E1B86ABEB00BC372D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 841810521B86ABEB00BC372D /* FMDatabase.m */; };
 		8418105F1B86ABEB00BC372D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 841810541B86ABEB00BC372D /* FMDatabaseAdditions.m */; };
 		841810601B86ABEB00BC372D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 841810561B86ABEB00BC372D /* FMDatabasePool.m */; };
 		841810611B86ABEB00BC372D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 841810581B86ABEB00BC372D /* FMDatabaseQueue.m */; };
 		841810621B86ABEB00BC372D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418105B1B86ABEB00BC372D /* FMResultSet.m */; };
 		841810631B86ABEB00BC372D /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418105D1B86ABEB00BC372D /* YTKKeyValueStore.m */; };
-		841810641B86AC1700BC372D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8418104D1B86AB2500BC372D /* libsqlite3.dylib */; };
 		841810671B86C30700BC372D /* LQVideoPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 841810661B86C30700BC372D /* LQVideoPlayerVC.m */; };
 		8418107B1B86C35D00BC372D /* kr-video-player-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8418106A1B86C35D00BC372D /* kr-video-player-close@2x.png */; };
 		8418107C1B86C35D00BC372D /* kr-video-player-close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8418106B1B86C35D00BC372D /* kr-video-player-close@3x.png */; };
@@ -70,8 +68,6 @@
 		845243801B69CBC2006E8E26 /* LQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452437E1B69CBC2006E8E26 /* LQNewFeatureVC.m */; };
 		845243811B69CBC2006E8E26 /* LQNewFeatureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */; };
 		8458FB491B8EB6BD002740AB /* LQCommodityIntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB481B8EB6BD002740AB /* LQCommodityIntroductionCell.m */; };
-		8458FB4D1B8EB8AF002740AB /* LQCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB4C1B8EB8AF002740AB /* LQCommodity.m */; };
-		8458FB531B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB521B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m */; };
 		8458FB561B8ED75E002740AB /* LQCommodityCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB551B8ED75E002740AB /* LQCommodityCommentCell.m */; };
 		8458FB591B8ED79E002740AB /* LQCommodityComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB581B8ED79E002740AB /* LQCommodityComment.m */; };
 		8458FB5C1B8ED7AD002740AB /* LQCommodityCommentCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458FB5B1B8ED7AD002740AB /* LQCommodityCommentCellFrame.m */; };
@@ -89,6 +85,7 @@
 		84835C3A1B733C2F001859E9 /* LQNewsBClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84835C391B733C2F001859E9 /* LQNewsBClass.m */; };
 		84835C3D1B733C40001859E9 /* LQNewsSonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84835C3C1B733C40001859E9 /* LQNewsSonClass.m */; };
 		84835C471B734666001859E9 /* LQNewsListContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 84835C461B734666001859E9 /* LQNewsListContent.m */; };
+		849177C01B902F660033783C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 849177BF1B902F660033783C /* libsqlite3.dylib */; };
 		849709991B632FD400C497B6 /* NSString+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709981B632FD400C497B6 /* NSString+LQExtension.m */; };
 		849709A21B63719500C497B6 /* UIImage+LQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A11B63719500C497B6 /* UIImage+LQExtension.m */; };
 		849709A51B63816C00C497B6 /* LQHomeRollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849709A41B63816C00C497B6 /* LQHomeRollingView.m */; };
@@ -233,7 +230,6 @@
 		840F65371B6F63060024B11A /* LQRegisteredAccountVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQRegisteredAccountVC.xib; sourceTree = "<group>"; };
 		8417A77C1B607CD700B80F54 /* LQHomePageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHomePageControlView.h; sourceTree = "<group>"; };
 		8417A77D1B607CD700B80F54 /* LQHomePageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHomePageControlView.m; sourceTree = "<group>"; };
-		8418104D1B86AB2500BC372D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		841810511B86ABEB00BC372D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		841810521B86ABEB00BC372D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		841810531B86ABEB00BC372D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -288,10 +284,6 @@
 		8452437F1B69CBC2006E8E26 /* LQNewFeatureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQNewFeatureVC.xib; sourceTree = "<group>"; };
 		8458FB471B8EB6BD002740AB /* LQCommodityIntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityIntroductionCell.h; sourceTree = "<group>"; };
 		8458FB481B8EB6BD002740AB /* LQCommodityIntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityIntroductionCell.m; sourceTree = "<group>"; };
-		8458FB4B1B8EB8AF002740AB /* LQCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodity.h; sourceTree = "<group>"; };
-		8458FB4C1B8EB8AF002740AB /* LQCommodity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodity.m; sourceTree = "<group>"; };
-		8458FB511B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityIntroductionCellFrame.h; sourceTree = "<group>"; };
-		8458FB521B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityIntroductionCellFrame.m; sourceTree = "<group>"; };
 		8458FB541B8ED75E002740AB /* LQCommodityCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityCommentCell.h; sourceTree = "<group>"; };
 		8458FB551B8ED75E002740AB /* LQCommodityCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCommodityCommentCell.m; sourceTree = "<group>"; };
 		8458FB571B8ED79E002740AB /* LQCommodityComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCommodityComment.h; sourceTree = "<group>"; };
@@ -327,6 +319,7 @@
 		84835C3C1B733C40001859E9 /* LQNewsSonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewsSonClass.m; sourceTree = "<group>"; };
 		84835C451B734666001859E9 /* LQNewsListContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewsListContent.h; sourceTree = "<group>"; };
 		84835C461B734666001859E9 /* LQNewsListContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewsListContent.m; sourceTree = "<group>"; };
+		849177BF1B902F660033783C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		849709971B632FD400C497B6 /* NSString+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LQExtension.h"; sourceTree = "<group>"; };
 		849709981B632FD400C497B6 /* NSString+LQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LQExtension.m"; sourceTree = "<group>"; };
 		849709A01B63719500C497B6 /* UIImage+LQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LQExtension.h"; sourceTree = "<group>"; };
@@ -496,7 +489,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841810641B86AC1700BC372D /* libsqlite3.dylib in Frameworks */,
+				849177C01B902F660033783C /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +497,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8418104E1B86AB2500BC372D /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,7 +567,7 @@
 		8418104F1B86AB8E00BC372D /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
-				8418104D1B86AB2500BC372D /* libsqlite3.dylib */,
+				849177BF1B902F660033783C /* libsqlite3.dylib */,
 			);
 			name = FrameWork;
 			sourceTree = "<group>";
@@ -673,10 +665,6 @@
 		8458FB4A1B8EB893002740AB /* Commodity */ = {
 			isa = PBXGroup;
 			children = (
-				8458FB4B1B8EB8AF002740AB /* LQCommodity.h */,
-				8458FB4C1B8EB8AF002740AB /* LQCommodity.m */,
-				8458FB511B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.h */,
-				8458FB521B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m */,
 				8458FB571B8ED79E002740AB /* LQCommodityComment.h */,
 				8458FB581B8ED79E002740AB /* LQCommodityComment.m */,
 				8458FB5A1B8ED7AD002740AB /* LQCommodityCommentCellFrame.h */,
@@ -1346,8 +1334,8 @@
 			buildConfigurationList = 84EFEA871B5CC6670049D6FA /* Build configuration list for PBXNativeTarget "美发沙龙网Tests" */;
 			buildPhases = (
 				84EFEA761B5CC6670049D6FA /* Sources */,
-				84EFEA771B5CC6670049D6FA /* Frameworks */,
 				84EFEA781B5CC6670049D6FA /* Resources */,
+				84EFEA771B5CC6670049D6FA /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1479,7 +1467,6 @@
 				D5E0F2F11B85E58B005B19DC /* MJRefreshAutoFooter.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
 				841810A61B871F6300BC372D /* LQVideoModel.m in Sources */,
-				8458FB4D1B8EB8AF002740AB /* LQCommodity.m in Sources */,
 				843CED171B857CA4007631C6 /* AppDelegate.m in Sources */,
 				840A00861B72ED9A007F7E78 /* AFHTTPRequestOperationManager.m in Sources */,
 				847C0C9D1B6B66DD00340448 /* UIColor+LQExtension.m in Sources */,
@@ -1543,7 +1530,6 @@
 				84E98F381B7450C60022D47D /* SDWebImageCompat.m in Sources */,
 				84E98F3C1B7450C60022D47D /* SDWebImageManager.m in Sources */,
 				D5E0F2FB1B85E58B005B19DC /* MJRefreshBackStateFooter.m in Sources */,
-				8458FB531B8EBAC3002740AB /* LQCommodityIntroductionCellFrame.m in Sources */,
 				84835C221B72FF2C001859E9 /* NSDictionary_JSONExtensions.m in Sources */,
 				D5E0F3021B85E58B005B19DC /* UIScrollView+MJRefresh.m in Sources */,
 				84F3CA851B5F36CE00DD44A9 /* LQTabBarController.m in Sources */,
@@ -1684,10 +1670,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "美发沙龙网/MeiFaShaLong.pch";
 				INFOPLIST_FILE = "美发沙龙网/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 			};
@@ -1697,10 +1685,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "美发沙龙网/MeiFaShaLong.pch";
 				INFOPLIST_FILE = "美发沙龙网/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 			};
@@ -1720,6 +1710,11 @@
 				);
 				INFOPLIST_FILE = "美发沙龙网Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/美发沙龙网/Classes/Main(主要)/Lib(第三方库)/ShareSDK/libraries/extends/WeChatSDK",
+					"$(PROJECT_DIR)/美发沙龙网/Classes/Main(主要)/Lib(第三方库)/ShareSDK/libraries/extends/SinaWeiboSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
@@ -1736,6 +1731,11 @@
 				);
 				INFOPLIST_FILE = "美发沙龙网Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/美发沙龙网/Classes/Main(主要)/Lib(第三方库)/ShareSDK/libraries/extends/WeChatSDK",
+					"$(PROJECT_DIR)/美发沙龙网/Classes/Main(主要)/Lib(第三方库)/ShareSDK/libraries/extends/SinaWeiboSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";

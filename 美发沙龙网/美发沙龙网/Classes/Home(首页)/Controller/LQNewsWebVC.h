@@ -12,5 +12,5 @@
 
 @property (nonatomic, copy) NSString *ID;
 @property (nonatomic, copy) NSString *classid;
-
+@property (nonatomic, copy) NSString *newstext;
 @end

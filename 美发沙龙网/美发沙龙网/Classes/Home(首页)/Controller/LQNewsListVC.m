@@ -47,14 +47,19 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     [self doLoading];
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    [self RequsetNewsList];
 }
 
 - (void)doLoading
 {
+    //获取存储的数据
+    YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:SQL_Name];
+    NSString *tableName = @"NewsList";
+    NSString *key = self.classid;
+    [store createTableWithName:tableName];
+    NSString *str = [store getStringById:key fromTable:tableName];
+    self.newsList = [LQNewsList objectWithKeyValues:str];
+    self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
+    
     CGFloat x              = 0;
     CGFloat y              = Navigation_Height;
     CGFloat width          = self.view.width;
@@ -69,6 +74,13 @@
     self.tableView = tableView;
     
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshTableView)];
+    
+    if (!self.newsList)
+    {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    
+    [self RequsetNewsList];
     
 }
 
@@ -86,6 +98,12 @@
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
+        YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:SQL_Name];
+        NSString *tableName = @"NewsList";
+        NSString *key = self.classid;
+        [store createTableWithName:tableName];
+        [store putString:operation.responseString withId:key intoTable:tableName];
+    
         self.newsList = [LQNewsList objectWithKeyValues:operation.responseString];
         self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
         [self.tableView reloadData];
@@ -142,6 +160,8 @@
     if ([self.newsList.table isEqualToString:@"movie"])
     {
         LQVideoPlayerVC *videoPlayerVC = [[LQVideoPlayerVC alloc] init];
+        videoPlayerVC.ID = newsContent.ID;
+        videoPlayerVC.classid = newsContent.classid;
         [self.navigationController pushViewController:videoPlayerVC animated:YES];
         
         return;
@@ -150,6 +170,8 @@
     if ([self.newsList.table isEqualToString:@"shop"])
     {
         LQMallVC *mallVC = [[LQMallVC alloc] init];
+        mallVC.ID = newsContent.ID;
+        mallVC.classid = newsContent.classid;
         mallVC.navigationItem.title = newsContent.classname;
         [self.navigationController pushViewController:mallVC animated:YES];
         

@@ -15,8 +15,9 @@
 #import "LQVideoModel.h"
 #import "LQVideoModels.h"
 #import "LQVideoNumberVC.h"
+#import "LQNewsContent.h"
 
-@interface LQVideoPlayerVC ()<UITableViewDataSource,UITableViewDelegate,LQVideoNumberCellDelegate>
+@interface LQVideoPlayerVC ()<UITableViewDataSource,UITableViewDelegate,LQVideoNumberCellDelegate,LQVideoPlayerTitleCellDelegate>
 
 @property (nonatomic, strong) KrVideoPlayerController  *videoController;
 @property (nonatomic, weak) UITableView *tableView;
@@ -54,6 +55,16 @@
     }
     
     return _tableView;
+}
+
+- (void)setID:(NSString *)ID
+{
+    _ID = ID;
+}
+
+- (void)setClassid:(NSString *)classid
+{
+    _classid = classid;
 }
 
 - (void)viewDidLoad
@@ -126,13 +137,35 @@
 #pragma mark - 网络请求
 - (void)videoRequest
 {
+    
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsContent.php";
+//    NSDictionary *parameters = @{@"id":self.ID,@"classid":self.classid};
+//    
+//    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+////        LQNewsContent *newsContent = [LQNewsContent objectWithKeyValues:operation.responseString];
+//        
+//        LQLog(@"%@",operation.responseString);
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        LQLog(@"请求失败%@",error);
+//        
+//        hud.labelText = HTTPRequestErrer_Text;
+//        hud.mode = MBProgressHUDModeText;
+//        [hud hide:YES afterDelay:1.5];
+//    }];
+    
+    
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         NSDictionary *dic1 = @{@"title":@"简介",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
         NSDictionary *dic2 = @{@"title":@"影片介绍",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
-        NSDictionary *dic3 = @{@"title":@"使用帮助",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
+        NSDictionary *dic3 = @{@"title":@"使用帮助",@"content":@"1.为什么要成为VIP会员？自助注册的会员为普通会员，并不是VIP会员，是无法观看VIP完整视频的，所以观看完整视频请联系客服升级为VIP会员，成为VIP会员即可观看本站几千集完整版教学视频，国内外名师为您详细讲解剪，烫，染，吹风造型，盘发扎发，美发店经营管理，使您足不出户就能了解最新的潮流趋势，最新优惠详情请咨询本站客服QQ800030206 电话0510-66651781\n2.如何购买VIP卡？自助注册的会员为普通会员，并不是VIP会员，是无法观看VIP完整视频的，所以观看完整视频请联系客服升级为VIP会员，成为VIP会员即可观看本站几千集完整版教学视频，国内外名师为您详细讲解剪，烫，染，吹风造型，盘发扎发，美发店经营管理，使您足不出户就能了解最新的潮流趋势，最新优惠详情请咨询本站客服QQ800030206 电话0510-66651781"};
         
         NSDictionary *videoModels = @{@"videoModels":@[dic1,dic2,dic3]};
         
@@ -160,6 +193,8 @@
     if (indexPath.row == 0)
     {
         LQVideoPlayerTitleCell *cell = [LQVideoPlayerTitleCell cellWithTableView:tableView indexPath:indexPath];
+        
+        cell.delegate = self;
         
         return cell;
     }
@@ -217,6 +252,12 @@
     
     self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
     [self.videoController play];
+}
+
+#pragma mark - LQVideoPlayerTitleCellDelegate
+- (void)fenxiangBtnDidClickWithCell:(LQVideoPlayerTitleCell *)cell
+{
+    
 }
 
 #pragma mark - viewWillDisappear

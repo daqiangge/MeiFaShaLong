@@ -13,6 +13,7 @@
 @property (nonatomic, weak) UIImageView *commodityImageView;
 @property (nonatomic, weak) UILabel *commodityNameLable;
 @property (nonatomic, weak) UILabel *commodityPriceLable;
+@property (nonatomic, weak) UILabel *commodityDiscountPriceLable;
 @property (nonatomic, weak) UILabel *commodityNumberLable;//编号
 @property (nonatomic, weak) UILabel *commodityBrandLable;
 @property (nonatomic, weak) UILabel *commodityUnitLable;
@@ -53,12 +54,29 @@
     return _commodityNameLable;
 }
 
+- (UILabel *)commodityDiscountPriceLable
+{
+    if (!_commodityDiscountPriceLable)
+    {
+        UILabel *lable = [[UILabel alloc] init];
+        lable.frame = CGRectMake(self.commodityNameLable.x, CGRectGetMaxY(self.commodityNameLable.frame), self.commodityNameLable.width, 20);
+        lable.numberOfLines = 1;
+        lable.textColor = [UIColor orangeColor];
+        lable.font = [UIFont systemFontOfSize:13];
+        [self addSubview:lable];
+        
+        _commodityDiscountPriceLable = lable;
+    }
+    
+    return _commodityDiscountPriceLable;
+}
+
 - (UILabel *)commodityPriceLable
 {
     if (!_commodityPriceLable)
     {
         UILabel *lable = [[UILabel alloc] init];
-        lable.frame = CGRectMake(self.commodityNameLable.x, CGRectGetMaxY(self.commodityNameLable.frame), self.commodityNameLable.width, 20);
+        lable.frame = CGRectMake(self.commodityNameLable.x, CGRectGetMaxY(self.commodityDiscountPriceLable.frame), self.commodityNameLable.width, 20);
         lable.numberOfLines = 1;
         lable.font = [UIFont systemFontOfSize:13];
         [self addSubview:lable];
@@ -137,7 +155,7 @@
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
-        [self doLoading];
+        
     }
     
     return self;
@@ -151,14 +169,18 @@
     return cell;
 }
 
-- (void)doLoading
+- (void)setContent:(LQNewsContent *)content
 {
-    self.commodityNameLable.text = @"小天鹅洗衣机XQB62-308G";
-    self.commodityPriceLable.text = @"市场价：￥1598.00 优惠价：￥1598.00  点数: 0";
-    self.commodityNumberLable.text = @"商品编号：XBDF223523";
-    self.commodityBrandLable.text = @"商品品牌：小天鹅";
-    self.commodityUnitLable.text = @"商品单位：台";
-    self.commodityAmountLable.text = @"商品数量：99999";
+    _content = content;
+    
+    [self.commodityImageView sd_setImageWithURL:[NSURL URLWithString:content.productpic] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+    self.commodityNameLable.text = content.title;
+    self.commodityDiscountPriceLable.text = [NSString stringWithFormat:@"优惠价：￥%@",content.tprice];
+    self.commodityPriceLable.text = [NSString stringWithFormat:@"市场价：￥%@  点数：%@",content.price,content.buyfen];
+    self.commodityNumberLable.text = [NSString stringWithFormat:@"商品编号：%@",content.productno];
+    self.commodityBrandLable.text = [NSString stringWithFormat:@"商品品牌：%@",content.pbrand];
+    self.commodityUnitLable.text = [NSString stringWithFormat:@"商品单位：%@",content.unit];
+    self.commodityAmountLable.text = [NSString stringWithFormat:@"商品重量：%@",content.weight];
 }
 
 @end

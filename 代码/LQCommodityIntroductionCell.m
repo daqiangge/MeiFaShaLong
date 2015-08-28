@@ -7,6 +7,7 @@
 //
 
 #import "LQCommodityIntroductionCell.h"
+#import "LQCommodity.h"
 
 @interface LQCommodityIntroductionCell()
 
@@ -30,7 +31,6 @@
 {
     LQCommodityIntroductionCell *cell = [[LQCommodityIntroductionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
@@ -42,6 +42,25 @@
     titleLable.textColor       = [UIColor blackColor];
     titleLable.text            = @"商品介绍";
     [self addSubview:titleLable];
+
+    UILabel *contentLable      = [[UILabel alloc] init];
+    contentLable.frame         = CGRectMake(titleLable.x, CGRectGetMaxY(titleLable.frame)+5, titleLable.width, 100);
+    contentLable.font          = [UIFont systemFontOfSize:13];
+    contentLable.textColor     = [UIColor grayColor];
+    contentLable.numberOfLines = 0;
+    [self addSubview:contentLable];
+    self.contentLable          = contentLable;
+}
+
+- (void)setCellFrame:(LQCommodityIntroductionCellFrame *)cellFrame
+{
+    _cellFrame = cellFrame;
+    
+    LQCommodity *commodity = cellFrame.commodity;
+    
+    self.contentLable.height = cellFrame.contentLableHeight;
+    
+    self.contentLable.text = commodity.introduction;
 }
 
 @end

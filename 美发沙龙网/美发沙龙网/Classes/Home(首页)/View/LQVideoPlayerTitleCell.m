@@ -58,4 +58,12 @@
     btn.layer.borderWidth = Layer_BorderWidth;
 }
 
+- (IBAction)fenxiang:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(fenxiangBtnDidClickWithCell:)])
+    {
+        [self.delegate fenxiangBtnDidClickWithCell:self];
+    }
+}
+
 @end

@@ -39,31 +39,42 @@
 - (void)doLoading
 {
     UIScrollView *scrollView = [[UIScrollView alloc] init];
-    scrollView.frame = CGRectMake(0, 0, self.width, self.height);
+//    scrollView.frame = CGRectMake(0, 0, self.width, self.height);
     scrollView.backgroundColor = [UIColor whiteColor];
     [self addSubview:scrollView];
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.and.top.equalTo(self);
+    }];
     
     
     long int num = self.sonclassArray.count;
     
     if (num == 0)
     {
-        self.height = space;
+//        self.height = space;
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo([NSNumber numberWithInt:space]);
+        }];
     }else {
         long int rows = (num - 1) / 4 + 1;//计算行数
         
-        self.height = space + (button_height + space) * rows;//计算按钮组的高度
-        scrollView.contentSize = CGSizeMake(self.width, self.height);
+        //计算按钮组的高度
+        CGFloat height = space + (button_height + space) * rows;
+        
+        scrollView.contentSize = CGSizeMake(LQScreen_Width, height);
         
         if (rows >= 3)
         {
-            self.height = space + (button_height + space) * 2.4;//计算按钮组的高度
+            //计算按钮组的高度
+            height = space + (button_height + space) * 2.4;
         }
+        
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo([NSNumber numberWithFloat:height]);
+        }];
     }
     
-    scrollView.height = self.height - 5;
-    
-    CGFloat width = (self.width - 5*space)/4;
+    CGFloat width = (LQScreen_Width - 5*space)/4;
     CGFloat height = button_height;
     
     //如果按钮个数小于4个，则一行均等放置

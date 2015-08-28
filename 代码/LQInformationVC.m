@@ -178,17 +178,43 @@
 
 - (void)doLoading
 {
-    UIView *backgroundView           = [[UIView alloc] init];
-    backgroundView.backgroundColor   = [UIColor whiteColor];
-    backgroundView.frame             = CGRectMake(0, CGRectGetMaxY(self.homeRollingView.frame), LQScreen_Width, LQScreen_Height);
+    UIView *backgroundView = [[UIView alloc] init];
+    backgroundView.backgroundColor = [UIColor whiteColor];
+    backgroundView.frame = CGRectMake(0, CGRectGetMaxY(self.homeRollingView.frame), LQScreen_Width, LQScreen_Height);
     [self.view addSubview:backgroundView];
-
-    self.searchBar.hidden            = NO;
-    self.homeRollingView.hidden      = NO;
-    self.btnGroupView.hidden         = NO;
+    
+    self.searchBar.hidden       = NO;
+    self.homeRollingView.hidden = NO;
+    self.btnGroupView.hidden = NO;
     self.informationTableView.hidden = NO;
     
+    NSString *tableName = @"AllNewsClass";
+    NSString *key       = @"AllNewsClass";
+    NSString *str       = [self.store getStringById:key fromTable:tableName];
+    
+    self.newsClass = [LQNewsClass objectWithKeyValues:str];
+    [self setSonclassArray];
+    
+    if (self.newsClass)
+    {
+        self.btnGroupView.sonclassArray = self.sonclassArray;
+        
+        if ([self getNewsListArray].count == 0)
+        {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }else
+        {
+            [self.informationTableView reloadData];
+        }
+    }
+    else
+    {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    
     [self requestAllNewsClass];
+    
+    
     
 }
 
@@ -267,9 +293,6 @@
 #pragma mark - 网络请求
 - (void)requestAllNewsClass
 {
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsClass.php";
     

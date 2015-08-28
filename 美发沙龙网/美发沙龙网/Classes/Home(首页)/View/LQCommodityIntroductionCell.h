@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LQCommodityIntroductionCellFrame.h"
+//#import "LQCommodityIntroductionCellFrame.h"
 
+#define CellHeight 40
 
 @interface LQCommodityIntroductionCell : UITableViewCell
-
-@property (nonatomic, strong) LQCommodityIntroductionCellFrame *cellFrame;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 

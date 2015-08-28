@@ -10,4 +10,7 @@
 
 @interface LQVideoPlayerVC : UIViewController
 
+@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, copy) NSString *classid;
+
 @end
