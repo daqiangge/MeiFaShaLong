@@ -1623,7 +1623,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1660,7 +1660,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1677,7 +1677,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 			};
 			name = Debug;
 		};
@@ -1692,7 +1692,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 			};
 			name = Release;
 		};
@@ -1716,7 +1716,7 @@
 					"$(PROJECT_DIR)/美发沙龙网/Classes/Main(主要)/Lib(第三方库)/ShareSDK/libraries/extends/SinaWeiboSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
 			};
 			name = Debug;
@@ -1737,7 +1737,7 @@
 					"$(PROJECT_DIR)/美发沙龙网/Classes/Main(主要)/Lib(第三方库)/ShareSDK/libraries/extends/SinaWeiboSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "721effb3-19c7-45ec-91a9-61766fb4a88a";
+				PROVISIONING_PROFILE = "6780109f-466a-4368-b278-c0aa63d07a8e";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/美发沙龙网.app/美发沙龙网";
 			};
 			name = Release;

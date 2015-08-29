@@ -71,6 +71,16 @@
     [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
 }
 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    //判断是否是单击
+    if (navigationType == UIWebViewNavigationTypeLinkClicked)
+    {
+        return NO;
+    }
+    return YES;
+}
+
 #pragma mark - 网络请求
 - (void)RequsetNewsContent
 {
@@ -79,10 +89,10 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsContent.php";
     NSDictionary *parameters = @{@"id":self.ID,@"classid":self.classid};
-    
+    LQLog(@"http://old.meifashalong.com/e/api/getNewsContent.php?id=%@&classid=%@",self.ID,self.classid);
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         LQNewsContent *newsContent = [LQNewsContent objectWithKeyValues:operation.responseString];
-        
+        LQLog(@"%@",operation.responseString);
         NSString *html_str = [NSString stringWithFormat:@"<p style=\"text-align:center;font-size:20px;font-weight:bold;\">%@</p>%@",newsContent.title,newsContent.newstext];
         
         [self.webView loadHTMLString:html_str baseURL:nil];

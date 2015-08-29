@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *newsListArray;
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, strong) LQNewsList *newsList;
+@property (nonatomic, assign) int pagesize;
 
 @end
 
@@ -45,6 +46,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
+    
+    self.pagesize = 1;
     
     [self doLoading];
 }
@@ -74,6 +77,9 @@
     self.tableView = tableView;
     
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshTableView)];
+    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshTableViewMore)];
+    
+    [self.tableView.footer noticeNoMoreData];
     
     if (!self.newsList)
     {
@@ -86,7 +92,24 @@
 
 - (void)refreshTableView
 {
+    self.pagesize = 1;
     [self RequsetNewsList];
+}
+
+- (void)refreshTableViewMore
+{
+    if (self.newsListArray.count >= self.pagesize*20)
+    {
+        self.pagesize ++;
+        
+        [self RequsetNewsList];
+        [self.tableView.footer endRefreshing];
+    }
+    else
+    {
+        [self.tableView.footer noticeNoMoreData];
+    }
+    
 }
 
 #pragma mark - 网络请求
@@ -94,7 +117,7 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsList.php";
-    NSDictionary *parameters = @{@"classid":self.classid,@"pageSize":@"20"};
+    NSDictionary *parameters = @{@"classid":self.classid,@"pageSize":@"20",@"pageIndex":[NSNumber numberWithInt:self.pagesize]};
     
     [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -105,12 +128,23 @@
         [store putString:operation.responseString withId:key intoTable:tableName];
     
         self.newsList = [LQNewsList objectWithKeyValues:operation.responseString];
-        self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
+        
+        if (self.pagesize == 1)
+        {
+            [self.newsListArray removeAllObjects];
+            self.newsListArray = [NSMutableArray arrayWithArray:self.newsList.data];
+        }
+        else
+        {
+            [self.newsListArray addObjectsFromArray:self.newsList.data];
+        }
+        
         [self.tableView reloadData];
         
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         
         [self.tableView.header endRefreshing];
+        [self.tableView.footer resetNoMoreData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
