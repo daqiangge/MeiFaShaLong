@@ -53,17 +53,17 @@
     if (self.page == 0)
     {
         [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[self.page + 1] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
-        [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[4] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+        [self.previousImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[4] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
     }
     else if (self.page < 4)
     {
         [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[self.page + 1] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
-        [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[self.page - 1] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+        [self.previousImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[self.page - 1] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
     }
     else if (self.page == 4)
     {
         [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[1] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
-        [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[self.page - 1] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
+        [self.previousImageView sd_setImageWithURL:[NSURL URLWithString:[imageUrlArray[self.page - 1] titlepicurl]] placeholderImage:[UIImage imageNamed:@"placehodeImage"]];
     }
     
     //更改小圆点的位置及标题
