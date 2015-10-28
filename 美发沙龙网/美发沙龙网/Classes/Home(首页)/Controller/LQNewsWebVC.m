@@ -89,11 +89,16 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsContent.php";
     NSDictionary *parameters = @{@"id":self.ID,@"classid":self.classid};
-    LQLog(@"http://old.meifashalong.com/e/api/getNewsContent.php?id=%@&classid=%@",self.ID,self.classid);
-    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+//    LQLog(@"http://old.meifashalong.com/e/api/getNewsContent.php?id=%@&classid=%@",self.ID,self.classid);
+    
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
         LQNewsContent *newsContent = [LQNewsContent objectWithKeyValues:operation.responseString];
-        LQLog(@"%@",operation.responseString);
-        NSString *html_str = [NSString stringWithFormat:@"<p style=\"text-align:center;font-size:20px;font-weight:bold;\">%@</p>%@",newsContent.title,newsContent.newstext];
+        
+//        LQLog(@"%@",operation.responseString);
+        
+        NSString *html_str = [NSString stringWithFormat:@"<p style=\"text-align:center;font-size:20px;font-weight:bold;\">%@</p><hr style=\"margin:1px 5px 20px 5px;border-top:1px solid #cacaca\">%@",newsContent.title,newsContent.newstext];
         
         [self.webView loadHTMLString:html_str baseURL:nil];
         
