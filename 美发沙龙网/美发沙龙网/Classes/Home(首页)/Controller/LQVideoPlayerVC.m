@@ -245,7 +245,8 @@
     }
 }
 
-#pragma mark - LQVideoNumberCellDelegate
+#pragma mark -
+#pragma ================= LQVideoNumberCellDelegate =================
 - (void)videoNumberCellDidClickBtnWithView:(LQVideoNumberCell *)view btn:(UIButton *)btn
 {
     self.videoBtnSelecteNum = (int)btn.tag;
@@ -260,12 +261,17 @@
     
 }
 
-#pragma mark - viewWillDisappear
+#pragma mark -
+#pragma ================= viewWillDisappear =================
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    [self.videoController dismiss];
 }
 
+#pragma mark -
+#pragma ================= dealloc =================
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
