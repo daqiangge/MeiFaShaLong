@@ -7,13 +7,13 @@
 //
 
 #import "LQVideoExplainCell.h"
-#import "LQVideoExplainCellFrame.h"
 #import "LQVideoModel.h"
 
 @interface LQVideoExplainCell()
 
 @property (nonatomic, weak) UILabel *titleLable;
 @property (weak, nonatomic) UILabel *contentLable;
+@property (nonatomic, weak) NSIndexPath *indexPath;
 
 @end
 
@@ -29,6 +29,8 @@
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.indexPath = indexPath;
     
     return cell;
 }
@@ -55,16 +57,32 @@
     return self;
 }
 
-- (void)setCellFrame:(LQVideoExplainCellFrame *)cellFrame
+- (void)setVideoModel:(LQVideoModel *)videoModel
 {
-    _cellFrame = cellFrame;
-    
-    LQVideoModel *videoModel = cellFrame.videoModel;
-    
-    self.contentLable.frame = CGRectMake(15, CGRectGetMaxY(self.titleLable.frame)+10, LQScreen_Width-30, cellFrame.contentHeight);
+    _videoModel = videoModel;
     
     self.titleLable.text = videoModel.title;
-//    self.contentLable.text = videoModel.content;
+    
+    if (self.indexPath.row == 2)
+    {
+        self.contentLable.frame = CGRectMake(15, CGRectGetMaxY(self.titleLable.frame)+10, LQScreen_Width-30, [self stringHeightWithString:videoModel.briefIntroduction]);
+        self.titleLable.text = @"简介";
+        self.contentLable.text = videoModel.briefIntroduction;
+    }
+    else if (self.indexPath.row == 3)
+    {
+        self.contentLable.frame = CGRectMake(15, CGRectGetMaxY(self.titleLable.frame)+10, LQScreen_Width-30, [self stringHeightWithString:videoModel.useHelp]);
+        self.titleLable.text = @"使用帮助";
+        self.contentLable.text = videoModel.useHelp;
+        
+    }
+}
+
+- (CGFloat)stringHeightWithString:(NSString *)string
+{
+    CGSize contentSize = [string calculateStringSizeWithMaxSize:CGSizeMake(LQScreen_Width-30, MAXFLOAT) font:ContentLable_Font];
+    
+    return contentSize.height;
 }
 
 @end

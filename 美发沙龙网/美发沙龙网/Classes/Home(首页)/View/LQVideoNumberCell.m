@@ -51,8 +51,9 @@
 {
     [super drawRect:rect];
     
-    self.oneBtn.selected = YES;
-    self.btn = self.oneBtn;
+    //默认第一个按钮选中
+//    self.oneBtn.selected = YES;
+//    self.btn = self.oneBtn;
 }
 
 - (IBAction)buttonDidClick:(UIButton *)sender
@@ -65,6 +66,69 @@
     if ([self.delegate respondsToSelector:@selector(videoNumberCellDidClickBtnWithView:btn:)])
     {
         [self.delegate videoNumberCellDidClickBtnWithView:self btn:sender];
+    }
+}
+
+- (void)setTotalpath:(int)totalpath
+{
+    _totalpath = totalpath;
+    
+    self.sumLable.text = [NSString stringWithFormat:@"共%d集",self.totalpath];
+    
+    switch (totalpath) {
+        case 0:
+            break;
+            
+        case 1:
+        {
+            self.oneBtn.hidden = NO;
+        }
+            break;
+            
+        case 2:
+        {
+            self.oneBtn.hidden = NO;
+            self.twoBtn.hidden = NO;
+        }
+            break;
+            
+        case 3:
+        {
+            self.oneBtn.hidden = NO;
+            self.twoBtn.hidden = NO;
+            self.threeBrn.hidden = NO;
+        }
+            break;
+            
+        case 4:
+        {
+            self.oneBtn.hidden = NO;
+            self.twoBtn.hidden = NO;
+            self.threeBrn.hidden = NO;
+            self.fourBrn.hidden = NO;
+        }
+            break;
+            
+        case 5:
+        {
+            self.oneBtn.hidden = NO;
+            self.twoBtn.hidden = NO;
+            self.threeBrn.hidden = NO;
+            self.fourBrn.hidden = NO;
+            self.fiveBrn.hidden = NO;
+        }
+            break;
+            
+        default:
+        {
+            self.oneBtn.hidden = NO;
+            self.twoBtn.hidden = NO;
+            self.threeBrn.hidden = NO;
+            self.fourBrn.hidden = NO;
+            self.fiveBrn.hidden = NO;
+            self.sixBtn.hidden = NO;
+        }
+            break;
     }
 }
 

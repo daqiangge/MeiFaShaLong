@@ -12,9 +12,14 @@
 
 @interface LQVideoNumberVC : UIViewController
 
+//视频集数
+@property (nonatomic, assign) int totalpath;
+
 /**
  *  记录播放的第几集
  */
 @property (nonatomic, assign) int videoBtnSelecteNum;
+
+
 
 @end

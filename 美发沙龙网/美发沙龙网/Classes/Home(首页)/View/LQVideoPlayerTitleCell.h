@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class LQVideoPlayerTitleCell;
+@class LQVideoModel;
 
 @protocol LQVideoPlayerTitleCellDelegate <NSObject>
 
@@ -19,6 +20,7 @@
 @interface LQVideoPlayerTitleCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *VideoTitleLable;
+@property (nonatomic, strong) LQVideoModel *videoModel;
 
 @property (nonatomic, weak) id<LQVideoPlayerTitleCellDelegate> delegate;
 

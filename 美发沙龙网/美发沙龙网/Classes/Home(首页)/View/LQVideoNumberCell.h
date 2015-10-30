@@ -21,6 +21,9 @@
 
 @property (nonatomic, weak) id<LQVideoNumberCellDelegate> delegate;
 
+//视频集数
+@property (nonatomic, assign) int totalpath;
+
 + (LQVideoNumberCell *)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 - (IBAction)buttonDidClick:(UIButton *)sender;
 

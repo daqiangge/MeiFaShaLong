@@ -7,12 +7,14 @@
 //
 
 #import "LQVideoPlayerTitleCell.h"
+#import "LQVideoModel.h"
 
 @interface LQVideoPlayerTitleCell()
 @property (weak, nonatomic) IBOutlet UIButton *fenxiangBtn;
 @property (weak, nonatomic) IBOutlet UIButton *chongzhiBtn;
 @property (weak, nonatomic) IBOutlet UIButton *shouchangBtn;
 @property (weak, nonatomic) IBOutlet UIButton *dianshuBtn;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -64,6 +66,13 @@
     {
         [self.delegate fenxiangBtnDidClickWithCell:self];
     }
+}
+
+- (void)setVideoModel:(LQVideoModel *)videoModel
+{
+    _videoModel = videoModel;
+    
+    self.titleLabel.text = videoModel.title;
 }
 
 @end

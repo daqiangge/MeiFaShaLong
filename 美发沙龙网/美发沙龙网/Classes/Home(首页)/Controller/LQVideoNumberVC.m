@@ -16,6 +16,13 @@
 
 @implementation LQVideoNumberVC
 
+- (void)setTotalpath:(int)totalpath
+{
+    _totalpath = totalpath;
+    
+    LQLog(@"LQVideoNumberVC ----- 集数为%d",_totalpath);
+}
+
 - (void)setVideoBtnSelecteNum:(int)videoBtnSelecteNum
 {
     _videoBtnSelecteNum = videoBtnSelecteNum;
@@ -41,7 +48,7 @@
     backgroundView.frame = CGRectMake(0, Navigation_Height, LQScreen_Width, LQScreen_Height);
     [self.view addSubview:backgroundView];
     
-    for (int i = 0; i < 21; i++)
+    for (int i = 0; i < self.totalpath; i++)
     {
         int row = i/6;
         int col = i%6;
@@ -87,6 +94,8 @@
     self.btn = btn;
     
     self.videoBtnSelecteNum = (int)btn.tag;
+    
+    LQLog(@"LQVideoNumberVC ----- videoBtnSelecteNum为%d",self.videoBtnSelecteNum);
     
     [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationName_VideoBtnSelecteNum object:[NSNumber numberWithInt:self.videoBtnSelecteNum]];
     

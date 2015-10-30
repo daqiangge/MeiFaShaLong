@@ -52,8 +52,17 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 - (void)setContentURL:(NSURL *)contentURL
 {
     [self stop];
+    
+    [self.videoControl.indicatorView startAnimating];
+    
+    //当更换视频播放时，重置进度条和进度时间
+    double currentTime = 0.0;
+    double totalTime = 0.0;
+    [self setTimeLabelValues:currentTime totalTime:totalTime];
+    self.videoControl.progressSlider.value = 0.0;
+    
     [super setContentURL:contentURL];
-    [self play];
+//    [self play];
 }
 
 #pragma mark - Publick Method
@@ -122,13 +131,16 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 
 - (void)onMPMoviePlayerPlaybackStateDidChangeNotification
 {
-    if (self.playbackState == MPMoviePlaybackStatePlaying) {
+    if (self.playbackState == MPMoviePlaybackStatePlaying)
+    {
+        LQLog(@"视频正在播放");
         self.videoControl.pauseButton.hidden = NO;
         self.videoControl.playButton.hidden = YES;
         [self startDurationTimer];
         [self.videoControl.indicatorView stopAnimating];
         [self.videoControl autoFadeOutControlBar];
     } else {
+        LQLog(@"视频停止播放");
         self.videoControl.pauseButton.hidden = YES;
         self.videoControl.playButton.hidden = NO;
         [self stopDurationTimer];
@@ -140,7 +152,8 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 
 - (void)onMPMoviePlayerLoadStateDidChangeNotification
 {
-    if (self.loadState & MPMovieLoadStateStalled) {
+    if (self.loadState & MPMovieLoadStateStalled)
+    {
         [self.videoControl.indicatorView startAnimating];
     }
 }

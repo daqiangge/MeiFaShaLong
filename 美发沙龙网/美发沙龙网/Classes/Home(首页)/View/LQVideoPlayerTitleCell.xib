@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,11 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="345" height="75"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="345" height="74.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015路易斯托尼盖时尚剪裁课程教学" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi5-cR-91a">
                         <rect key="frame" x="15" y="15" width="315" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="f6y-jH-Ht7"/>
                         </constraints>
@@ -25,6 +26,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtx-Fj-tjF">
                         <rect key="frame" x="15" y="29" width="71" height="30"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="6JT-Ok-1Gp"/>
                         </constraints>
@@ -42,6 +44,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucY-Uh-fqq">
                         <rect key="frame" x="96" y="29" width="72" height="30"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="在线充值">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,6 +56,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJc-KN-lBq">
                         <rect key="frame" x="178" y="29" width="71" height="30"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="收藏">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,6 +68,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4O-aj-c4t">
                         <rect key="frame" x="259" y="29" width="71" height="30"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="我的点数">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,6 +79,7 @@
                         </state>
                     </button>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="ucY-Uh-fqq" firstAttribute="bottom" secondItem="Xtx-Fj-tjF" secondAttribute="bottom" id="1Rl-dT-wMi"/>
                     <constraint firstItem="ucY-Uh-fqq" firstAttribute="bottom" secondItem="Q4O-aj-c4t" secondAttribute="bottom" id="5Qf-6Z-Hsl"/>
@@ -95,12 +101,14 @@
                     <constraint firstItem="XJc-KN-lBq" firstAttribute="leading" secondItem="ucY-Uh-fqq" secondAttribute="trailing" constant="10" id="xab-fM-sfv"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="VideoTitleLable" destination="Hi5-cR-91a" id="5l2-U6-KX3"/>
                 <outlet property="chongzhiBtn" destination="ucY-Uh-fqq" id="Krr-Ea-Z5q"/>
                 <outlet property="dianshuBtn" destination="Q4O-aj-c4t" id="kqL-e4-w1T"/>
                 <outlet property="fenxiangBtn" destination="Xtx-Fj-tjF" id="DVb-55-O3I"/>
                 <outlet property="shouchangBtn" destination="XJc-KN-lBq" id="OES-le-zes"/>
+                <outlet property="titleLabel" destination="Hi5-cR-91a" id="e0Y-yk-2fw"/>
             </connections>
             <point key="canvasLocation" x="540.5" y="261.5"/>
         </tableViewCell>

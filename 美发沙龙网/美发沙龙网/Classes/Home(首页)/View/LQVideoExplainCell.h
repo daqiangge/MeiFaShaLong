@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class LQVideoExplainCellFrame;
+#define ContentLable_Font ([UIFont systemFontOfSize:14])
+
+@class LQVideoModel;
 
 @interface LQVideoExplainCell : UITableViewCell
 
-@property (nonatomic, strong) LQVideoExplainCellFrame *cellFrame;
+@property (nonatomic, strong) LQVideoModel *videoModel;
 
 + (LQVideoExplainCell *)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 
