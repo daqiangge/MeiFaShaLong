@@ -10,4 +10,15 @@
 
 @implementation LQVideoModel
 
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{@"title":@"data.title",
+             @"ID":@"data.id",
+             @"classid":@"data.classid",
+             @"classname":@"data.classname",
+             @"tbname":@"data.tbname",
+             @"onlinepath":@"data.onlinepath",
+             @"totalpath":@"data.totalpath"};
+}
+
 @end

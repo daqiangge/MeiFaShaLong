@@ -64,7 +64,7 @@
     self.contentLable.frame = CGRectMake(15, CGRectGetMaxY(self.titleLable.frame)+10, LQScreen_Width-30, cellFrame.contentHeight);
     
     self.titleLable.text = videoModel.title;
-    self.contentLable.text = videoModel.content;
+//    self.contentLable.text = videoModel.content;
 }
 
 @end

@@ -15,9 +15,12 @@
 {
     _videoModel = videoModel;
     
-    CGSize contentSize = [videoModel.content calculateStringSizeWithMaxSize:CGSizeMake(LQScreen_Width-30, MAXFLOAT) font:ContentLable_Font];
+//    CGSize contentSize = [videoModel.content calculateStringSizeWithMaxSize:CGSizeMake(LQScreen_Width-30, MAXFLOAT) font:ContentLable_Font];
     
-    self.contentHeight = contentSize.height;
+//    self.contentHeight = contentSize.height;
+    
+    self.contentHeight = 200;
+    
     self.cellheight =  self.contentHeight + 50;
 }
 

@@ -10,7 +10,13 @@
 
 @interface LQVideoModel : NSObject
 
+@property (nonatomic, copy) NSString *err_msg;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, copy) NSString *classid;
+@property (nonatomic, copy) NSString *tbname;
+@property (nonatomic, copy) NSString *totalpath;
+@property (nonatomic, strong) NSArray *onlinepath;
+@property (nonatomic, copy) NSString *info;
 
 @end

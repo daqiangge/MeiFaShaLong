@@ -53,7 +53,7 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 {
     [self stop];
     [super setContentURL:contentURL];
-//    [self play];
+    [self play];
 }
 
 #pragma mark - Publick Method

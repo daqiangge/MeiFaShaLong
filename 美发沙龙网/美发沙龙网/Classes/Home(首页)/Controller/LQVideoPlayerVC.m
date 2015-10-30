@@ -77,8 +77,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeVideoBtnSelecteNum:) name:KNotificationName_VideoBtnSelecteNum object:nil];
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(AAA)];
+    
     [self doLoading];
-    [self videoRequest];
 }
 
 - (void)doLoading
@@ -110,6 +111,8 @@
         }];
         [self.view addSubview:self.videoController.view];
     }
+    
+    [self videoRequest];
 }
 
 //隐藏navigation tabbar 电池栏
@@ -130,7 +133,7 @@
     [cell buttonDidClick:btn];
     self.videoBtnSelecteNum = [obj intValue];
     
-    self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
+    self.videoController.contentURL = [NSURL URLWithString:@"http://www.mf521.com/shipin/vip/guonei/baohaosiranfalilun/1.mp4"];
     [self.videoController play];
 }
 
@@ -138,48 +141,52 @@
 - (void)videoRequest
 {
     
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    NSString *urlStr = @"http://old.meifashalong.com/e/api/getNewsContent.php";
-//    NSDictionary *parameters = @{@"id":self.ID,@"classid":self.classid};
-//    
-//    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-////        LQNewsContent *newsContent = [LQNewsContent objectWithKeyValues:operation.responseString];
-//        
-//        LQLog(@"%@",operation.responseString);
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        LQLog(@"请求失败%@",error);
-//        
-//        hud.labelText = HTTPRequestErrer_Text;
-//        hud.mode = MBProgressHUDModeText;
-//        [hud hide:YES afterDelay:1.5];
-//    }];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *urlStr = @"http://old.meifashalong.com/e/api/movieSlider.php";
+    NSDictionary *parameters = @{@"id":self.ID,@"classid":self.classid};
     
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        LQVideoModel *videoModel = [LQVideoModel objectWithKeyValues:operation.responseString];
         
-        NSDictionary *dic1 = @{@"title":@"简介",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
-        NSDictionary *dic2 = @{@"title":@"影片介绍",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
-        NSDictionary *dic3 = @{@"title":@"使用帮助",@"content":@"1.为什么要成为VIP会员？自助注册的会员为普通会员，并不是VIP会员，是无法观看VIP完整视频的，所以观看完整视频请联系客服升级为VIP会员，成为VIP会员即可观看本站几千集完整版教学视频，国内外名师为您详细讲解剪，烫，染，吹风造型，盘发扎发，美发店经营管理，使您足不出户就能了解最新的潮流趋势，最新优惠详情请咨询本站客服QQ800030206 电话0510-66651781\n2.如何购买VIP卡？自助注册的会员为普通会员，并不是VIP会员，是无法观看VIP完整视频的，所以观看完整视频请联系客服升级为VIP会员，成为VIP会员即可观看本站几千集完整版教学视频，国内外名师为您详细讲解剪，烫，染，吹风造型，盘发扎发，美发店经营管理，使您足不出户就能了解最新的潮流趋势，最新优惠详情请咨询本站客服QQ800030206 电话0510-66651781"};
-        
-        NSDictionary *videoModels = @{@"videoModels":@[dic1,dic2,dic3]};
-        
-        
-        self.videoController.contentURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
-        
-        self.videoModels = [LQVideoModels objectWithKeyValues:videoModels];
-        
-        [self.tableView reloadData];
-        
+        self.videoController.contentURL = [NSURL URLWithString:videoModel.onlinepath[0]];
         self.videoBtnSelecteNum = 101;
         
+        LQLog(@"视频地址以获取");
+        
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    });
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        LQLog(@"请求失败%@",error);
+        
+        hud.labelText = HTTPRequestErrer_Text;
+        hud.mode = MBProgressHUDModeText;
+        [hud hide:YES afterDelay:1.5];
+    }];
+    
+    
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//        NSDictionary *dic1 = @{@"title":@"简介",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
+//        NSDictionary *dic2 = @{@"title":@"影片介绍",@"content":@"所需点数：25点/集（VIP卡用户或VIP会员无需点数）\n上传时间：2015年07月08日\n影片类型：2015剪发 托尼盖美发 剪发理论 汤尼盖教学\n影片简介：2015路易斯托尼盖时尚剪裁课程教学，时尚剪裁理论+全新安得卡特发型剪裁）"};
+//        NSDictionary *dic3 = @{@"title":@"使用帮助",@"content":@"1.为什么要成为VIP会员？自助注册的会员为普通会员，并不是VIP会员，是无法观看VIP完整视频的，所以观看完整视频请联系客服升级为VIP会员，成为VIP会员即可观看本站几千集完整版教学视频，国内外名师为您详细讲解剪，烫，染，吹风造型，盘发扎发，美发店经营管理，使您足不出户就能了解最新的潮流趋势，最新优惠详情请咨询本站客服QQ800030206 电话0510-66651781\n2.如何购买VIP卡？自助注册的会员为普通会员，并不是VIP会员，是无法观看VIP完整视频的，所以观看完整视频请联系客服升级为VIP会员，成为VIP会员即可观看本站几千集完整版教学视频，国内外名师为您详细讲解剪，烫，染，吹风造型，盘发扎发，美发店经营管理，使您足不出户就能了解最新的潮流趋势，最新优惠详情请咨询本站客服QQ800030206 电话0510-66651781"};
+//        
+//        NSDictionary *videoModels = @{@"videoModels":@[dic1,dic2,dic3]};
+//        
+//        
+//        self.videoController.contentURL = [NSURL URLWithString:@"http://www.mf521.com/shipin/vip/guonei/baohaosiranfalilun/1.mp4"];
+//        
+//        self.videoModels = [LQVideoModels objectWithKeyValues:videoModels];
+//        
+//        [self.tableView reloadData];
+//        
+//        self.videoBtnSelecteNum = 101;
+//        
+//        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//    });
 }
 
 #pragma mark - UITableViewDataSource,UITableViewDelegate
@@ -267,7 +274,11 @@
 {
     [super viewWillDisappear:animated];
     
-    [self.videoController dismiss];
+    //判断是否点击返回按钮
+    if (![[self.navigationController viewControllers] containsObject:self])
+    {
+        [self.videoController dismiss];
+    }
 }
 
 #pragma mark -
