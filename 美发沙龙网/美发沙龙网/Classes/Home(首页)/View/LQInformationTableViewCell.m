@@ -22,7 +22,7 @@
     {
         CGFloat x = 12.5;
         CGFloat y = 14;
-        CGFloat width = 67;
+        CGFloat width = 50;
         CGFloat height = cell_height - 2 * y;
         CGRect frame = CGRectMake(x, y, width, height);
         
@@ -50,7 +50,7 @@
     {
         CGFloat x = CGRectGetMaxX(self.titleImageView.frame) + 10;
         CGFloat y = CGRectGetMinY(self.titleImageView.frame);
-        CGFloat width = self.width - x - 40;
+        CGFloat width = LQScreen_Width - x - 21;
         CGFloat height = 34;
         CGRect frame = CGRectMake(x, y, width, height);
         

@@ -8,25 +8,25 @@
 
 #import "LQHomeVC.h"
 #import "LQHomeModularView.h"
-#import "LQHomePageControlView.h"
 #import "LQInformationVC.h"
-#import "LQHomeRollingView.h"
 #import "LQNewsList.h"
 #import "LQNewsListContent.h"
 #import "LQNewsWebVC.h"
+#import "LQAdvertisements.h"
+#import "LQAdvertisement.h"
+#import "LZAutoScrollView.h"
 
-@interface LQHomeVC ()<LQHomeModularViewDelegate,LQHomeRollingViewDelegate>
+@interface LQHomeVC ()<LQHomeModularViewDelegate,LZAutoScrollViewDelegate>
 
 @property (weak, nonatomic  ) LQHomeModularView     *homeModularView;
-@property (nonatomic, weak  ) LQHomePageControlView *homePageControlView;
-@property (nonatomic, weak  ) LQHomeRollingView     *homeRollingView;
+@property (nonatomic, weak  ) LZAutoScrollView     *homeRollingView;
 @property (nonatomic, strong) NSArray *newsListArray;
 
 @end
 
 @implementation LQHomeVC
 
-- (LQHomeRollingView *)homeRollingView
+- (LZAutoScrollView *)homeRollingView
 {
     if (_homeRollingView == nil)
     {
@@ -35,9 +35,13 @@
         CGFloat width                      = LQScreen_Width;
         CGFloat height                     = (130 * LQScreen_Width)/320;
         CGRect frame                       = CGRectMake(x, y, width, height);
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+        imageView.image = [UIImage imageNamed:@"placehodeImage"];
+        [self.view addSubview:imageView];
 
-        LQHomeRollingView *homeRollingView = [LQHomeRollingView homeRollingViewWithFrame:frame];
-        homeRollingView.deleagte = self;
+        LZAutoScrollView *homeRollingView =[[LZAutoScrollView alloc] initWithFrame:frame];
+        homeRollingView.delegate = self;
         [self.view addSubview:homeRollingView];
         _homeRollingView                   = homeRollingView;
         
@@ -100,21 +104,38 @@
  */
 - (void)refresh
 {
-    [self requestNewsList];
+//    [self requestNewsList];
+    [self requestAdvertisementPhoto];
 }
 
 #pragma mark - 网络请求
-- (void)requestNewsList
+/*
+ 获取广告图片
+ */
+- (void)requestAdvertisementPhoto
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsList.php";
-    NSDictionary *parameters = @{@"pageSize":@"5",@"classid":@"58"};
+    NSDictionary *parameters = @{@"classid":@"134"};
     
-    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        LQNewsList *newsList = [LQNewsList objectWithKeyValues:operation.responseString];
-        self.newsListArray = newsList.data;
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+//        LQLog(@"%@",operation.responseString);
         
-        self.homeRollingView.homeRollingScrollView.imageUrlArray = [NSMutableArray arrayWithArray:self.newsListArray];
+        LQAdvertisements *advertisements = [LQAdvertisements objectWithKeyValues:operation.responseString];
+        
+        NSMutableArray *imageArray = [NSMutableArray array];
+        NSMutableArray *titleArray = [NSMutableArray array];
+        for (LQAdvertisement *advertisement in advertisements.advertisements)
+        {
+            [imageArray addObject:advertisement.titlepic];
+            [titleArray addObject:advertisement.title];
+        }
+        
+        self.homeRollingView.titles = titleArray;
+        self.homeRollingView.images = imageArray;
+        self.homeRollingView.placeHolder = [UIImage imageNamed:@"placehodeImage"];
+        [self.homeRollingView createViews];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         LQLog(@"请求失败%@",error);
@@ -134,21 +155,6 @@
     informationVC.classid = [NSString stringWithFormat:@"%ld",btn.tag];
     
     [self.navigationController pushViewController:informationVC animated:YES];
-}
-
-#pragma mark - LQHomeRollingViewDelegate
-- (void)homeRollingViewDidClickImageView:(LQHomeRollingView *)homeRollingView newsListContent:(LQNewsListContent *)newsContent
-{
-    if (self.newsListArray.count == 0)
-    {
-        return;
-    }
-    
-    LQNewsWebVC *newWebVC = [[LQNewsWebVC alloc] init];
-    newWebVC.ID = newsContent.ID;
-    newWebVC.classid = newsContent.classid;
-    newWebVC.navigationItem.title = newsContent.classname;
-    [self.navigationController pushViewController:newWebVC animated:YES];
 }
 
 @end

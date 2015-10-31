@@ -7,7 +7,7 @@
 //
 
 #import "LQInformationVC.h"
-#import "LQHomeRollingView.h"
+#import "LZAutoScrollView.h"
 #import "LQInformationBtnGroupView.h"
 #import "LQInformationTableViewCell.h"
 #import "LQNewsClass.h"
@@ -19,10 +19,12 @@
 #import "LQSearchController.h"
 #import "AppDelegate.h"
 #import "LQMallVC.h"
+#import "LQAdvertisements.h"
+#import "LQAdvertisement.h"
 
-@interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate,LQInformationBtnGroupViewDelegate,UISearchBarDelegate>
+@interface LQInformationVC ()<UITableViewDataSource,UITableViewDelegate,LQInformationBtnGroupViewDelegate,UISearchBarDelegate,LZAutoScrollViewDelegate>
 
-@property (nonatomic, weak) LQHomeRollingView *homeRollingView;
+@property (nonatomic, weak) LZAutoScrollView *homeRollingView;
 @property (nonatomic, weak) UIView *searchBarBsckgroundView;
 @property (nonatomic, weak) UISearchBar *searchBar;
 @property (nonatomic, weak) LQInformationBtnGroupView *btnGroupView;
@@ -70,17 +72,22 @@
     return _searchBar;
 }
 
-- (LQHomeRollingView *)homeRollingView
+- (LZAutoScrollView *)homeRollingView
 {
     if (_homeRollingView == nil)
     {
         CGFloat x                          = 0;
         CGFloat y                          = CGRectGetMaxY(self.searchBarBsckgroundView.frame);
         CGFloat width                      = LQScreen_Width;
-        CGFloat height                     = (145 * LQScreen_Width)/320;
+        CGFloat height                     = (130 * LQScreen_Width)/320;
         CGRect frame                       = CGRectMake(x, y, width, height);
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+        imageView.image = [UIImage imageNamed:@"placehodeImage"];
+        [self.view addSubview:imageView];
 
-        LQHomeRollingView *homeRollingView = [LQHomeRollingView homeRollingViewWithFrame:frame];
+        LZAutoScrollView *homeRollingView = [[LZAutoScrollView alloc] initWithFrame:frame];
+        homeRollingView.delegate = self;
         [self.view addSubview:homeRollingView];
         _homeRollingView                   = homeRollingView;
         
@@ -189,6 +196,7 @@
     self.informationTableView.hidden = NO;
     
     [self requestAllNewsClass];
+    [self requestAdvertisementPhoto];
     
 }
 
@@ -312,7 +320,9 @@
     NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsList.php";
     NSDictionary *parameters               = @{@"classid":self.classid,@"pageSize":@"10"};
     
-    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+//         LQLog(@"%@",operation.responseString);
         
         [self.newsListArray removeAllObjects];
         
@@ -338,6 +348,60 @@
         hud.mode = MBProgressHUDModeText;
         [hud hide:YES afterDelay:1.5];
     }];
+}
+
+/*
+ 获取广告图片
+ */
+- (void)requestAdvertisementPhoto
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *urlStr                       = @"http://old.meifashalong.com/e/api/getNewsList.php";
+    
+    NSString *advertisementPhotoClassid = @"";
+    
+    switch ([self.classid intValue])
+    {
+        case 81:
+            advertisementPhotoClassid = @"134";
+            break;
+            
+        case 94:
+            advertisementPhotoClassid = @"134";
+            break;
+            
+        default:
+            return;
+            break;
+    }
+    
+    NSDictionary *parameters = @{@"classid":advertisementPhotoClassid};
+    
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         LQAdvertisements *advertisements = [LQAdvertisements objectWithKeyValues:operation.responseString];
+         
+         NSMutableArray *imageArray = [NSMutableArray array];
+         NSMutableArray *titleArray = [NSMutableArray array];
+         for (LQAdvertisement *advertisement in advertisements.advertisements)
+         {
+             [imageArray addObject:advertisement.titlepic];
+             [titleArray addObject:advertisement.title];
+         }
+    
+         self.homeRollingView.titles = titleArray;
+         self.homeRollingView.images = imageArray;
+         self.homeRollingView.placeHolder = [UIImage imageNamed:@"placehodeImage"];
+         [self.homeRollingView createViews];
+         
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         LQLog(@"请求失败%@",error);
+         
+         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+         hud.labelText = HTTPRequestErrer_Text;
+         hud.mode = MBProgressHUDModeText;
+         [hud hide:YES afterDelay:1.5];
+     }];
 }
 
 #pragma mark - TableViewDelegate&DataSource
