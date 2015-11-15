@@ -107,6 +107,7 @@
         btnGroupView.btnGroupViewDelegate = self;
         [self.view addSubview:btnGroupView];
         
+        
         [btnGroupView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.homeRollingView.mas_bottom);
             make.left.and.right.equalTo(self.view);
