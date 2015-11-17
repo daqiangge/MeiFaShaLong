@@ -138,9 +138,9 @@
 		D546A3E11B5FBEB40003A581 /* LQHomeModularView.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */; };
 		D546A41B1B5FCECC0003A581 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A41A1B5FCECC0003A581 /* UIView+Extension.m */; };
 		D56FC34B1B764E8D00862568 /* LQNewsWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */; };
-		D596FD421BE4AFAD00F95830 /* LQAdvertisement.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD411BE4AFAD00F95830 /* LQAdvertisement.m */; settings = {ASSET_TAGS = (); }; };
-		D596FD451BE506DA00F95830 /* LQAdvertisements.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD441BE506DA00F95830 /* LQAdvertisements.m */; settings = {ASSET_TAGS = (); }; };
-		D596FD491BE512F700F95830 /* LZAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD481BE512F700F95830 /* LZAutoScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		D596FD421BE4AFAD00F95830 /* LQAdvertisement.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD411BE4AFAD00F95830 /* LQAdvertisement.m */; };
+		D596FD451BE506DA00F95830 /* LQAdvertisements.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD441BE506DA00F95830 /* LQAdvertisements.m */; };
+		D596FD491BE512F700F95830 /* LZAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD481BE512F700F95830 /* LZAutoScrollView.m */; };
 		D5A9B7261B803F0A00645B13 /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A9B7211B803F0A00645B13 /* CustomURLCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D5A9B7271B803F0A00645B13 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A9B7231B803F0A00645B13 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D5A9B7281B803F0A00645B13 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A9B7251B803F0A00645B13 /* Util.m */; };
@@ -1605,7 +1605,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: haibo wei (R6NHM7EA2H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: haibo wei (R6NHM7EA2H)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1649,7 +1650,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: haibo wei (R6NHM7EA2H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: haibo wei (R6NHM7EA2H)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1674,6 +1676,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: haibo wei (R6NHM7EA2H)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "美发沙龙网/MeiFaShaLong.pch";
 				INFOPLIST_FILE = "美发沙龙网/Info.plist";
@@ -1689,6 +1692,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: haibo wei (R6NHM7EA2H)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "美发沙龙网/MeiFaShaLong.pch";
 				INFOPLIST_FILE = "美发沙龙网/Info.plist";

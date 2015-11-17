@@ -150,7 +150,8 @@
         
         [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.btnGroupView.mas_bottom).with.offset(5);
-            make.left.bottom.and.right.equalTo(self.view);
+            make.left.and.right.equalTo(self.view);
+            make.bottom.equalTo(self.view.mas_bottom).with.offset(-48);
         }];
         
         tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshTableView)];

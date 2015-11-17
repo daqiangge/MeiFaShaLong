@@ -29,12 +29,15 @@
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"menu-icon" selectedImageName:@"menu-icon" target:self action:@selector(openMeun)];
     }else
     {
-        viewController.hidesBottomBarWhenPushed = YES;
-        
         NSArray *array = self.viewControllers;
         long int count = array.count;
         UIViewController *vc = array[count - 1];
         vc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    }
+    
+    if (self.viewControllers.count > 1)
+    {
+        viewController.hidesBottomBarWhenPushed = YES;
     }
     
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
