@@ -13,6 +13,10 @@
 #import "LQPersonalCenterVC.h"
 #import "LQNavigationController.h"
 
+#import "LQMoreVC.h"
+#import "ReleaseInformationVC.h"
+#import "FriendsCircleVC.h"
+
 @interface LQTabBarController ()<UITabBarControllerDelegate>
 
 @end
@@ -35,17 +39,17 @@
            imageName:@"tabbar_home"
    selectedImageName:@"tabbar_home_selected"];
     
-    LQNewRecommendVC *newRecommendVC = [[LQNewRecommendVC alloc] init];
-    [self addChildVC:newRecommendVC
-         tabBarTitle:@"最新"
-      navgationTitle:@"最新"
+    FriendsCircleVC *friendsCircleVC = [[FriendsCircleVC alloc] init];
+    [self addChildVC:friendsCircleVC
+         tabBarTitle:@"朋友圈"
+      navgationTitle:@"朋友圈"
            imageName:@"tabbar_message_center"
    selectedImageName:@"tabbar_message_center_selected"];
     
-    LQCommunityVC *communityVC = [[LQCommunityVC alloc] init];
-    [self addChildVC:communityVC
-         tabBarTitle:@"美发人社区"
-      navgationTitle:@"美发人社区"
+    ReleaseInformationVC *releaseInformationVC = [[ReleaseInformationVC alloc] init];
+    [self addChildVC:releaseInformationVC
+         tabBarTitle:@"发布信息"
+      navgationTitle:@"发布信息"
            imageName:@"tabbar_discover"
    selectedImageName:@"tabbar_discover_selected"];
     
@@ -53,6 +57,13 @@
     [self addChildVC:personalCenterVC
          tabBarTitle:@"个人中心"
       navgationTitle:@"个人中心"
+           imageName:@"tabbar_profile"
+   selectedImageName:@"tabbar_profile_selected"];
+    
+    LQMoreVC *moreVC = [[LQMoreVC alloc] init];
+    [self addChildVC:moreVC
+         tabBarTitle:@"更多"
+      navgationTitle:@"更多"
            imageName:@"tabbar_profile"
    selectedImageName:@"tabbar_profile_selected"];
     

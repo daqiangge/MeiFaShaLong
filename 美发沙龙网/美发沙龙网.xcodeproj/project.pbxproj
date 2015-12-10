@@ -138,6 +138,9 @@
 		D546A3E11B5FBEB40003A581 /* LQHomeModularView.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A3E01B5FBEB40003A581 /* LQHomeModularView.m */; };
 		D546A41B1B5FCECC0003A581 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D546A41A1B5FCECC0003A581 /* UIView+Extension.m */; };
 		D56FC34B1B764E8D00862568 /* LQNewsWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */; };
+		D58F96EB1C19AC8900770521 /* LQMoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D58F96EA1C19AC8900770521 /* LQMoreVC.m */; };
+		D58F96F11C19AFF400770521 /* ReleaseInformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D58F96F01C19AFF400770521 /* ReleaseInformationVC.m */; };
+		D58F96F71C19B0A300770521 /* FriendsCircleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D58F96F61C19B0A300770521 /* FriendsCircleVC.m */; };
 		D596FD421BE4AFAD00F95830 /* LQAdvertisement.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD411BE4AFAD00F95830 /* LQAdvertisement.m */; };
 		D596FD451BE506DA00F95830 /* LQAdvertisements.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD441BE506DA00F95830 /* LQAdvertisements.m */; };
 		D596FD491BE512F700F95830 /* LZAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D596FD481BE512F700F95830 /* LZAutoScrollView.m */; };
@@ -426,6 +429,12 @@
 		D546A41A1B5FCECC0003A581 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		D56FC3491B764E8D00862568 /* LQNewsWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNewsWebVC.h; sourceTree = "<group>"; };
 		D56FC34A1B764E8D00862568 /* LQNewsWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNewsWebVC.m; sourceTree = "<group>"; };
+		D58F96E91C19AC8900770521 /* LQMoreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQMoreVC.h; sourceTree = "<group>"; };
+		D58F96EA1C19AC8900770521 /* LQMoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQMoreVC.m; sourceTree = "<group>"; };
+		D58F96EF1C19AFF400770521 /* ReleaseInformationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleaseInformationVC.h; sourceTree = "<group>"; };
+		D58F96F01C19AFF400770521 /* ReleaseInformationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseInformationVC.m; sourceTree = "<group>"; };
+		D58F96F51C19B0A300770521 /* FriendsCircleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCircleVC.h; sourceTree = "<group>"; };
+		D58F96F61C19B0A300770521 /* FriendsCircleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCircleVC.m; sourceTree = "<group>"; };
 		D596FD401BE4AFAD00F95830 /* LQAdvertisement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQAdvertisement.h; sourceTree = "<group>"; };
 		D596FD411BE4AFAD00F95830 /* LQAdvertisement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQAdvertisement.m; sourceTree = "<group>"; };
 		D596FD431BE506DA00F95830 /* LQAdvertisements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQAdvertisements.h; sourceTree = "<group>"; };
@@ -727,9 +736,12 @@
 				84CEF05B1B5E36F00017D798 /* Login(登录) */,
 				84CEF06A1B5E36F00017D798 /* Meun(菜单) */,
 				84CEF0571B5E36F00017D798 /* Home(首页) */,
+				D58F96E31C19AAF900770521 /* 发布信息 */,
+				D58F96E41C19AAF900770521 /* 更多 */,
+				D58F96E51C19AAF900770521 /* 朋友圈 */,
+				84F3CA6F1B5F27E900DD44A9 /* PersonalCenter(个人中心) */,
 				84F3CA6B1B5F27E900DD44A9 /* NewRecommend(最新推荐) */,
 				84F3CA671B5F27E900DD44A9 /* Community(社区) */,
-				84F3CA6F1B5F27E900DD44A9 /* PersonalCenter(个人中心) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1188,6 +1200,105 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D58F96E31C19AAF900770521 /* 发布信息 */ = {
+			isa = PBXGroup;
+			children = (
+				D58F96EC1C19AFBC00770521 /* Model */,
+				D58F96ED1C19AFBC00770521 /* VC */,
+				D58F96EE1C19AFBC00770521 /* View */,
+			);
+			path = "发布信息";
+			sourceTree = "<group>";
+		};
+		D58F96E41C19AAF900770521 /* 更多 */ = {
+			isa = PBXGroup;
+			children = (
+				D58F96E61C19AC6E00770521 /* Model */,
+				D58F96E71C19AC6E00770521 /* VC */,
+				D58F96E81C19AC6E00770521 /* View */,
+			);
+			path = "更多";
+			sourceTree = "<group>";
+		};
+		D58F96E51C19AAF900770521 /* 朋友圈 */ = {
+			isa = PBXGroup;
+			children = (
+				D58F96F21C19B07700770521 /* Model */,
+				D58F96F31C19B07700770521 /* VC */,
+				D58F96F41C19B07700770521 /* View */,
+			);
+			path = "朋友圈";
+			sourceTree = "<group>";
+		};
+		D58F96E61C19AC6E00770521 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D58F96E71C19AC6E00770521 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				D58F96E91C19AC8900770521 /* LQMoreVC.h */,
+				D58F96EA1C19AC8900770521 /* LQMoreVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		D58F96E81C19AC6E00770521 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D58F96EC1C19AFBC00770521 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D58F96ED1C19AFBC00770521 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				D58F96EF1C19AFF400770521 /* ReleaseInformationVC.h */,
+				D58F96F01C19AFF400770521 /* ReleaseInformationVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		D58F96EE1C19AFBC00770521 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D58F96F21C19B07700770521 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D58F96F31C19B07700770521 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				D58F96F51C19B0A300770521 /* FriendsCircleVC.h */,
+				D58F96F61C19B0A300770521 /* FriendsCircleVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		D58F96F41C19B07700770521 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D596FD3C1BE4AF5300F95830 /* Advertisement */ = {
 			isa = PBXGroup;
 			children = (
@@ -1365,6 +1476,7 @@
 				TargetAttributes = {
 					84EFEA5D1B5CC6670049D6FA = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = H2D79BRXET;
 					};
 					84EFEA791B5CC6670049D6FA = {
 						CreatedOnToolsVersion = 6.4;
@@ -1469,6 +1581,7 @@
 				D5E0F3031B85E58B005B19DC /* UIView+MJExtension.m in Sources */,
 				840F65311B6F428C0024B11A /* UIView_extra.m in Sources */,
 				D5E0F2F11B85E58B005B19DC /* MJRefreshAutoFooter.m in Sources */,
+				D58F96EB1C19AC8900770521 /* LQMoreVC.m in Sources */,
 				84F3CA881B5F3F2E00DD44A9 /* LQBaseViewController.m in Sources */,
 				841810A61B871F6300BC372D /* LQVideoModel.m in Sources */,
 				843CED171B857CA4007631C6 /* AppDelegate.m in Sources */,
@@ -1488,6 +1601,7 @@
 				D596FD421BE4AFAD00F95830 /* LQAdvertisement.m in Sources */,
 				84835C341B733B38001859E9 /* LQNewsClassData.m in Sources */,
 				84EFEA6A1B5CC6670049D6FA /* _____.xcdatamodeld in Sources */,
+				D58F96F11C19AFF400770521 /* ReleaseInformationVC.m in Sources */,
 				84E2DBBF1B5F6A730068423C /* LQNavigationController.m in Sources */,
 				D5E0F2F61B85E58B005B19DC /* MJRefreshAutoGifFooter.m in Sources */,
 				840F65301B6F428C0024B11A /* LeftSlideViewController.m in Sources */,
@@ -1563,6 +1677,7 @@
 				841810601B86ABEB00BC372D /* FMDatabasePool.m in Sources */,
 				8418109E1B8713E800BC372D /* LQVideoExplainCell.m in Sources */,
 				840A008F1B72ED9A007F7E78 /* MJFoundation.m in Sources */,
+				D58F96F71C19B0A300770521 /* FriendsCircleVC.m in Sources */,
 				841810631B86ABEB00BC372D /* YTKKeyValueStore.m in Sources */,
 				8477BB761B8EA2DC00A02FB8 /* LQCommodityCell.m in Sources */,
 				84835C171B72FC89001859E9 /* LQNewsList.m in Sources */,
@@ -1676,7 +1791,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: haibo wei (R6NHM7EA2H)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "美发沙龙网/MeiFaShaLong.pch";
 				INFOPLIST_FILE = "美发沙龙网/Info.plist";
@@ -1692,7 +1807,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: haibo wei (R6NHM7EA2H)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "美发沙龙网/MeiFaShaLong.pch";
 				INFOPLIST_FILE = "美发沙龙网/Info.plist";
