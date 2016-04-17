@@ -25,6 +25,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    NSLog(@"123123123");
+    
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
     NSString *versionKey = @"CFBundleVersion";
